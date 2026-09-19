@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>О клинике — Лингва Бона</title>
+  <meta name="description" content="Клиника детской неврологии «Лингва Бона»: команда специалистов, принципы работы, научная практика и отзывы родителей.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Chiron+GoRound+TC:wght@200;300;400;500;600;700&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
+</head>
+<body class="page-about">
+
+  <!-- ============================ Navbar ============================ -->
+  <header class="navbar-cont">
+    <div class="navbar-lb">
+      <div class="navbar-lb__left">
+        <a class="navbar-lb__logo" href="index.html">Лингва Бона</a>
+        <button class="round-btn navbar-lb__burger" type="button"
+                data-bs-toggle="offcanvas" data-bs-target="#mobileMenu"
+                aria-controls="mobileMenu" aria-label="Открыть меню">
+          <img class="navbar-lb__burger-grid" src="img/icons/burger-dark.svg" alt="" width="20" height="20">
+          <img class="navbar-lb__burger-lines" src="img/icons/burger.svg" alt="" width="20" height="20">
+        </button>
+      </div>
+
+      <nav class="navbar-lb__menu" aria-label="Основное меню">
+        <a class="menu-btn" href="uslugi.html">Услуги</a>
+        <a class="menu-btn" href="vrachi.html">Врачи</a>
+        <a class="menu-btn" href="o-klinike.html" aria-current="page">Клиника</a>
+        <a class="menu-btn" href="akcii.html">Акции</a>
+        <a class="menu-btn" href="ceny.html">Цены</a>
+        <a class="menu-btn" href="otzyvy.html">Отзывы</a>
+        <a class="menu-btn" href="kontakty.html">Контакты</a>
+        <a class="menu-btn" href="tel:+01234567890">+0 (123) 456 78-90</a>
+      </nav>
+
+      <div class="navbar-lb__contacts">
+        <a class="round-btn" href="#" aria-label="МАКС">
+          <img src="img/icons/max.svg" alt="" width="20" height="20">
+        </a>
+        <a class="round-btn" href="#" aria-label="ВКонтакте">
+          <img src="img/icons/vk.svg" alt="" width="20" height="20">
+        </a>
+        <a class="btn-50 btn-50--dark" href="#zapis">Записаться</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ============================ Mobile menu ============================ -->
+  <div class="offcanvas offcanvas-end mobile-menu" tabindex="-1" id="mobileMenu" aria-labelledby="mobileMenuLabel">
+    <div class="offcanvas-header">
+      <h2 class="offcanvas-title mobile-menu__title" id="mobileMenuLabel">Меню</h2>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Закрыть"></button>
+    </div>
+    <div class="offcanvas-body">
+      <nav class="mobile-menu__nav" aria-label="Мобильное меню">
+        <a class="mobile-menu__link" href="uslugi.html">Услуги</a>
+        <a class="mobile-menu__link" href="vrachi.html">Врачи</a>
+        <a class="mobile-menu__link" href="o-klinike.html" aria-current="page">Клиника</a>
+        <a class="mobile-menu__link" href="akcii.html">Акции</a>
+        <a class="mobile-menu__link" href="ceny.html">Цены</a>
+        <a class="mobile-menu__link" href="otzyvy.html">Отзывы</a>
+        <a class="mobile-menu__link" href="kontakty.html">Контакты</a>
+      </nav>
+      <div class="mobile-menu__footer">
+        <a class="mobile-menu__phone" href="tel:+01234567890">+0 (123) 456 78-90</a>
+        <a class="btn-50 btn-50--dark w-100" href="#zapis">Записаться</a>
+      </div>
+    </div>
+  </div>
+
+  <main>
+
+    <!-- ============================ Шапка ============================ -->
+    <section class="phero-cont">
+      <div class="phero phero--about">
+        <div class="phero__bg" aria-hidden="true">
+          <img class="phero__bg-base" src="img/product-hero.jpg" alt="">
+          <span class="phero__bg-tint"></span>
+          <span class="phero__bg-layer"><img src="img/about-hero-layer.jpg" alt=""></span>
+        </div>
+
+        <div class="ahero">
+          <p class="ahero__crumbs"><a href="index.html">Главная</a> / <span>О клинике</span></p>
+          <p class="ahero__eyebrow">Клиника детской неврологии</p>
+          <h1 class="ahero__title">Лингва Бона — клиника,<br>где на ситуацию ребёнка смотрят целиком</h1>
+          <p class="ahero__lead">Специалисты разных направлений смотрят на ситуацию вместе, чтобы разобраться в причинах трудностей и составить понятный план дальнейших действий.</p>
+          <a class="btn-big btn-big--orange ahero__btn" href="#zapis">Записаться</a>
+          <p class="ahero__badges">В команде — профессор, кандидаты наук и специалисты с многолетней практикой.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================ Взгляд на ребёнка целиком ============================ -->
+    <section class="team-cont">
+      <div class="team">
+        <header class="section-title">
+          <h2 class="section-title__heading">Ребёнок — больше, чем отдельный симптом</h2>
+          <p class="section-title__sub">Речь, внимание, сон, эмоции, поведение и обучение развиваются не изолированно друг от друга. Поэтому трудность, которая заметна в одной области, иногда может быть связана сразу с несколькими факторами.</p>
+        </header>
+
+        <div class="mind">
+          <div class="mind__intro">
+            <h3 class="mind__title">Понимание этих связей помогает определить, какая помощь действительно нужна ребёнку.</h3>
+            <p class="mind__text">Например, трудности в школе могут объясняться не только нагрузкой, но и особенностями внимания, речи, сна или эмоционального состояния. Внешне всё выглядит как «не хочет учиться», а причины могут быть разными. Поэтому мы смотрим на ситуацию целиком, прежде чем предлагать решение.</p>
+          </div>
+
+          <div class="mind__map">
+            <span class="mind__ring" aria-hidden="true"></span>
+
+            <div class="mind__col">
+              <span data-pixel-round class="mind__pill">Cлова</span>
+              <span data-pixel-round class="mind__pill mind__pill--far">Внимание</span>
+              <span data-pixel-round class="mind__pill">Обучение</span>
+            </div>
+
+            <div class="mind__center">
+              <img src="img/about-mind.jpg" alt="Ребёнок на занятии со специалистом">
+              <span class="mind__result" data-pixel-round>Целостное понимание ситуации</span>
+            </div>
+
+            <div class="mind__col mind__col--right">
+              <span data-pixel-round class="mind__pill">Речь</span>
+              <span data-pixel-round class="mind__pill mind__pill--far">Эмоции</span>
+              <span data-pixel-round class="mind__pill">Поведение</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================ Специалисты ============================ -->
+    <section class="team-cont">
+      <div class="team">
+        <header class="section-title">
+          <h2 class="section-title__heading">Сильные специалисты которые смотрят на ситуацию вместе</h2>
+          <p class="section-title__sub">В Лингва Бона работают специалисты разных направлений. Мы ценим не только профессиональный опыт каждого, но и способность видеть границы своей специальности и при необходимости работать вместе с коллегами.</p>
+        </header>
+
+        <div class="team__img">
+          <img src="img/about-team.jpg" alt="Команда клиники «Лингва Бона»">
+        </div>
+
+        <div class="team__cards">
+          <div class="team__track">
+          <article class="doctor-card">
+            <div class="doctor-card__img">
+              <img src="img/doctor-product.jpg" alt="Иванова Анна Петровна">
+            </div>
+            <div class="doctor-card__info">
+              <div class="doctor-card__name-block">
+                <div class="doctor-card__name"><span>Иванова Анна Петровна</span></div>
+                <p class="doctor-card__practice">Детский невролог</p>
+              </div>
+              <div class="divider-wrap"><span class="divider"></span></div>
+              <div class="doctor-card__meta">
+                <p class="doctor-card__degree">Кандидат медицинских наук • cтаж 24 года</p>
+              </div>
+              <div class="doctor-card__buttons">
+                <a class="btn-50 btn-50--outline w-100" href="vrach.html">О враче</a>
+              </div>
+            </div>
+          </article>
+          <article class="doctor-card">
+            <div class="doctor-card__img">
+              <img src="img/doctor-product.jpg" alt="Иванова Анна Петровна">
+            </div>
+            <div class="doctor-card__info">
+              <div class="doctor-card__name-block">
+                <div class="doctor-card__name"><span>Иванова Анна Петровна</span></div>
+                <p class="doctor-card__practice">Детский невролог</p>
+              </div>
+              <div class="divider-wrap"><span class="divider"></span></div>
+              <div class="doctor-card__meta">
+                <p class="doctor-card__degree">Кандидат медицинских наук • cтаж 24 года</p>
+              </div>
+              <div class="doctor-card__buttons">
+                <a class="btn-50 btn-50--outline w-100" href="vrach.html">О враче</a>
+              </div>
+            </div>
+          </article>
+          <article class="doctor-card">
+            <div class="doctor-card__img">
+              <img src="img/doctor-product.jpg" alt="Иванова Анна Петровна">
+            </div>
+            <div class="doctor-card__info">
+              <div class="doctor-card__name-block">
+                <div class="doctor-card__name"><span>Иванова Анна Петровна</span></div>
+                <p class="doctor-card__practice">Детский невролог</p>
+              </div>
+              <div class="divider-wrap"><span class="divider"></span></div>
+              <div class="doctor-card__meta">
+                <p class="doctor-card__degree">Кандидат медицинских наук • cтаж 24 года</p>
+              </div>
+              <div class="doctor-card__buttons">
+                <a class="btn-50 btn-50--outline w-100" href="vrach.html">О враче</a>
+              </div>
+            </div>
+          </article>
+          <article class="doctor-card">
+            <div class="doctor-card__img">
+              <img src="img/doctor-product.jpg" alt="Иванова Анна Петровна">
+            </div>
+            <div class="doctor-card__info">
+              <div class="doctor-card__name-block">
+                <div class="doctor-card__name"><span>Иванова Анна Петровна</span></div>
+                <p class="doctor-card__practice">Детский невролог</p>
+              </div>
+              <div class="divider-wrap"><span class="divider"></span></div>
+              <div class="doctor-card__meta">
+                <p class="doctor-card__degree">Кандидат медицинских наук • cтаж 24 года</p>
+              </div>
+              <div class="doctor-card__buttons">
+                <a class="btn-50 btn-50--outline w-100" href="vrach.html">О враче</a>
+              </div>
+            </div>
+          </article>
+          <article class="doctor-card">
+            <div class="doctor-card__img">
+              <img src="img/doctor-product.jpg" alt="Иванова Анна Петровна">
+            </div>
+            <div class="doctor-card__info">
+              <div class="doctor-card__name-block">
+                <div class="doctor-card__name"><span>Иванова Анна Петровна</span></div>
+                <p class="doctor-card__practice">Детский невролог</p>
+              </div>
+              <div class="divider-wrap"><span class="divider"></span></div>
+              <div class="doctor-card__meta">
+                <p class="doctor-card__degree">Кандидат медицинских наук • cтаж 24 года</p>
+              </div>
+              <div class="doctor-card__buttons">
+                <a class="btn-50 btn-50--outline w-100" href="vrach.html">О враче</a>
+              </div>
+            </div>
+          </article>
+          <article class="doctor-card">
+            <div class="doctor-card__img">
+              <img src="img/doctor-product.jpg" alt="Иванова Анна Петровна">
+            </div>
+            <div class="doctor-card__info">
+              <div class="doctor-card__name-block">
+                <div class="doctor-card__name"><span>Иванова Анна Петровна</span></div>
+                <p class="doctor-card__practice">Детский невролог</p>
+              </div>
+              <div class="divider-wrap"><span class="divider"></span></div>
+              <div class="doctor-card__meta">
+                <p class="doctor-card__degree">Кандидат медицинских наук • cтаж 24 года</p>
+              </div>
+              <div class="doctor-card__buttons">
+                <a class="btn-50 btn-50--outline w-100" href="vrach.html">О враче</a>
+              </div>
+            </div>
+          </article>
+          </div>
+        </div>
+
+        <a class="btn-50 btn-50--orange team__more" href="vrachi.html">
+          Вся команда
+          <img src="img/icons/arrow-right-white.svg" alt="" width="20" height="20">
+        </a>
+      </div>
+    </section>
+
+    <!-- ============================ Практика и наука ============================ -->
+    <section class="science-cont">
+      <div class="science">
+        <header class="section-title">
+          <h2 class="section-title__heading">Практика, которая развивается вместе с наукой</h2>
+          <p class="section-title__sub">Специалисты клиники участвуют в научной работе, разрабатывают собственные методики и применяют накопленный профессиональный опыт в ежедневной практике.</p>
+        </header>
+
+        <div class="science__grid">
+          <article class="science-card">
+            <h3 class="science-card__title"><span class="science-card__num">1.</span> Авторские методики</h3>
+            <p class="science-card__text">Специалисты клиники разрабатывают и совершенствуют собственные подходы к оценке и помощи детям с (конкретная область)</p>
+          </article>
+          <article class="science-card">
+            <h3 class="science-card__title"><span class="science-card__num">2.</span> Патенты и разработки</h3>
+            <p class="science-card__text">В основе нескольких разработок команды — результаты практической и исследовательской работы с детьми.</p>
+          </article>
+          <article class="science-card">
+            <h3 class="science-card__title"><span class="science-card__num">3.</span> Научная работа</h3>
+            <p class="science-card__text">Специалисты участвуют в исследованиях по вопросам (реальная область исследования).</p>
+          </article>
+          <article class="science-card">
+            <h3 class="science-card__title"><span class="science-card__num">4.</span> Передача профессионального опыта</h3>
+            <p class="science-card__text">Часть команды совмещает клиническую работу с преподаванием в Пермской медицинской академии.</p>
+          </article>
+        </div>
+
+        <a class="btn-50 btn-50--orange science__more" href="statyi.html">
+          Публикации и разработки
+          <img src="img/icons/arrow-right-white.svg" alt="" width="20" height="20">
+        </a>
+      </div>
+    </section>
+
+    <!-- ============================ Принципы ============================ -->
+    <section class="principals-cont">
+      <div class="principals">
+        <header class="section-title">
+          <h2 class="section-title__heading section-title__heading--tight">Принципы, по которым мы работаем</h2>
+        </header>
+
+        <div class="principals__line">
+          <div class="principals__track">
+            <article class="principals-card">
+              <div class="principals-card__title">
+                <h3><span class="principals-card__num">1.</span> Сначала разбираемся - потом назначаем</h3>
+                <p>Дополнительные обследования и консультации рекомендуем тогда, когда они действительно помогают уточнить ситуацию или принять дальнейшее решение.</p>
+              </div>
+              <div class="divider-wrap divider-wrap--center"><span class="divider"></span></div>
+            </article>
+            <article class="principals-card">
+              <div class="principals-card__title">
+                <h3><span class="principals-card__num">2.</span> Если одной точки зрения недостаточно - обсуждаем ситуацию вместе</h3>
+                <p>Специалист может привлечь коллег другого профиля, чтобы родителю не приходилось самостоятельно соединять разные заключения и рекомендации.</p>
+              </div>
+              <div class="divider-wrap divider-wrap--center"><span class="divider"></span></div>
+            </article>
+            <article class="principals-card">
+              <div class="principals-card__title">
+                <h3><span class="principals-card__num">3.</span> Объясняем не только что делать, но и почему</h3>
+                <p>Рекомендации должны быть понятны родителям: что мы увидели, на что стоит обратить внимание и почему предлагаем именно такой следующий шаг.</p>
+              </div>
+              <div class="divider-wrap divider-wrap--center"><span class="divider"></span></div>
+            </article>
+            <article class="principals-card">
+              <div class="principals-card__title">
+                <h3><span class="principals-card__num">4.</span> После встречи должен быть понятен следующий шаг</h3>
+                <p>Родитель должен уйти не с набором отдельных советов, а с пониманием приоритетов: что важно сейчас, что можно отложить и когда нужно вернуться к оценке ситуации.</p>
+              </div>
+              <div class="divider-wrap divider-wrap--center"><span class="divider"></span></div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================ Отзывы ============================ -->
+    <section class="contacts-cont">
+      <div class="contacts contacts--flat">
+        <h2 class="section-title__heading">Что говорят родители</h2>
+
+        <div class="reviews">
+          <div class="reviews__head">
+            <div class="reviews__ratings">
+              <a class="btn-50 reviews__rating" href="#">4,9 ★ Яндекс Карты <span class="reviews__rating-dot">•</span> 186 оценок</a>
+              <a class="btn-50 reviews__rating" href="#">4,8 ★ 2ГИС <span class="reviews__rating-dot">•</span> 94 оценки</a>
+            </div>
+
+            <div class="find-us__photos">
+              <div class="find-us__photo"><img src="img/clinic-1.png" alt="Ресепшн клиники «Лингва Бона»"></div>
+              <div class="find-us__photo"><img src="img/clinic-1.png" alt="Зона ожидания клиники «Лингва Бона»"></div>
+              <div class="find-us__photo"><img src="img/clinic-1.png" alt="Администраторы клиники «Лингва Бона»"></div>
+            </div>
+          </div>
+
+          <article class="review-card">
+            <div class="review-card__body">
+              <p class="review-card__text">До Лингва Бона мы были у нескольких специалистов и получали разные рекомендации. Здесь нас сначала подробно расспросили, изучили предыдущие заключения и объяснили, как могут быть связаны разные трудности ребёнка. Самое ценное — после приёма стало понятно, что действительно важно сейчас и что делать дальше».</p>
+              <p class="review-card__author">Мария, мама пациента</p>
+              <a class="card-link" href="#">
+                Яндекс Карты
+                <img src="img/icons/arrow-right-orange.svg" alt="" width="20" height="20">
+              </a>
+            </div>
+            <div class="divider-wrap divider-wrap--center"><span class="divider"></span></div>
+          </article>
+
+          <div class="reviews__row">
+            <article class="review-card">
+              <div class="review-card__body">
+                <p class="review-card__text">Ребёнок обычно тревожится на приёмах, но здесь быстро почувствовал себя спокойно. Доктор разговаривала прежде всего с ним, а не только со мной».</p>
+                <p class="review-card__author">Анна</p>
+              </div>
+              <div class="divider-wrap divider-wrap--center"><span class="divider"></span></div>
+            </article>
+
+            <article class="review-card">
+              <div class="review-card__body">
+                <p class="review-card__text">Получили ответы на вопросы, которые долго оставались непонятными после предыдущих консультаций.</p>
+                <p class="review-card__author">Екатерина</p>
+              </div>
+              <div class="divider-wrap divider-wrap--center"><span class="divider"></span></div>
+            </article>
+          </div>
+        </div>
+
+        <a class="btn-50 btn-50--orange reviews__more" href="otzyvy.html">
+          Все отзывы
+          <img src="img/icons/arrow-right-white.svg" alt="" width="20" height="20">
+        </a>
+      </div>
+    </section>
+
+    <!-- ============================ Консилиум и контакты ============================ -->
+    <section class="contacts-cont" id="zapis">
+      <div class="contacts">
+        <div class="consilium-title">
+          <h2 class="section-title__heading">Записаться на консилиум</h2>
+          <p class="consilium-bar">
+            <span class="consilium-bar__item">3 специалиста</span>
+            <span class="consilium-bar__sep" aria-hidden="true"></span>
+            <span class="consilium-bar__item">около 2,5 часов</span>
+            <span class="consilium-bar__sep" aria-hidden="true"></span>
+            <span class="consilium-bar__item consilium-bar__item--price">30 000 ₽</span>
+          </p>
+        </div>
+
+        <div class="contacts__cards">
+          <article class="know-card">
+            <div class="know-card__main">
+              <div class="know-card__title">
+                <h3>Выбрать удобное время</h3>
+                <div class="divider-wrap"><span class="divider"></span></div>
+              </div>
+              <p class="know-card__text">Посмотрите актуальное расписание и запишитесь онлайн.</p>
+            </div>
+            <a class="btn-50 btn-50--orange w-100" href="vrachi.html">
+              Выбрать время
+              <img src="img/icons/arrow-right-white.svg" alt="" width="20" height="20">
+            </a>
+          </article>
+
+          <article class="know-card know-card--help">
+            <div class="know-card__main">
+              <div class="know-card__title">
+                <h3>Не уверены, что консилиум Вам подходит?</h3>
+                <div class="divider-wrap"><span class="divider"></span></div>
+              </div>
+              <p class="know-card__text">Поможем понять, с какого формата лучше начать.</p>
+            </div>
+            <a class="btn-50 btn-50--outline w-100" href="vopros-otvet.html">
+              Помочь выбрать
+              <img src="img/icons/arrow-right-orange.svg" alt="" width="20" height="20">
+            </a>
+          </article>
+        </div>
+
+        <div class="questions">
+          <div class="questions__subtitle">
+            <p class="questions__heading">Написать администратору</p>
+            <p class="questions__lead">Позвоните или напишите и администратор поможет с выбором врача и записью</p>
+          </div>
+
+          <div class="questions__contacts">
+            <div class="contact-item">
+              <a class="link-button" href="tel:+01234567890">
+                <img src="img/icons/phone.svg" alt="" width="20" height="20">
+                <span>+0 123 456 78 90</span>
+              </a>
+              <p class="contact-item__label">Позвонить</p>
+            </div>
+
+            <span class="contact-divider" aria-hidden="true"></span>
+
+            <div class="contact-item">
+              <a class="link-button" href="#">
+                <img src="img/icons/max-contact.svg" alt="" width="20" height="20">
+                <span>МАКС</span>
+              </a>
+              <p class="contact-item__label">Написать</p>
+            </div>
+
+            <span class="contact-divider" aria-hidden="true"></span>
+
+            <div class="contact-item">
+              <a class="link-button" href="https://yandex.ru/maps/?text=%D0%9F%D0%B5%D1%80%D0%BC%D1%8C%2C%20%D1%83%D0%BB%D0%B8%D1%86%D0%B0%20%D0%91%D1%80%D0%B0%D1%82%D1%8C%D0%B5%D0%B2%20%D0%9A%D0%B0%D0%BC%D0%B5%D0%BD%D1%81%D0%BA%D0%B8%D1%85%2C%2067" target="_blank" rel="noopener">
+                <img src="img/icons/map-pin.svg" alt="" width="20" height="20">
+                <span>Пермь, ул. Б.Каменских, 67</span>
+              </a>
+              <p class="contact-item__label">Адрес</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="contacts__map">
+          <div class="map-bar">
+            <p class="map-bar__address">Пермь, ул. Братьев Каменских, 67</p>
+            <a class="map-bar__route" href="https://yandex.ru/maps/?text=%D0%9F%D0%B5%D1%80%D0%BC%D1%8C%2C%20%D1%83%D0%BB%D0%B8%D1%86%D0%B0%20%D0%91%D1%80%D0%B0%D1%82%D1%8C%D0%B5%D0%B2%20%D0%9A%D0%B0%D0%BC%D0%B5%D0%BD%D1%81%D0%BA%D0%B8%D1%85%2C%2067" target="_blank" rel="noopener">Построить маршрут -&gt;</a>
+          </div>
+          <div class="map-bar__img">
+            <img src="img/map.png" alt="Карта: Пермь, ул. Братьев Каменских, 67">
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============================ Footer ============================ -->
+  <footer class="footer-cont">
+    <div class="footer">
+      <div class="footer__top">
+        <div class="footer__brand">
+          <p class="footer__brand-name">Лингва Бона</p>
+          <p class="footer__brand-desc">Клиника детской неврологии</p>
+        </div>
+        <div class="footer__menu">
+          <p class="footer__menu-links"><span><a href="uslugi.html">Услуги</a>&nbsp;&nbsp;&nbsp;·&nbsp;&nbsp;&nbsp;<a href="vrachi.html">Врачи</a>&nbsp;&nbsp;&nbsp;·&nbsp;&nbsp;&nbsp;<a href="o-klinike.html">Клиника</a></span><span class="footer__menu-sep">&nbsp;&nbsp;&nbsp;·&nbsp;&nbsp;&nbsp;</span><span><a href="ceny.html">Цены</a>&nbsp;&nbsp;&nbsp;·&nbsp;&nbsp;&nbsp;<a href="kontakty.html">Контакты</a></span></p>
+          <a class="footer__phone" href="tel:+01234567890">+0 (123) 456-78-90</a>
+        </div>
+      </div>
+      <div class="footer__bot">
+        <a href="#">Юридическая информация</a>
+        <a href="#">Политика конфиденциальности</a>
+        <a href="#">Согласие на обработку персональных данных</a>
+        <a href="#">Лицензия / сведения о медицинской организации</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

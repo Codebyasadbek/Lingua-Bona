@@ -1,0 +1,869 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Лингва Бона — клиника детской неврологии</title>
+  <meta name="description" content="Клиника детской неврологии, где помогают спокойно понять, что происходит с ребёнком.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Chiron+GoRound+TC:wght@200;300;400;500;600;700&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+
+  <!-- ============================ Navbar ============================ -->
+  <header class="navbar-cont">
+    <div class="navbar-lb">
+      <div class="navbar-lb__left">
+        <a class="navbar-lb__logo" href="index.html">Лингва Бона</a>
+        <button class="round-btn navbar-lb__burger" type="button"
+                data-bs-toggle="offcanvas" data-bs-target="#mobileMenu"
+                aria-controls="mobileMenu" aria-label="Открыть меню">
+          <img class="navbar-lb__burger-grid" src="img/icons/burger-dark.svg" alt="" width="20" height="20">
+          <img class="navbar-lb__burger-lines" src="img/icons/burger.svg" alt="" width="20" height="20">
+        </button>
+      </div>
+
+      <nav class="navbar-lb__menu" aria-label="Основное меню">
+        <a class="menu-btn" href="uslugi.html">Услуги</a>
+        <a class="menu-btn" href="vrachi.html">Врачи</a>
+        <a class="menu-btn" href="o-klinike.html">Клиника</a>
+        <a class="menu-btn" href="akcii.html">Акции</a>
+        <a class="menu-btn" href="ceny.html">Цены</a>
+        <a class="menu-btn" href="otzyvy.html">Отзывы</a>
+        <a class="menu-btn" href="kontakty.html">Контакты</a>
+        <a class="menu-btn" href="tel:+01234567890">+0 (123) 456 78-90</a>
+      </nav>
+
+      <div class="navbar-lb__contacts">
+        <a class="round-btn" href="#" aria-label="МАКС">
+          <img src="img/icons/max.svg" alt="" width="20" height="20">
+        </a>
+        <a class="round-btn" href="#" aria-label="ВКонтакте">
+          <img src="img/icons/vk.svg" alt="" width="20" height="20">
+        </a>
+        <a class="btn-50 btn-50--dark" href="#zapis">Записаться</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ============================ Mobile menu ============================ -->
+  <div class="offcanvas offcanvas-end mobile-menu" tabindex="-1" id="mobileMenu" aria-labelledby="mobileMenuLabel">
+    <div class="offcanvas-header">
+      <h2 class="offcanvas-title mobile-menu__title" id="mobileMenuLabel">Меню</h2>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Закрыть"></button>
+    </div>
+    <div class="offcanvas-body">
+      <nav class="mobile-menu__nav" aria-label="Мобильное меню">
+        <a class="mobile-menu__link" href="uslugi.html">Услуги</a>
+        <a class="mobile-menu__link" href="vrachi.html">Врачи</a>
+        <a class="mobile-menu__link" href="o-klinike.html">Клиника</a>
+        <a class="mobile-menu__link" href="akcii.html">Акции</a>
+        <a class="mobile-menu__link" href="ceny.html">Цены</a>
+        <a class="mobile-menu__link" href="otzyvy.html">Отзывы</a>
+        <a class="mobile-menu__link" href="kontakty.html">Контакты</a>
+      </nav>
+      <div class="mobile-menu__footer">
+        <a class="mobile-menu__phone" href="tel:+01234567890">+0 (123) 456 78-90</a>
+        <a class="btn-50 btn-50--dark w-100" href="#zapis">Записаться</a>
+      </div>
+    </div>
+  </div>
+
+  <main>
+
+    <!-- ============================ Hero ============================ -->
+    <section class="hero-cont">
+      <div class="hero">
+        <div class="hero__bg" aria-hidden="true">
+          <img src="img/hero.png" alt="">
+        </div>
+        <div class="hero__text">
+          <h1 class="hero__title">Клиника детской неврологии, <br>где помогают спокойно понять, <br>что происходит с ребёнком</h1>
+          <p class="hero__lead">Если вас беспокоят речь, поведение, внимание, сон, головные боли или тики — мы внимательно оценим состояние ребёнка, объясним всё простым языком и поможем понять, что делать дальше</p>
+          <div class="hero__buttons">
+            <a class="btn-big btn-big--orange" href="#zapis">Записаться</a>
+            <a class="btn-big btn-big--white" href="vopros-otvet.html">Не знаете, к кому обратиться?</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================ Diagnostics ============================ -->
+    <section class="diagnostics-cont">
+      <div class="diagnostics">
+        <header class="section-title">
+          <h2 class="section-title__heading">Что беспокоит вашего ребёнка?</h2>
+          <p class="section-title__sub">Выберите то, что больше всего похоже на вашу ситуацию <br>Мы подскажем, с чего обычно начинают</p>
+        </header>
+
+        <div class="diagnostics__body">
+          <div class="diagnostics__cards" id="diagnosisAccordion">
+
+            <div class="diagnostics__col">
+              <article class="diagnosis-card">
+                <button class="diagnosis-card__head collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#diag-1" aria-expanded="false" aria-controls="diag-1">
+                  <span class="diagnosis-card__title">Не говорит <br class="br-mob">или говорит мало</span>
+                  <span class="diagnosis-card__footer">
+                    <span class="diagnosis-card__desc">Задержка речи, алалия</span>
+                    <span class="diagnosis-card__chevron"><img src="img/icons/chevron-down.svg" alt="" width="20" height="20"></span>
+                  </span>
+                </button>
+                <div class="collapse" id="diag-1" data-bs-parent="#diagnosisAccordion">
+                  <div class="diagnosis-card__body">
+                    <ul>
+                      <li>Ребёнок молчит или использует мало слов</li>
+                      <li>Речь непонятна окружающим</li>
+                      <li>Отстаёт от сверстников по речи</li>
+                    </ul>
+                    <p>Такие трудности могут быть связаны с разными особенностями развития.</p>
+                  </div>
+                </div>
+              </article>
+
+              <article class="diagnosis-card">
+                <button class="diagnosis-card__head collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#diag-2" aria-expanded="false" aria-controls="diag-2">
+                  <span class="diagnosis-card__title">Особенности общения <br class="br-mob">и поведения</span>
+                  <span class="diagnosis-card__footer">
+                    <span class="diagnosis-card__desc">Аутизм, аутичные черты</span>
+                    <span class="diagnosis-card__chevron"><img src="img/icons/chevron-down.svg" alt="" width="20" height="20"></span>
+                  </span>
+                </button>
+                <div class="collapse" id="diag-2" data-bs-parent="#diagnosisAccordion">
+                  <div class="diagnosis-card__body">
+                    <ul>
+                      <li>Избегает контакта глазами</li>
+                      <li>Трудно играть с другими детьми</li>
+                      <li>Повторяющиеся действия и ритуалы</li>
+                    </ul>
+                    <p>Такие трудности могут быть связаны с разными особенностями развития.</p>
+                  </div>
+                </div>
+              </article>
+
+              <article class="diagnosis-card">
+                <button class="diagnosis-card__head collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#diag-3" aria-expanded="false" aria-controls="diag-3">
+                  <span class="diagnosis-card__title">Трудно <br class="br-mob">сосредоточиться</span>
+                  <span class="diagnosis-card__footer">
+                    <span class="diagnosis-card__desc">СДВГ, гиперактивность</span>
+                    <span class="diagnosis-card__chevron"><img src="img/icons/chevron-down.svg" alt="" width="20" height="20"></span>
+                  </span>
+                </button>
+                <div class="collapse" id="diag-3" data-bs-parent="#diagnosisAccordion">
+                  <div class="diagnosis-card__body">
+                    <ul>
+                      <li>Ребёнок быстро отвлекается</li>
+                      <li>Не доводит начатое до конца</li>
+                      <li>Трудно усидеть на месте</li>
+                    </ul>
+                    <p>Такие трудности могут быть связаны с разными особенностями развития.</p>
+                  </div>
+                </div>
+              </article>
+            </div>
+
+            <div class="diagnostics__col">
+              <article class="diagnosis-card">
+                <button class="diagnosis-card__head collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#diag-4" aria-expanded="false" aria-controls="diag-4">
+                  <span class="diagnosis-card__title">Тики</span>
+                  <span class="diagnosis-card__footer">
+                    <span class="diagnosis-card__desc">Движения, моргание, звуки</span>
+                    <span class="diagnosis-card__chevron"><img src="img/icons/chevron-down.svg" alt="" width="20" height="20"></span>
+                  </span>
+                </button>
+                <div class="collapse" id="diag-4" data-bs-parent="#diagnosisAccordion">
+                  <div class="diagnosis-card__body">
+                    <ul>
+                      <li>Частое моргание или подёргивания</li>
+                      <li>Навязчивые звуки и покашливания</li>
+                      <li>Усиление в стрессовых ситуациях</li>
+                    </ul>
+                    <p>Такие трудности могут быть связаны с разными особенностями развития.</p>
+                  </div>
+                </div>
+              </article>
+
+              <article class="diagnosis-card">
+                <button class="diagnosis-card__head collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#diag-5" aria-expanded="false" aria-controls="diag-5">
+                  <span class="diagnosis-card__title">Заикается</span>
+                  <span class="diagnosis-card__footer">
+                    <span class="diagnosis-card__desc">Запинки, нарушение плавности речи</span>
+                    <span class="diagnosis-card__chevron"><img src="img/icons/chevron-down.svg" alt="" width="20" height="20"></span>
+                  </span>
+                </button>
+                <div class="collapse" id="diag-5" data-bs-parent="#diagnosisAccordion">
+                  <div class="diagnosis-card__body">
+                    <ul>
+                      <li>Повторяет первые слоги слов</li>
+                      <li>Делает паузы в середине фразы</li>
+                      <li>Избегает говорить при посторонних</li>
+                    </ul>
+                    <p>Такие трудности могут быть связаны с разными особенностями развития.</p>
+                  </div>
+                </div>
+              </article>
+
+              <article class="diagnosis-card">
+                <button class="diagnosis-card__head collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#diag-6" aria-expanded="false" aria-controls="diag-6">
+                  <span class="diagnosis-card__title">Плохо спит</span>
+                  <span class="diagnosis-card__footer">
+                    <span class="diagnosis-card__desc">Засыпание, пробуждения, беспокойный сон</span>
+                    <span class="diagnosis-card__chevron"><img src="img/icons/chevron-down.svg" alt="" width="20" height="20"></span>
+                  </span>
+                </button>
+                <div class="collapse" id="diag-6" data-bs-parent="#diagnosisAccordion">
+                  <div class="diagnosis-card__body">
+                    <ul>
+                      <li>Долго засыпает вечером</li>
+                      <li>Просыпается несколько раз за ночь</li>
+                      <li>Утром встаёт уставшим</li>
+                    </ul>
+                    <p>Такие трудности могут быть связаны с разными особенностями развития.</p>
+                  </div>
+                </div>
+              </article>
+            </div>
+
+            <div class="diagnostics__col">
+              <article class="diagnosis-card">
+                <button class="diagnosis-card__head collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#diag-7" aria-expanded="false" aria-controls="diag-7">
+                  <span class="diagnosis-card__title">Часто болит голова</span>
+                  <span class="diagnosis-card__footer">
+                    <span class="diagnosis-card__desc">Головные боли, мигрень</span>
+                    <span class="diagnosis-card__chevron"><img src="img/icons/chevron-down.svg" alt="" width="20" height="20"></span>
+                  </span>
+                </button>
+                <div class="collapse" id="diag-7" data-bs-parent="#diagnosisAccordion">
+                  <div class="diagnosis-card__body">
+                    <ul>
+                      <li>Жалуется на боль несколько раз в неделю</li>
+                      <li>Боль усиливается к вечеру</li>
+                      <li>Сопровождается тошнотой</li>
+                    </ul>
+                    <p>Такие трудности могут быть связаны с разными особенностями развития.</p>
+                  </div>
+                </div>
+              </article>
+
+              <article class="diagnosis-card">
+                <button class="diagnosis-card__head collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#diag-8" aria-expanded="false" aria-controls="diag-8">
+                  <span class="diagnosis-card__title">Трудности с учёбой</span>
+                  <span class="diagnosis-card__footer">
+                    <span class="diagnosis-card__desc">Чтение, письмо, счёт, внимание</span>
+                    <span class="diagnosis-card__chevron"><img src="img/icons/chevron-down.svg" alt="" width="20" height="20"></span>
+                  </span>
+                </button>
+                <div class="collapse" id="diag-8" data-bs-parent="#diagnosisAccordion">
+                  <div class="diagnosis-card__body">
+                    <ul>
+                      <li>Ребёнок быстро устает от занятий</li>
+                      <li>Делает много ошибок</li>
+                      <li>Знания плохо закрепляются</li>
+                    </ul>
+                    <p>Такие трудности могут быть связаны с разными особенностями развития.</p>
+                  </div>
+                </div>
+              </article>
+
+              <article class="diagnosis-card">
+                <button class="diagnosis-card__head collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#diag-9" aria-expanded="false" aria-controls="diag-9">
+                  <span class="diagnosis-card__title">Трудности с учёбой</span>
+                  <span class="diagnosis-card__footer">
+                    <span class="diagnosis-card__desc">Чтение, письмо, счёт, внимание</span>
+                    <span class="diagnosis-card__chevron"><img src="img/icons/chevron-down.svg" alt="" width="20" height="20"></span>
+                  </span>
+                </button>
+                <div class="collapse" id="diag-9" data-bs-parent="#diagnosisAccordion">
+                  <div class="diagnosis-card__body">
+                    <ul>
+                      <li>Ребёнок быстро устает от занятий</li>
+                      <li>Делает много ошибок</li>
+                      <li>Знания плохо закрепляются</li>
+                    </ul>
+                    <p>Такие трудности могут быть связаны с разными особенностями развития.</p>
+                  </div>
+                </div>
+              </article>
+            </div>
+          </div>
+
+          <div class="diagnostics__more">
+            <button class="btn-big btn-big--ghost w-100" type="button" data-more-toggle="diagnostics">
+              <span data-more-label>Показать еще 4</span>
+              <img src="img/icons/chevron-down-dark.svg" alt="" width="20" height="20">
+            </button>
+          </div>
+
+          <div class="big-cards-frame">
+            <div class="big-cards">
+              <p class="big-cards__title">Не нашли свою ситуацию?</p>
+              <div class="big-cards__line" id="bigCardsAccordion">
+
+                <article class="diagnosis-card diagnosis-card--light">
+                  <button class="diagnosis-card__head collapsed" type="button" data-bs-toggle="collapse"
+                          data-bs-target="#diag-10" aria-expanded="false" aria-controls="diag-10">
+                    <span class="diagnosis-card__title">Диагноз поставлен</span>
+                    <span class="diagnosis-card__footer">
+                      <span class="diagnosis-card__desc">Нужно второе мнение или план действий</span>
+                      <span class="diagnosis-card__chevron"><img src="img/icons/chevron-down.svg" alt="" width="20" height="20"></span>
+                    </span>
+                  </button>
+                  <div class="collapse" id="diag-10" data-bs-parent="#bigCardsAccordion">
+                    <div class="diagnosis-card__body">
+                      <ul>
+                        <li>Разберём уже готовые заключения</li>
+                        <li>Объясним, что действительно важно</li>
+                        <li>Предложим понятный план действий</li>
+                      </ul>
+                      <p>Такие трудности могут быть связаны с разными особенностями развития.</p>
+                    </div>
+                  </div>
+                </article>
+
+                <article class="diagnosis-card diagnosis-card--light">
+                  <button class="diagnosis-card__head collapsed" type="button" data-bs-toggle="collapse"
+                          data-bs-target="#diag-11" aria-expanded="false" aria-controls="diag-11">
+                    <span class="diagnosis-card__title">Не знаю, с чего начать</span>
+                    <span class="diagnosis-card__footer">
+                      <span class="diagnosis-card__desc">Поможем сориентироваться</span>
+                      <span class="diagnosis-card__chevron"><img src="img/icons/chevron-down.svg" alt="" width="20" height="20"></span>
+                    </span>
+                  </button>
+                  <div class="collapse" id="diag-11" data-bs-parent="#bigCardsAccordion">
+                    <div class="diagnosis-card__body">
+                      <ul>
+                        <li>Зададим несколько простых вопросов</li>
+                        <li>Подскажем, с какого специалиста начать</li>
+                        <li>Поможем записаться на удобное время</li>
+                      </ul>
+                      <p>Такие трудности могут быть связаны с разными особенностями развития.</p>
+                    </div>
+                  </div>
+                </article>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================ Help ============================ -->
+    <section class="help-cont">
+      <div class="help">
+        <header class="section-title">
+          <h2 class="section-title__heading">Как мы помогаем?</h2>
+          <p class="section-title__sub">Не просто отдельные консультации, а понятный путь <br>от вопроса к плану действий</p>
+        </header>
+
+        <div class="help__line" id="helpAccordion">
+          <article class="help-card">
+            <button class="help-card__head collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#help-1" aria-expanded="false" aria-controls="help-1">
+              <span class="help-card__title">
+                <span class="help-card__num">1</span>
+                <span class="help-card__name">Анализ</span>
+                <span class="divider-wrap"><span class="divider"></span></span>
+              </span>
+              <span class="help-card__desc">Сначала внимательно разбираемся</span>
+              <span class="help-card__chevron"><img src="img/icons/chevron-down.svg" alt="" width="20" height="20"></span>
+            </button>
+            <div class="collapse" id="help-1" data-bs-parent="#helpAccordion">
+              <div class="help-card__body">Слушаем родителей, изучаем историю развития ребёнка и предыдущие заключения.</div>
+            </div>
+          </article>
+
+          <article class="help-card">
+            <button class="help-card__head collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#help-2" aria-expanded="false" aria-controls="help-2">
+              <span class="help-card__title">
+                <span class="help-card__num">2</span>
+                <span class="help-card__name">Приоритеты</span>
+                <span class="divider-wrap"><span class="divider"></span></span>
+              </span>
+              <span class="help-card__desc">Понимаем, что действительно важно</span>
+              <span class="help-card__chevron"><img src="img/icons/chevron-down.svg" alt="" width="20" height="20"></span>
+            </button>
+            <div class="collapse" id="help-2" data-bs-parent="#helpAccordion">
+              <div class="help-card__body">Слушаем родителей, изучаем историю развития ребёнка и предыдущие заключения.</div>
+            </div>
+          </article>
+
+          <article class="help-card">
+            <button class="help-card__head collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#help-3" aria-expanded="false" aria-controls="help-3">
+              <span class="help-card__title">
+                <span class="help-card__num">3</span>
+                <span class="help-card__name">Консилиум</span>
+                <span class="divider-wrap"><span class="divider"></span></span>
+              </span>
+              <span class="help-card__desc">Обсуждаем ситуацию командой</span>
+              <span class="help-card__chevron"><img src="img/icons/chevron-down.svg" alt="" width="20" height="20"></span>
+            </button>
+            <div class="collapse" id="help-3" data-bs-parent="#helpAccordion">
+              <div class="help-card__body">Слушаем родителей, изучаем историю развития ребёнка и предыдущие заключения.</div>
+            </div>
+          </article>
+
+          <article class="help-card">
+            <button class="help-card__head collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#help-4" aria-expanded="false" aria-controls="help-4">
+              <span class="help-card__title">
+                <span class="help-card__num">4</span>
+                <span class="help-card__name">План</span>
+                <span class="divider-wrap"><span class="divider"></span></span>
+              </span>
+              <span class="help-card__desc">Собираем единый план <br><br></span>
+              <span class="help-card__chevron"><img src="img/icons/chevron-down.svg" alt="" width="20" height="20"></span>
+            </button>
+            <div class="collapse" id="help-4" data-bs-parent="#helpAccordion">
+              <div class="help-card__body">Слушаем родителей, изучаем историю развития ребёнка и предыдущие заключения.</div>
+            </div>
+          </article>
+
+          <article class="help-card">
+            <button class="help-card__head collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#help-5" aria-expanded="false" aria-controls="help-5">
+              <span class="help-card__title">
+                <span class="help-card__num">5</span>
+                <span class="help-card__name">Контроль</span>
+                <span class="divider-wrap"><span class="divider"></span></span>
+              </span>
+              <span class="help-card__desc">Смотрим, как меняется состояние</span>
+              <span class="help-card__chevron"><img src="img/icons/chevron-down.svg" alt="" width="20" height="20"></span>
+            </button>
+            <div class="collapse" id="help-5" data-bs-parent="#helpAccordion">
+              <div class="help-card__body">Слушаем родителей, изучаем историю развития ребёнка и предыдущие заключения.</div>
+            </div>
+          </article>
+        </div>
+
+        <div class="help__big-text">
+          <p>Речь, внимание, сон, поведение и школьные навыки могут быть связаны. Поэтому мы стараемся увидеть не отдельный симптом, а всю картину развития ребёнка</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================ Team ============================ -->
+    <section class="team-cont">
+      <div class="team">
+        <header class="section-title">
+          <h2 class="section-title__heading">Наши специалисты</h2>
+          <p class="section-title__sub">Наши специалисты работают как одна команда. Когда нужен взгляд нескольких специалистов, <br>они обсуждают результаты и формируют согласованный план помощи ребёнку.</p>
+        </header>
+
+        <div class="team__img">
+          <img src="img/team.png" alt="Команда клиники Лингва Бона">
+        </div>
+
+        <div class="team__cards">
+          <div class="team__track">
+
+            <article class="doctor-card">
+              <div class="doctor-card__img">
+                <img src="img/doctor.png" alt="Ким Ю Ли">
+              </div>
+              <div class="doctor-card__info">
+                <div class="doctor-card__name-block">
+                  <div class="doctor-card__name">
+                    <span>Ким</span>
+                    <span>Ю Ли</span>
+                  </div>
+                  <p class="doctor-card__practice">Детский невролог</p>
+                </div>
+                <div class="divider-wrap"><span class="divider"></span></div>
+                <div class="doctor-card__meta">
+                  <p class="doctor-card__degree">Кандидат медицинских наук • cтаж 18 лет</p>
+                  <p class="doctor-card__badges">
+                    <span>Тики</span><span>•</span><span>СдвГ</span><span>•</span><span>Головные боли</span>
+                  </p>
+                </div>
+                <div class="doctor-card__buttons">
+                  <a class="btn-50 btn-50--sand w-100" href="vrach.html#video">
+                    Познакомиться с врачом · 40 сек
+                    <img src="img/icons/play.svg" alt="" width="20" height="20">
+                  </a>
+                  <div class="doctor-card__buttons-row">
+                    <a class="btn-50 btn-50--outline" href="vrach.html">О враче</a>
+                    <a class="btn-50 btn-50--orange" href="#zapis">
+                      Записаться
+                      <img src="img/icons/arrow-right-white.svg" alt="" width="20" height="20">
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="doctor-card">
+              <div class="doctor-card__img">
+                <img src="img/doctor.png" alt="Константинопольский Константин Константинович">
+              </div>
+              <div class="doctor-card__info">
+                <div class="doctor-card__name-block">
+                  <div class="doctor-card__name">
+                    <span>Константинопольский</span>
+                    <span>Константин Константинович</span>
+                  </div>
+                  <p class="doctor-card__practice">Детский невролог</p>
+                </div>
+                <div class="divider-wrap"><span class="divider"></span></div>
+                <div class="doctor-card__meta">
+                  <p class="doctor-card__degree">Кандидат медицинских наук • cтаж 18 лет</p>
+                  <p class="doctor-card__badges">
+                    <span>Тики</span><span>•</span><span>СдвГ</span><span>•</span><span>Головные боли</span>
+                  </p>
+                </div>
+                <div class="doctor-card__buttons">
+                  <a class="btn-50 btn-50--sand w-100" href="vrach.html#video">
+                    Познакомиться с врачом · 40 сек
+                    <img src="img/icons/play.svg" alt="" width="20" height="20">
+                  </a>
+                  <div class="doctor-card__buttons-row">
+                    <a class="btn-50 btn-50--outline" href="vrach.html">О враче</a>
+                    <a class="btn-50 btn-50--orange" href="#zapis">
+                      Записаться
+                      <img src="img/icons/arrow-right-white.svg" alt="" width="20" height="20">
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="doctor-card">
+              <div class="doctor-card__img">
+                <img src="img/doctor.png" alt="Ким Ю Ли">
+              </div>
+              <div class="doctor-card__info">
+                <div class="doctor-card__name-block">
+                  <div class="doctor-card__name">
+                    <span>Ким</span>
+                    <span>Ю Ли</span>
+                  </div>
+                  <p class="doctor-card__practice">Детский невролог</p>
+                </div>
+                <div class="divider-wrap"><span class="divider"></span></div>
+                <div class="doctor-card__meta">
+                  <p class="doctor-card__degree">Кандидат медицинских наук • cтаж 18 лет</p>
+                  <p class="doctor-card__badges">
+                    <span>Тики</span><span>•</span><span>СдвГ</span><span>•</span><span>Головные боли</span>
+                  </p>
+                </div>
+                <div class="doctor-card__buttons">
+                  <a class="btn-50 btn-50--sand w-100" href="vrach.html#video">
+                    Познакомиться с врачом · 40 сек
+                    <img src="img/icons/play.svg" alt="" width="20" height="20">
+                  </a>
+                  <div class="doctor-card__buttons-row">
+                    <a class="btn-50 btn-50--outline" href="vrach.html">О враче</a>
+                    <a class="btn-50 btn-50--orange" href="#zapis">
+                      Записаться
+                      <img src="img/icons/arrow-right-white.svg" alt="" width="20" height="20">
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="doctor-card doctor-card--extra">
+              <div class="doctor-card__img">
+                <img src="img/doctor.png" alt="Константинопольский Константин Константинович">
+              </div>
+              <div class="doctor-card__info">
+                <div class="doctor-card__name-block">
+                  <div class="doctor-card__name">
+                    <span>Константинопольский</span>
+                    <span>Константин Константинович</span>
+                  </div>
+                  <p class="doctor-card__practice">Детский невролог</p>
+                </div>
+                <div class="divider-wrap"><span class="divider"></span></div>
+                <div class="doctor-card__meta">
+                  <p class="doctor-card__degree">Кандидат медицинских наук • cтаж 18 лет</p>
+                  <p class="doctor-card__badges">
+                    <span>Тики</span><span>•</span><span>СдвГ</span><span>•</span><span>Головные боли</span>
+                  </p>
+                </div>
+                <div class="doctor-card__buttons">
+                  <a class="btn-50 btn-50--sand w-100" href="vrach.html#video">
+                    Познакомиться с врачом · 40 сек
+                    <img src="img/icons/play.svg" alt="" width="20" height="20">
+                  </a>
+                  <div class="doctor-card__buttons-row">
+                    <a class="btn-50 btn-50--outline" href="vrach.html">О враче</a>
+                    <a class="btn-50 btn-50--orange" href="#zapis">
+                      Записаться
+                      <img src="img/icons/arrow-right-white.svg" alt="" width="20" height="20">
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="doctor-card doctor-card--mobile-only">
+              <div class="doctor-card__img">
+                <img src="img/doctor.png" alt="Ким Ю Ли">
+              </div>
+              <div class="doctor-card__info">
+                <div class="doctor-card__name-block">
+                  <div class="doctor-card__name">
+                    <span>Ким</span>
+                    <span>Ю Ли</span>
+                  </div>
+                  <p class="doctor-card__practice">Детский невролог</p>
+                </div>
+                <div class="divider-wrap"><span class="divider"></span></div>
+                <div class="doctor-card__meta">
+                  <p class="doctor-card__degree">Кандидат медицинских наук • cтаж 18 лет</p>
+                  <p class="doctor-card__badges">
+                    <span>Тики</span><span>•</span><span>СдвГ</span><span>•</span><span>Головные боли</span>
+                  </p>
+                </div>
+                <div class="doctor-card__buttons">
+                  <a class="btn-50 btn-50--sand w-100" href="vrach.html#video">
+                    Познакомиться с врачом · 40 сек
+                    <img src="img/icons/play.svg" alt="" width="20" height="20">
+                  </a>
+                  <div class="doctor-card__buttons-row">
+                    <a class="btn-50 btn-50--outline" href="vrach.html">О враче</a>
+                    <a class="btn-50 btn-50--orange" href="#zapis">
+                      Записаться
+                      <img src="img/icons/arrow-right-white.svg" alt="" width="20" height="20">
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="doctor-card doctor-card--mobile-only">
+              <div class="doctor-card__img">
+                <img src="img/doctor.png" alt="Константинопольский Константин Константинович">
+              </div>
+              <div class="doctor-card__info">
+                <div class="doctor-card__name-block">
+                  <div class="doctor-card__name">
+                    <span>Константинопольский</span>
+                    <span>Константин Константинович</span>
+                  </div>
+                  <p class="doctor-card__practice">Детский невролог</p>
+                </div>
+                <div class="divider-wrap"><span class="divider"></span></div>
+                <div class="doctor-card__meta">
+                  <p class="doctor-card__degree">Кандидат медицинских наук • cтаж 18 лет</p>
+                  <p class="doctor-card__badges">
+                    <span>Тики</span><span>•</span><span>СдвГ</span><span>•</span><span>Головные боли</span>
+                  </p>
+                </div>
+                <div class="doctor-card__buttons">
+                  <a class="btn-50 btn-50--sand w-100" href="vrach.html#video">
+                    Познакомиться с врачом · 40 сек
+                    <img src="img/icons/play.svg" alt="" width="20" height="20">
+                  </a>
+                  <div class="doctor-card__buttons-row">
+                    <a class="btn-50 btn-50--outline" href="vrach.html">О враче</a>
+                    <a class="btn-50 btn-50--orange" href="#zapis">
+                      Записаться
+                      <img src="img/icons/arrow-right-white.svg" alt="" width="20" height="20">
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </article>
+          </div>
+
+        </div>
+
+        <a class="btn-big btn-big--muted" href="vrachi.html">
+          Все специалисты
+          <img src="img/icons/arrow-right-dark.svg" alt="" width="20" height="20">
+        </a>
+      </div>
+    </section>
+
+    <!-- ============================ Principals ============================ -->
+    <section class="principals-cont">
+      <div class="principals">
+        <header class="section-title">
+          <h2 class="section-title__heading section-title__heading--tight">Принципы, по которым мы работаем</h2>
+        </header>
+
+        <div class="principals__line">
+          <div class="principals__track">
+            <article class="principals-card">
+              <div class="principals-card__title">
+                <h3>Объясняем каждое назначение</h3>
+                <p>Если врач рекомендует обследование или консультацию другого специалиста, мы объясняем, зачем это нужно и как результат может повлиять на лечение.</p>
+              </div>
+              <div class="divider-wrap divider-wrap--center"><span class="divider"></span></div>
+            </article>
+
+            <article class="principals-card">
+              <div class="principals-card__title">
+                <h3>Объединяем выводы специалистов в один план</h3>
+                <p>Когда ребёнку нужна помощь нескольких специалистов, мы объединяем их выводы и рекомендации. Вам не нужно самостоятельно сопоставлять разные мнения и решать, кому следовать.</p>
+              </div>
+              <div class="divider-wrap divider-wrap--center"><span class="divider"></span></div>
+            </article>
+
+            <article class="principals-card">
+              <div class="principals-card__title">
+                <h3>Объясняем простым языком</h3>
+                <p>После консультации вы понимаете, что врач увидел, что это значит и почему предложен именно такой следующий шаг.</p>
+              </div>
+              <div class="divider-wrap divider-wrap--center"><span class="divider"></span></div>
+            </article>
+
+            <article class="principals-card">
+              <div class="principals-card__title">
+                <h3>Каждый приём завершается планом действий</h3>
+                <p>После приёма вы понимаете, что делать дальше: нужны ли обследования или консультации других специалистов, когда необходим контроль и какой следующий шаг наиболее важен.</p>
+              </div>
+              <div class="divider-wrap divider-wrap--center"><span class="divider"></span></div>
+            </article>
+          </div>
+
+        </div>
+
+        <div class="quote">
+          <a class="btn-50 btn-50--outline" href="otzyvy.html">
+            Все отзывы
+            <img src="img/icons/arrow-right-orange.svg" alt="" width="20" height="20">
+          </a>
+          <blockquote class="quote__text">После консультации у нас впервые появилось ощущение, <br>что всё разложили по полочкам: что важно сейчас, что можно отложить <br>и что делать дальше</blockquote>
+          <p class="quote__author">Юдин Алексей Николаевич, <br>Компрос, 123 года</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================ Contacts ============================ -->
+    <section class="contacts-cont" id="zapis">
+      <div class="contacts">
+        <header class="section-title">
+          <h2 class="section-title__heading">Как вам удобнее записаться?</h2>
+        </header>
+
+        <div class="contacts__cards">
+          <article class="know-card">
+            <div class="know-card__main">
+              <div class="know-card__title">
+                <h3><span class="know-card__accent">Знаю</span>, к кому хочу записаться</h3>
+                <div class="divider-wrap"><span class="divider"></span></div>
+              </div>
+              <p class="know-card__text">Посмотрите актуальное расписание врачей и выберите удобное время</p>
+            </div>
+            <a class="btn-50 btn-50--orange w-100" href="vrachi.html">
+              Выбрать врача и время
+              <img src="img/icons/arrow-right-white.svg" alt="" width="20" height="20">
+            </a>
+          </article>
+
+          <article class="know-card know-card--help">
+            <div class="know-card__main">
+              <div class="know-card__title">
+                <h3><span class="know-card__accent">Не знаете</span>, к кому обратиться?</h3>
+                <div class="divider-wrap"><span class="divider"></span></div>
+              </div>
+              <p class="know-card__text">Ответьте на 3 коротких вопроса — подскажем, с какого специалиста обычно начинают в похожей ситуации</p>
+            </div>
+            <a class="btn-50 btn-50--outline w-100" href="vopros-otvet.html">
+              Подобрать специалиста
+              <img src="img/icons/arrow-right-orange.svg" alt="" width="20" height="20">
+            </a>
+          </article>
+        </div>
+
+        <div class="questions">
+          <div class="questions__subtitle">
+            <p class="questions__heading">Остались вопросы?</p>
+            <p class="questions__lead">Позвоните или напишите и администратор поможет с выбором врача и записью</p>
+          </div>
+
+          <div class="questions__contacts">
+            <div class="contact-item">
+              <a class="link-button" href="tel:+01234567890">
+                <img src="img/icons/phone.svg" alt="" width="20" height="20">
+                <span>+0 123 456 78 90</span>
+              </a>
+              <p class="contact-item__label">Позвонить</p>
+            </div>
+
+            <span class="contact-divider" aria-hidden="true"></span>
+
+            <div class="contact-item">
+              <a class="link-button" href="#">
+                <img src="img/icons/max-contact.svg" alt="" width="20" height="20">
+                <span>МАКС</span>
+              </a>
+              <p class="contact-item__label">Написать</p>
+            </div>
+
+            <span class="contact-divider" aria-hidden="true"></span>
+
+            <div class="contact-item">
+              <a class="link-button" href="https://yandex.ru/maps/?text=%D0%9F%D0%B5%D1%80%D0%BC%D1%8C%2C%20%D1%83%D0%BB%D0%B8%D1%86%D0%B0%20%D0%91%D1%80%D0%B0%D1%82%D1%8C%D0%B5%D0%B2%20%D0%9A%D0%B0%D0%BC%D0%B5%D0%BD%D1%81%D0%BA%D0%B8%D1%85%2C%2067" target="_blank" rel="noopener">
+                <img src="img/icons/map-pin.svg" alt="" width="20" height="20">
+                <span>Пермь, ул. Б.Каменских, 67</span>
+              </a>
+              <p class="contact-item__label">Адрес</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="contacts__art" aria-hidden="true">
+          <img class="contacts__art-v1" src="img/art-vector-1.svg" alt="">
+          <img class="contacts__art-v2" src="img/art-vector-2.svg" alt="">
+          <img class="contacts__art-e1" src="img/art-ellipse-1.svg" alt="">
+          <img class="contacts__art-e2" src="img/art-ellipse-2.svg" alt="">
+        </div>
+
+        <div class="contacts__map">
+          <div class="map-bar">
+            <p class="map-bar__address">Пермь, ул. Братьев Каменских, 67</p>
+            <a class="map-bar__route" href="https://yandex.ru/maps/?text=%D0%9F%D0%B5%D1%80%D0%BC%D1%8C%2C%20%D1%83%D0%BB%D0%B8%D1%86%D0%B0%20%D0%91%D1%80%D0%B0%D1%82%D1%8C%D0%B5%D0%B2%20%D0%9A%D0%B0%D0%BC%D0%B5%D0%BD%D1%81%D0%BA%D0%B8%D1%85%2C%2067" target="_blank" rel="noopener">Построить маршрут -&gt;</a>
+          </div>
+          <div class="map-bar__img">
+            <img src="img/map.png" alt="Карта: Пермь, ул. Братьев Каменских, 67">
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============================ Footer ============================ -->
+  <footer class="footer-cont footer-cont--home">
+    <div class="footer">
+      <div class="footer__top">
+        <div class="footer__brand">
+          <p class="footer__brand-name">Лингва Бона</p>
+          <p class="footer__brand-desc">Клиника детской неврологии</p>
+        </div>
+        <div class="footer__menu">
+          <p class="footer__menu-links"><span><a href="uslugi.html">Услуги</a>&nbsp;&nbsp;&nbsp;·&nbsp;&nbsp;&nbsp;<a href="vrachi.html">Врачи</a>&nbsp;&nbsp;&nbsp;·&nbsp;&nbsp;&nbsp;<a href="o-klinike.html">Клиника</a></span><span class="footer__menu-sep">&nbsp;&nbsp;&nbsp;·&nbsp;&nbsp;&nbsp;</span><span><a href="ceny.html">Цены</a>&nbsp;&nbsp;&nbsp;·&nbsp;&nbsp;&nbsp;<a href="kontakty.html">Контакты</a></span></p>
+          <a class="footer__phone" href="tel:+01234567890">+0 (123) 456-78-90</a>
+        </div>
+      </div>
+      <div class="footer__bot">
+        <a href="#">Юридическая информация</a>
+        <a href="#">Политика конфиденциальности</a>
+        <a href="#">Согласие на обработку персональных данных</a>
+        <a href="#">Лицензия / сведения о медицинской организации</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

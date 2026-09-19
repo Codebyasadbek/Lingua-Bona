@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Отзывы — Лингва Бона</title>
+  <meta name="description" content="Отзывы родителей о клинике детской неврологии «Лингва Бона» и истории семей, которые обращались к нашим специалистам.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Chiron+GoRound+TC:wght@200;300;400;500;600;700&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+
+  <!-- ============================ Navbar ============================ -->
+  <header class="navbar-cont">
+    <div class="navbar-lb">
+      <div class="navbar-lb__left">
+        <a class="navbar-lb__logo" href="index.html">Лингва Бона</a>
+        <button class="round-btn navbar-lb__burger" type="button"
+                data-bs-toggle="offcanvas" data-bs-target="#mobileMenu"
+                aria-controls="mobileMenu" aria-label="Открыть меню">
+          <img class="navbar-lb__burger-grid" src="img/icons/burger-dark.svg" alt="" width="20" height="20">
+          <img class="navbar-lb__burger-lines" src="img/icons/burger.svg" alt="" width="20" height="20">
+        </button>
+      </div>
+
+      <nav class="navbar-lb__menu" aria-label="Основное меню">
+        <a class="menu-btn" href="uslugi.html">Услуги</a>
+        <a class="menu-btn" href="vrachi.html">Врачи</a>
+        <a class="menu-btn" href="o-klinike.html">Клиника</a>
+        <a class="menu-btn" href="akcii.html">Акции</a>
+        <a class="menu-btn" href="ceny.html">Цены</a>
+        <a class="menu-btn" href="otzyvy.html" aria-current="page">Отзывы</a>
+        <a class="menu-btn" href="kontakty.html">Контакты</a>
+        <a class="menu-btn" href="tel:+01234567890">+0 (123) 456 78-90</a>
+      </nav>
+
+      <div class="navbar-lb__contacts">
+        <a class="round-btn" href="#" aria-label="МАКС">
+          <img src="img/icons/max.svg" alt="" width="20" height="20">
+        </a>
+        <a class="round-btn" href="#" aria-label="ВКонтакте">
+          <img src="img/icons/vk.svg" alt="" width="20" height="20">
+        </a>
+        <a class="btn-50 btn-50--dark" href="#zapis">Записаться</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ============================ Mobile menu ============================ -->
+  <div class="offcanvas offcanvas-end mobile-menu" tabindex="-1" id="mobileMenu" aria-labelledby="mobileMenuLabel">
+    <div class="offcanvas-header">
+      <h2 class="offcanvas-title mobile-menu__title" id="mobileMenuLabel">Меню</h2>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Закрыть"></button>
+    </div>
+    <div class="offcanvas-body">
+      <nav class="mobile-menu__nav" aria-label="Мобильное меню">
+        <a class="mobile-menu__link" href="uslugi.html">Услуги</a>
+        <a class="mobile-menu__link" href="vrachi.html">Врачи</a>
+        <a class="mobile-menu__link" href="o-klinike.html">Клиника</a>
+        <a class="mobile-menu__link" href="akcii.html">Акции</a>
+        <a class="mobile-menu__link" href="ceny.html">Цены</a>
+        <a class="mobile-menu__link" href="otzyvy.html" aria-current="page">Отзывы</a>
+        <a class="mobile-menu__link" href="kontakty.html">Контакты</a>
+      </nav>
+      <div class="mobile-menu__footer">
+        <a class="mobile-menu__phone" href="tel:+01234567890">+0 (123) 456 78-90</a>
+        <a class="btn-50 btn-50--dark w-100" href="#zapis">Записаться</a>
+      </div>
+    </div>
+  </div>
+
+  <main>
+
+    <!-- ============================ Шапка страницы ============================ -->
+    <section class="page-hero-cont">
+      <div class="page-hero">
+        <p class="page-hero__crumbs"><a href="index.html">Главная</a> / <span class="page-hero__crumbs-current">Отзывы</span></p>
+        <h1 class="page-hero__title">Отзывы о клинике Лингва Бона</h1>
+        <p class="page-hero__lead">Опыт родителей, которые обращались в клинику к нашим специалистам и на программы помощи.</p>
+      </div>
+    </section>
+
+    <!-- ============================ Оценки на площадках ============================ -->
+    <section class="diagnostics-cont">
+      <div class="rating-cards">
+          <article class="rating-card">
+            <div class="rating-card__title">
+              <p class="rating-card__score"><span class="rating-card__value">4,9 ★</span> Яндекс Карты</p>
+              <p class="rating-card__count">123 оценок</p>
+            </div>
+            <a class="card-link" href="#">
+              Посмотреть
+              <img src="img/icons/arrow-right-orange.svg" alt="" width="20" height="20">
+            </a>
+            <span class="divider" aria-hidden="true"></span>
+          </article>
+
+          <article class="rating-card">
+            <div class="rating-card__title">
+              <p class="rating-card__score"><span class="rating-card__value">4,9 ★</span> Продокторов</p>
+              <p class="rating-card__count">123 оценок</p>
+            </div>
+            <a class="card-link" href="#">
+              Посмотреть
+              <img src="img/icons/arrow-right-orange.svg" alt="" width="20" height="20">
+            </a>
+            <span class="divider" aria-hidden="true"></span>
+          </article>
+
+          <article class="rating-card">
+            <div class="rating-card__title">
+              <p class="rating-card__score"><span class="rating-card__value">4,9 ★</span> 2ГИС</p>
+              <p class="rating-card__count">123 оценок</p>
+            </div>
+            <a class="card-link" href="#">
+              Посмотреть
+              <img src="img/icons/arrow-right-orange.svg" alt="" width="20" height="20">
+            </a>
+            <span class="divider" aria-hidden="true"></span>
+          </article>
+      </div>
+    </section>
+
+    <!-- ============================ Отзывы родителей ============================ -->
+    <section class="contacts-cont">
+      <div class="reviews-page">
+        <h2 class="section-title__heading">Отзывы родителей</h2>
+
+        <div class="reviews-page__rows">
+          <div class="reviews-page__row">
+            <article class="review-card review-card--white">
+              <div class="review-card__body">
+                <p class="review-card__text">Врач внимательно выслушала, подробно расспросила о развитии ребёнка и изучила предыдущие обследования. Особенно ценно, что всё объяснила понятным языком и не стала назначать дополнительные исследования без необходимости. После приёма стало понятно, что делать дальше.</p>
+                <p class="review-card__meta">
+                  <span class="review-card__author" data-pixel-round>Мария, мама пациента</span>
+                  <span class="review-card__dot" aria-hidden="true"></span>
+                  <span class="review-card__date">март 2026</span>
+                </p>
+                <a class="card-link" href="#">
+                  Яндекс Карты
+                  <img src="img/icons/arrow-right-orange.svg" alt="" width="20" height="20">
+                </a>
+              </div>
+              <div class="divider-wrap divider-wrap--center"><span class="divider"></span></div>
+            </article>
+            <article class="review-card review-card--white">
+              <div class="review-card__body">
+                <p class="review-card__text">Врач внимательно выслушала, подробно расспросила о развитии ребёнка и изучила предыдущие обследования. Особенно ценно, что всё объяснила понятным языком и не стала назначать дополнительные исследования без необходимости. После приёма стало понятно, что делать дальше.</p>
+                <p class="review-card__meta">
+                  <span class="review-card__author" data-pixel-round>Мария, мама пациента</span>
+                  <span class="review-card__dot" aria-hidden="true"></span>
+                  <span class="review-card__date">март 2026</span>
+                </p>
+                <a class="card-link" href="#">
+                  Яндекс Карты
+                  <img src="img/icons/arrow-right-orange.svg" alt="" width="20" height="20">
+                </a>
+              </div>
+              <div class="divider-wrap divider-wrap--center"><span class="divider"></span></div>
+            </article>
+          </div>
+
+          <div class="reviews-page__row">
+            <article class="review-card review-card--white">
+              <div class="review-card__body">
+                <p class="review-card__text">Врач внимательно выслушала, подробно расспросила о развитии ребёнка и изучила предыдущие обследования. Особенно ценно, что всё объяснила понятным языком и не стала назначать дополнительные исследования без необходимости. После приёма стало понятно, что делать дальше.</p>
+                <p class="review-card__meta">
+                  <span class="review-card__author" data-pixel-round>Мария, мама пациента</span>
+                  <span class="review-card__dot" aria-hidden="true"></span>
+                  <span class="review-card__date">март 2026</span>
+                </p>
+                <a class="card-link" href="#">
+                  Яндекс Карты
+                  <img src="img/icons/arrow-right-orange.svg" alt="" width="20" height="20">
+                </a>
+              </div>
+              <div class="divider-wrap divider-wrap--center"><span class="divider"></span></div>
+            </article>
+            <article class="review-card review-card--white">
+              <div class="review-card__body">
+                <p class="review-card__text">Врач внимательно выслушала, подробно расспросила о развитии ребёнка и изучила предыдущие обследования. Особенно ценно, что всё объяснила понятным языком и не стала назначать дополнительные исследования без необходимости. После приёма стало понятно, что делать дальше.</p>
+                <p class="review-card__meta">
+                  <span class="review-card__author" data-pixel-round>Мария, мама пациента</span>
+                  <span class="review-card__dot" aria-hidden="true"></span>
+                  <span class="review-card__date">март 2026</span>
+                </p>
+                <a class="card-link" href="#">
+                  Яндекс Карты
+                  <img src="img/icons/arrow-right-orange.svg" alt="" width="20" height="20">
+                </a>
+              </div>
+              <div class="divider-wrap divider-wrap--center"><span class="divider"></span></div>
+            </article>
+          </div>
+
+          <div class="reviews-page__row">
+            <article class="review-card review-card--white">
+              <div class="review-card__body">
+                <p class="review-card__text">Врач внимательно выслушала, подробно расспросила о развитии ребёнка и изучила предыдущие обследования. Особенно ценно, что всё объяснила понятным языком и не стала назначать дополнительные исследования без необходимости. После приёма стало понятно, что делать дальше.</p>
+                <p class="review-card__meta">
+                  <span class="review-card__author" data-pixel-round>Мария, мама пациента</span>
+                  <span class="review-card__dot" aria-hidden="true"></span>
+                  <span class="review-card__date">март 2026</span>
+                </p>
+                <a class="card-link" href="#">
+                  Яндекс Карты
+                  <img src="img/icons/arrow-right-orange.svg" alt="" width="20" height="20">
+                </a>
+              </div>
+              <div class="divider-wrap divider-wrap--center"><span class="divider"></span></div>
+            </article>
+            <article class="review-card review-card--white">
+              <div class="review-card__body">
+                <p class="review-card__text">Врач внимательно выслушала, подробно расспросила о развитии ребёнка и изучила предыдущие обследования. Особенно ценно, что всё объяснила понятным языком и не стала назначать дополнительные исследования без необходимости. После приёма стало понятно, что делать дальше.</p>
+                <p class="review-card__meta">
+                  <span class="review-card__author" data-pixel-round>Мария, мама пациента</span>
+                  <span class="review-card__dot" aria-hidden="true"></span>
+                  <span class="review-card__date">март 2026</span>
+                </p>
+                <a class="card-link" href="#">
+                  Яндекс Карты
+                  <img src="img/icons/arrow-right-orange.svg" alt="" width="20" height="20">
+                </a>
+              </div>
+              <div class="divider-wrap divider-wrap--center"><span class="divider"></span></div>
+            </article>
+          </div>
+
+          <div class="reviews-page__row">
+            <article class="review-card review-card--white">
+              <div class="review-card__body">
+                <p class="review-card__text">Врач внимательно выслушала, подробно расспросила о развитии ребёнка и изучила предыдущие обследования. Особенно ценно, что всё объяснила понятным языком и не стала назначать дополнительные исследования без необходимости. После приёма стало понятно, что делать дальше.</p>
+                <p class="review-card__meta">
+                  <span class="review-card__author" data-pixel-round>Мария, мама пациента</span>
+                  <span class="review-card__dot" aria-hidden="true"></span>
+                  <span class="review-card__date">март 2026</span>
+                </p>
+                <a class="card-link" href="#">
+                  Яндекс Карты
+                  <img src="img/icons/arrow-right-orange.svg" alt="" width="20" height="20">
+                </a>
+              </div>
+              <div class="divider-wrap divider-wrap--center"><span class="divider"></span></div>
+            </article>
+            <article class="review-card review-card--white">
+              <div class="review-card__body">
+                <p class="review-card__text">Врач внимательно выслушала, подробно расспросила о развитии ребёнка и изучила предыдущие обследования. Особенно ценно, что всё объяснила понятным языком и не стала назначать дополнительные исследования без необходимости. После приёма стало понятно, что делать дальше.</p>
+                <p class="review-card__meta">
+                  <span class="review-card__author" data-pixel-round>Мария, мама пациента</span>
+                  <span class="review-card__dot" aria-hidden="true"></span>
+                  <span class="review-card__date">март 2026</span>
+                </p>
+                <a class="card-link" href="#">
+                  Яндекс Карты
+                  <img src="img/icons/arrow-right-orange.svg" alt="" width="20" height="20">
+                </a>
+              </div>
+              <div class="divider-wrap divider-wrap--center"><span class="divider"></span></div>
+            </article>
+          </div>
+
+          <div class="reviews-page__row">
+            <article class="review-card review-card--white">
+              <div class="review-card__body">
+                <p class="review-card__text">Врач внимательно выслушала, подробно расспросила о развитии ребёнка и изучила предыдущие обследования. Особенно ценно, что всё объяснила понятным языком и не стала назначать дополнительные исследования без необходимости. После приёма стало понятно, что делать дальше.</p>
+                <p class="review-card__meta">
+                  <span class="review-card__author" data-pixel-round>Мария, мама пациента</span>
+                  <span class="review-card__dot" aria-hidden="true"></span>
+                  <span class="review-card__date">март 2026</span>
+                </p>
+                <a class="card-link" href="#">
+                  Яндекс Карты
+                  <img src="img/icons/arrow-right-orange.svg" alt="" width="20" height="20">
+                </a>
+              </div>
+              <div class="divider-wrap divider-wrap--center"><span class="divider"></span></div>
+            </article>
+            <article class="review-card review-card--white">
+              <div class="review-card__body">
+                <p class="review-card__text">Врач внимательно выслушала, подробно расспросила о развитии ребёнка и изучила предыдущие обследования. Особенно ценно, что всё объяснила понятным языком и не стала назначать дополнительные исследования без необходимости. После приёма стало понятно, что делать дальше.</p>
+                <p class="review-card__meta">
+                  <span class="review-card__author" data-pixel-round>Мария, мама пациента</span>
+                  <span class="review-card__dot" aria-hidden="true"></span>
+                  <span class="review-card__date">март 2026</span>
+                </p>
+                <a class="card-link" href="#">
+                  Яндекс Карты
+                  <img src="img/icons/arrow-right-orange.svg" alt="" width="20" height="20">
+                </a>
+              </div>
+              <div class="divider-wrap divider-wrap--center"><span class="divider"></span></div>
+            </article>
+          </div>
+        </div>
+
+        <a class="btn-50 btn-50--orange reviews-page__more" href="#">Показать больше</a>
+      </div>
+    </section>
+
+    <!-- ============================ Истории семей ============================ -->
+    <section class="contacts-cont">
+      <div class="stories">
+        <h2 class="section-title__heading">Истории семей</h2>
+
+        <div class="stories__rows">
+          <div class="stories__row">
+            <div class="story-photo">
+              <img src="img/story-1.png" alt="Ребёнок на занятии в школе">
+            </div>
+            <article class="story-card">
+              <div class="story-card__body">
+                <h3 class="story-card__title">Когда школьные трудности оказались сложнее, чем казалось</h3>
+                <p class="story-card__text">История семьи о том, как разные наблюдения удалось собрать в единую картину.</p>
+                <a class="card-link" href="statya.html">
+                  Читать историю
+                  <img src="img/icons/arrow-right-orange.svg" alt="" width="20" height="20">
+                </a>
+              </div>
+              <div class="divider-wrap divider-wrap--center"><span class="divider"></span></div>
+            </article>
+          </div>
+
+          <div class="stories__row">
+            <article class="story-card">
+              <div class="story-card__body">
+                <h3 class="story-card__title">Когда школьные трудности оказались сложнее, чем казалось</h3>
+                <p class="story-card__text">История семьи о том, как разные наблюдения удалось собрать в единую картину.</p>
+                <a class="card-link" href="statya.html">
+                  Читать историю
+                  <img src="img/icons/arrow-right-orange.svg" alt="" width="20" height="20">
+                </a>
+              </div>
+              <div class="divider-wrap divider-wrap--center"><span class="divider"></span></div>
+            </article>
+            <div class="story-photo">
+              <img src="img/story-1.png" alt="Ребёнок на занятии в школе">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================ Оставить отзыв ============================ -->
+    <section class="contacts-cont">
+      <div class="review-cta">
+        <h2 class="section-title__heading section-title__heading--tight">Уже были в Лингва Бона?</h2>
+        <p class="review-cta__lead">Нам важно знать, каким был ваш опыт.</p>
+        <a class="btn-50 btn-50--orange review-cta__btn" href="#">
+          Оставить отзыв
+          <img src="img/icons/arrow-right-white.svg" alt="" width="20" height="20">
+        </a>
+      </div>
+    </section>
+
+    <!-- ============================ Консилиум и контакты ============================ -->
+    <section class="contacts-cont" id="zapis">
+      <div class="contacts">
+        <div class="consilium-title">
+          <h2 class="section-title__heading">Записаться на консилиум</h2>
+          <p class="consilium-bar">
+            <span class="consilium-bar__item">3 специалиста</span>
+            <span class="consilium-bar__sep" aria-hidden="true"></span>
+            <span class="consilium-bar__item">около 2,5 часов</span>
+            <span class="consilium-bar__sep" aria-hidden="true"></span>
+            <span class="consilium-bar__item consilium-bar__item--price">30 000 ₽</span>
+          </p>
+        </div>
+
+        <div class="contacts__cards">
+          <article class="know-card">
+            <div class="know-card__main">
+              <div class="know-card__title">
+                <h3>Выбрать удобное время</h3>
+                <div class="divider-wrap"><span class="divider"></span></div>
+              </div>
+              <p class="know-card__text">Посмотрите актуальное расписание и запишитесь онлайн.</p>
+            </div>
+            <a class="btn-50 btn-50--orange w-100" href="vrachi.html">
+              Выбрать время
+              <img src="img/icons/arrow-right-white.svg" alt="" width="20" height="20">
+            </a>
+          </article>
+
+          <article class="know-card know-card--help">
+            <div class="know-card__main">
+              <div class="know-card__title">
+                <h3>Не уверены, что консилиум Вам подходит?</h3>
+                <div class="divider-wrap"><span class="divider"></span></div>
+              </div>
+              <p class="know-card__text">Поможем понять, с какого формата лучше начать.</p>
+            </div>
+            <a class="btn-50 btn-50--outline w-100" href="vopros-otvet.html">
+              Помочь выбрать
+              <img src="img/icons/arrow-right-orange.svg" alt="" width="20" height="20">
+            </a>
+          </article>
+        </div>
+
+        <div class="questions">
+          <div class="questions__subtitle">
+            <p class="questions__heading">Написать администратору</p>
+            <p class="questions__lead">Позвоните или напишите и администратор поможет с выбором врача и записью</p>
+          </div>
+
+          <div class="questions__contacts">
+            <div class="contact-item">
+              <a class="link-button" href="tel:+01234567890">
+                <img src="img/icons/phone.svg" alt="" width="20" height="20">
+                <span>+0 123 456 78 90</span>
+              </a>
+              <p class="contact-item__label">Позвонить</p>
+            </div>
+
+            <span class="contact-divider" aria-hidden="true"></span>
+
+            <div class="contact-item">
+              <a class="link-button" href="#">
+                <img src="img/icons/max-contact.svg" alt="" width="20" height="20">
+                <span>МАКС</span>
+              </a>
+              <p class="contact-item__label">Написать</p>
+            </div>
+
+            <span class="contact-divider" aria-hidden="true"></span>
+
+            <div class="contact-item">
+              <a class="link-button" href="https://yandex.ru/maps/?text=%D0%9F%D0%B5%D1%80%D0%BC%D1%8C%2C%20%D1%83%D0%BB%D0%B8%D1%86%D0%B0%20%D0%91%D1%80%D0%B0%D1%82%D1%8C%D0%B5%D0%B2%20%D0%9A%D0%B0%D0%BC%D0%B5%D0%BD%D1%81%D0%BA%D0%B8%D1%85%2C%2067" target="_blank" rel="noopener">
+                <img src="img/icons/map-pin.svg" alt="" width="20" height="20">
+                <span>Пермь, ул. Б.Каменских, 67</span>
+              </a>
+              <p class="contact-item__label">Адрес</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="contacts__map">
+          <div class="map-bar">
+            <p class="map-bar__address">Пермь, ул. Братьев Каменских, 67</p>
+            <a class="map-bar__route" href="https://yandex.ru/maps/?text=%D0%9F%D0%B5%D1%80%D0%BC%D1%8C%2C%20%D1%83%D0%BB%D0%B8%D1%86%D0%B0%20%D0%91%D1%80%D0%B0%D1%82%D1%8C%D0%B5%D0%B2%20%D0%9A%D0%B0%D0%BC%D0%B5%D0%BD%D1%81%D0%BA%D0%B8%D1%85%2C%2067" target="_blank" rel="noopener">Построить маршрут -&gt;</a>
+          </div>
+          <div class="map-bar__img">
+            <img src="img/map.png" alt="Карта: Пермь, ул. Братьев Каменских, 67">
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============================ Footer ============================ -->
+  <footer class="footer-cont">
+    <div class="footer">
+      <div class="footer__top">
+        <div class="footer__brand">
+          <p class="footer__brand-name">Лингва Бона</p>
+          <p class="footer__brand-desc">Клиника детской неврологии</p>
+        </div>
+        <div class="footer__menu">
+          <p class="footer__menu-links"><span><a href="uslugi.html">Услуги</a>&nbsp;&nbsp;&nbsp;·&nbsp;&nbsp;&nbsp;<a href="vrachi.html">Врачи</a>&nbsp;&nbsp;&nbsp;·&nbsp;&nbsp;&nbsp;<a href="o-klinike.html">Клиника</a></span><span class="footer__menu-sep">&nbsp;&nbsp;&nbsp;·&nbsp;&nbsp;&nbsp;</span><span><a href="ceny.html">Цены</a>&nbsp;&nbsp;&nbsp;·&nbsp;&nbsp;&nbsp;<a href="kontakty.html">Контакты</a></span></p>
+          <a class="footer__phone" href="tel:+01234567890">+0 (123) 456-78-90</a>
+        </div>
+      </div>
+      <div class="footer__bot">
+        <a href="#">Юридическая информация</a>
+        <a href="#">Политика конфиденциальности</a>
+        <a href="#">Согласие на обработку персональных данных</a>
+        <a href="#">Лицензия / сведения о медицинской организации</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

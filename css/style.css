@@ -1,0 +1,7328 @@
+/* =========================================================================
+   Lingua Bona — общие стили сайта
+   Дизайн-токены и вёрстка по макету Figma (1440 / 760 / 360)
+   ========================================================================= */
+
+:root {
+  /* Цвета */
+  --lb-orange: #f4a21e;
+  --lb-graphite: #2f3438;
+  --lb-muted: #69747c;
+  --lb-sand-border: #e8e3da;
+  --lb-soft-sand: #f4f0e8;
+  --lb-warm-ivory: #fcfbf8;
+  --lb-dark-hover: #f1e9d9;
+  --lb-sand-button: #f8f6f0;
+  --lb-slate: #6e879f;
+  --lb-white: #fff;
+
+  /* Шрифты */
+  --lb-font-title: "Chiron GoRound TC", "Manrope", sans-serif;
+  --lb-font-text: "Manrope", sans-serif;
+
+  /* Тени */
+  --lb-shadow-small: 0 0 20px rgba(188, 171, 160, 0.2);
+  --lb-shadow-big: 0 0 25px rgba(188, 171, 160, 0.5);
+  --lb-shadow-hover: 0 0 50px rgba(188, 171, 160, 0.5);
+
+  /* Сетка */
+  --lb-side: 80px;
+  --lb-radius-lg: 30px;
+  --lb-radius-md: 20px;
+  --lb-radius-sm: 15px;
+}
+
+/* ------------------------------- Базовое ------------------------------- */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--lb-warm-ivory);
+  overflow-wrap: break-word;
+  color: var(--lb-graphite);
+  font-family: var(--lb-font-text);
+  font-size: 16px;
+  line-height: 20px;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5, h6, p, blockquote, ul {
+  margin: 0;
+}
+
+ul {
+  padding: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+button {
+  font: inherit;
+  color: inherit;
+  background: none;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+}
+
+/* Общая обёртка секции: 1440 с боковыми отступами 80 */
+.navbar-cont,
+.hero-cont,
+.page-hero-cont,
+.phero-cont,
+.doc-hero-cont,
+.findus-cont,
+.services-cont,
+.diagnostics-cont,
+.gains-cont,
+.steps-cont,
+.includes-cont,
+.faq-cont,
+.help-cont,
+.team-cont,
+.principals-cont,
+.science-cont,
+.article-hero-cont,
+.contacts-cont,
+.footer-cont {
+  width: 100%;
+  max-width: 1440px;
+  margin-inline: auto;
+  padding-inline: var(--lb-side);
+}
+
+/* Перенос строки только для мобильного макета */
+.br-mob {
+  display: none;
+}
+
+/* Перенос строки только для десктопного макета */
+.br-desk {
+  display: revert;
+}
+
+/* ------------------------------ Разделитель ------------------------------ */
+
+.divider-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-end;
+  height: 5px;
+  width: 100%;
+}
+
+.divider-wrap--center {
+  height: 2px;
+  justify-content: center;
+}
+
+.divider {
+  display: block;
+  width: 45px;
+  height: 2px;
+  border-radius: 1000px;
+  background: var(--lb-orange);
+}
+
+/* ------------------------------- Кнопки -------------------------------- */
+
+/* Круглая кнопка 50×50 */
+.round-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+  width: 50px;
+  height: 50px;
+  padding: 10px;
+  border: 1.5px solid var(--lb-sand-border);
+  border-radius: 1000px;
+  background: transparent;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.round-btn:hover {
+  background: var(--lb-soft-sand);
+}
+
+.round-btn img {
+  width: 20px;
+  height: 20px;
+}
+
+/* Кнопка высотой 50px */
+.btn-50 {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  height: 50px;
+  padding: 10px 27px;
+  border: 0;
+  border-radius: 1000px;
+  font-family: var(--lb-font-text);
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 20px;
+  text-align: center;
+  transition: opacity 0.2s ease, background-color 0.2s ease;
+}
+
+.btn-50:hover {
+  opacity: 0.85;
+}
+
+.btn-50 img {
+  flex: 0 0 auto;
+  width: 20px;
+  height: 20px;
+}
+
+.btn-50--dark {
+  background: var(--lb-graphite);
+  color: var(--lb-white);
+}
+
+.btn-50--orange {
+  background: var(--lb-orange);
+  color: var(--lb-white);
+}
+
+.btn-50--outline {
+  background: var(--lb-white);
+  border: 1.5px solid var(--lb-orange);
+  color: var(--lb-orange);
+}
+
+.btn-50--sand {
+  background: var(--lb-sand-button);
+  color: var(--lb-orange);
+}
+
+/* Кнопка высотой 60px */
+.btn-big {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  height: 60px;
+  padding-inline: 30px;
+  border: 0;
+  border-radius: 1000px;
+  font-family: var(--lb-font-title);
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 30px;
+  text-align: center;
+  transition: opacity 0.2s ease;
+}
+
+.btn-big:hover {
+  opacity: 0.85;
+}
+
+.btn-big img {
+  flex: 0 0 auto;
+  width: 20px;
+  height: 20px;
+}
+
+.btn-big--orange {
+  background: var(--lb-orange);
+  color: var(--lb-white);
+}
+
+.btn-big--white {
+  background: var(--lb-white);
+  color: var(--lb-orange);
+}
+
+.btn-big--muted {
+  background: var(--lb-white);
+  border: 1.5px solid var(--lb-graphite);
+  color: var(--lb-graphite);
+  opacity: 0.5;
+}
+
+.btn-big--muted:hover {
+  opacity: 0.75;
+}
+
+.btn-big--ghost {
+  background: var(--lb-white);
+  border: 1.5px solid var(--lb-dark-hover);
+  color: var(--lb-graphite);
+  font-size: 16px;
+  opacity: 0.5;
+}
+
+.btn-big--ghost:hover {
+  opacity: 0.75;
+}
+
+/* --------------------------- Заголовок секции --------------------------- */
+
+.section-title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  text-align: center;
+}
+
+.section-title__heading {
+  width: 100%;
+  text-align: center;
+  font-family: var(--lb-font-title);
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 30px;
+  letter-spacing: -0.3px;
+  color: var(--lb-graphite);
+}
+
+.section-title__heading--tight {
+  line-height: 1;
+  letter-spacing: 0;
+}
+
+.section-title__sub {
+  width: 100%;
+  font-family: var(--lb-font-title);
+  font-size: 20px;
+  font-weight: 300;
+  line-height: 25px;
+  color: var(--lb-muted);
+}
+
+/* ================================ Navbar ================================ */
+
+/* Якоря «Записаться» и «Видео»: шапка липкая, поэтому отступаем на её высоту */
+:target {
+  scroll-margin-top: 150px;
+}
+
+.navbar-cont {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-block: 20px;
+  position: sticky;
+  top: 0;
+  z-index: 1030;
+}
+
+.navbar-lb {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  /* min-height, а не height: название клиники или подпись кнопки из админки
+     могут занять две строки — шапка станет выше, но не разорвётся */
+  min-height: 100px;
+  /* последний рубеж: содержимое не может вызвать прокрутку всей страницы */
+  overflow: hidden;
+  padding-left: 50px;
+  padding-right: 30px;
+  border-radius: var(--lb-radius-lg);
+  background: rgba(244, 240, 232, 0.6);
+  backdrop-filter: blur(7.5px);
+  -webkit-backdrop-filter: blur(7.5px);
+}
+
+.navbar-lb__left {
+  display: flex;
+  flex: 0 1 auto;
+  align-items: center;
+  gap: 5px;
+  min-width: 0;
+}
+
+.navbar-lb__logo {
+  display: block;
+  min-width: 160px;
+  font-family: var(--lb-font-title);
+  font-size: 27px;
+  font-weight: 400;
+  line-height: 30px;
+  letter-spacing: -0.54px;
+  color: #000;
+}
+
+.navbar-lb__burger {
+  display: none;
+}
+
+.navbar-lb__menu {
+  display: flex;
+  flex: 0 1 auto;
+  align-items: center;
+  gap: 20px;
+  min-width: 0;
+  /* пунктов меню может стать больше, чем помещается в пилюлю */
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.navbar-lb__menu::-webkit-scrollbar {
+  display: none;
+}
+
+.menu-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--lb-font-text);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 20px;
+  letter-spacing: 0.08px;
+  color: var(--lb-muted);
+  white-space: nowrap;
+  transition: color 0.2s ease;
+}
+
+.menu-btn:hover {
+  color: var(--lb-orange);
+}
+
+.navbar-lb__contacts {
+  display: flex;
+  flex: 0 1 auto;
+  align-items: center;
+  gap: 5px;
+  min-width: 0;
+}
+
+/* Подпись кнопки записи задаётся в админке: кнопка тянется вниз */
+.navbar-lb__contacts .btn-50 {
+  height: auto;
+  min-height: 50px;
+  min-width: 0;
+}
+
+/* Узкий десктоп (1200-1439): отступы и шаг меню плавно сжимаются,
+   чтобы содержимое шапки не выходило за пределы пилюли.
+   На 1440 значения равны макетным (50 / 30 / 20). */
+@media (min-width: 1200px) {
+
+  .navbar-lb {
+    padding-left: clamp(30px, calc(50px - (1440px - 100vw) / 12), 50px);
+    padding-right: clamp(20px, calc(30px - (1440px - 100vw) / 24), 30px);
+  }
+
+  .navbar-lb__menu {
+    gap: clamp(7px, calc(20px - (1440px - 100vw) / 18.5), 20px);
+  }
+}
+
+/* ----------------------------- Мобильное меню ----------------------------- */
+
+.mobile-menu {
+  background: var(--lb-warm-ivory);
+  max-width: 320px;
+}
+
+.mobile-menu__title {
+  font-family: var(--lb-font-title);
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--lb-graphite);
+}
+
+.mobile-menu .offcanvas-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.mobile-menu__nav {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.mobile-menu__link {
+  font-family: var(--lb-font-text);
+  font-size: 18px;
+  line-height: 24px;
+  color: var(--lb-graphite);
+}
+
+.mobile-menu__link:hover {
+  color: var(--lb-orange);
+}
+
+.mobile-menu__footer {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.mobile-menu__phone {
+  font-family: var(--lb-font-text);
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--lb-graphite);
+}
+
+/* ================================= Hero ================================= */
+
+.hero-cont {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 20px;
+}
+
+.hero {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 700px;
+  padding: 60px 50px;
+  border-radius: var(--lb-radius-lg);
+  overflow: hidden;
+}
+
+.hero__bg {
+  position: absolute;
+  inset: 0;
+  border-radius: var(--lb-radius-lg);
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.hero__bg img {
+  position: absolute;
+  left: 0;
+  top: -13.8%;
+  width: 118.59%;
+  height: 144.51%;
+  max-width: none;
+  object-fit: cover;
+}
+
+.hero__bg::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: var(--lb-radius-lg);
+  background: linear-gradient(90deg, #2f3438 17.148%, rgba(47, 52, 56, 0) 79.667%);
+}
+
+.hero__text {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 30px;
+  flex: 0 0 auto;
+  width: 740px;
+}
+
+.hero__title {
+  width: 100%;
+  font-family: var(--lb-font-title);
+  font-size: 50px;
+  font-weight: 400;
+  line-height: 50px;
+  letter-spacing: -0.5px;
+  color: var(--lb-white);
+}
+
+.hero__lead {
+  width: 680px;
+  height: 90px;
+  font-family: var(--lb-font-title);
+  font-size: 20px;
+  font-weight: 300;
+  line-height: 28px;
+  color: var(--lb-white);
+}
+
+.hero__buttons {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  width: 100%;
+}
+
+.hero__buttons .btn-big--orange {
+  flex: 0 0 auto;
+}
+
+.hero__buttons .btn-big--white {
+  flex: 1 0 0;
+  min-width: 0;
+}
+
+/* ============================== Diagnostics ============================== */
+
+.diagnostics-cont {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-block: 40px;
+}
+
+.diagnostics {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+  width: 100%;
+}
+
+.diagnostics__body {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  width: 100%;
+}
+
+.diagnostics__cards {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  width: 100%;
+}
+
+.diagnostics__col {
+  display: flex;
+  flex: 1 0 0;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
+}
+
+.diagnostics__more {
+  display: none;
+}
+
+/* Карточка-аккордеон */
+.diagnosis-card {
+  width: 100%;
+  border-radius: var(--lb-radius-lg);
+  background: var(--lb-soft-sand);
+  transition: box-shadow 0.25s ease;
+}
+
+.diagnosis-card--light {
+  flex: 1 0 0;
+  min-width: 0;
+  background: var(--lb-white);
+}
+
+.diagnosis-card:hover {
+  box-shadow: var(--lb-shadow-hover);
+}
+
+.diagnosis-card__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 30px;
+  border-radius: var(--lb-radius-lg);
+  text-align: left;
+}
+
+.diagnosis-card__head {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.diagnosis-card__title {
+  width: 100%;
+  font-family: var(--lb-font-title);
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 20px;
+  color: var(--lb-orange);
+}
+
+.diagnosis-card--light .diagnosis-card__title {
+  color: var(--lb-graphite);
+}
+
+.diagnosis-card__footer {
+  display: flex;
+  /* шеврон выравнивается по последней строке описания, как в макете */
+  align-items: flex-end;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.diagnosis-card__desc {
+  font-family: var(--lb-font-text);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 20px;
+  letter-spacing: 0.08px;
+  color: var(--lb-muted);
+  min-width: 0;
+}
+
+.diagnosis-card__chevron {
+  display: block;
+  flex: 0 0 auto;
+  width: 20px;
+  height: 20px;
+  transition: transform 0.3s ease;
+}
+
+.diagnosis-card__head:not(.collapsed) .diagnosis-card__chevron {
+  transform: rotate(180deg);
+}
+
+.diagnosis-card__body {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  padding: 30px 30px 40px;
+  font-family: var(--lb-font-text);
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 22px;
+  color: var(--lb-muted);
+}
+
+.diagnosis-card__body::before {
+  content: "";
+  position: absolute;
+  left: 30px;
+  top: 0;
+  width: 90px;
+  height: 2px;
+  border-radius: 1000px;
+  background: var(--lb-orange);
+}
+
+.diagnosis-card__body ul {
+  margin: 0 0 10px;
+  padding-left: 24px;
+  list-style: disc;
+}
+
+/* Блок «Не нашли свою ситуацию?» */
+.big-cards-frame {
+  width: 100%;
+  padding: 40px 20px 20px;
+  border-radius: var(--lb-radius-lg);
+  background: var(--lb-soft-sand);
+}
+
+.big-cards {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 25px;
+  width: 100%;
+}
+
+.big-cards__title {
+  width: 100%;
+  font-family: var(--lb-font-title);
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 25px;
+  text-align: center;
+  color: var(--lb-graphite);
+}
+
+.big-cards__line {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  width: 100%;
+}
+
+/* ================================= Help ================================= */
+
+.help-cont {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-block: 40px;
+}
+
+.help {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 50px;
+  width: 100%;
+  padding: 50px 30px 30px;
+  border-radius: var(--lb-radius-lg);
+  background: var(--lb-white);
+  box-shadow: var(--lb-shadow-big);
+}
+
+.help__line {
+  display: flex;
+  align-items: flex-start;
+  gap: 30px;
+  width: 100%;
+  padding-left: 30px;
+}
+
+.help-card {
+  flex: 1 0 0;
+  min-width: 0;
+  border-radius: var(--lb-radius-md);
+}
+
+.help-card__head {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 30px;
+  width: 100%;
+  border-radius: var(--lb-radius-md);
+  text-align: left;
+}
+
+.help-card__title {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 25px;
+  width: 100%;
+}
+
+.help-card__num {
+  font-family: var(--lb-font-title);
+  font-size: 60px;
+  font-weight: 200;
+  line-height: 40px;
+  color: var(--lb-orange);
+}
+
+.help-card__name {
+  width: 100%;
+  font-family: var(--lb-font-title);
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 20px;
+  color: var(--lb-orange);
+}
+
+.help-card__desc {
+  width: 100%;
+  font-family: var(--lb-font-text);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 20px;
+  letter-spacing: 0.08px;
+  color: var(--lb-muted);
+}
+
+.help-card__chevron {
+  display: block;
+  width: 20px;
+  height: 20px;
+  transition: transform 0.3s ease;
+}
+
+.help-card__head:not(.collapsed) .help-card__chevron {
+  transform: rotate(180deg);
+}
+
+.help-card__body {
+  padding-top: 25px;
+  font-family: var(--lb-font-text);
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 22px;
+  color: var(--lb-muted);
+}
+
+.help__big-text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 40px;
+  border-radius: var(--lb-radius-lg);
+  background: var(--lb-warm-ivory);
+}
+
+.help__big-text p {
+  flex: 1 0 0;
+  min-width: 0;
+  font-family: var(--lb-font-title);
+  font-size: 30px;
+  font-weight: 400;
+  line-height: 35px;
+  letter-spacing: -0.3px;
+  text-align: center;
+  color: var(--lb-orange);
+}
+
+/* ================================= Team ================================= */
+
+.team-cont {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-block: 40px;
+}
+
+.team {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+  width: 100%;
+}
+
+.team__img {
+  position: relative;
+  width: 100%;
+  height: 460px;
+  border-radius: var(--lb-radius-lg);
+  overflow: hidden;
+}
+
+.team__img img {
+  position: absolute;
+  left: 0;
+  top: -15.22%;
+  width: 100%;
+  height: 156.52%;
+  max-width: none;
+  object-fit: cover;
+}
+
+.team__cards {
+  width: 100%;
+}
+
+.team__track {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  width: 100%;
+}
+
+/* Карточка врача */
+.doctor-card {
+  display: flex;
+  flex: 1 0 0;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 30px;
+  min-width: 0;
+  padding: 10px;
+  border-radius: var(--lb-radius-md);
+  background: var(--lb-white);
+  box-shadow: var(--lb-shadow-small);
+}
+
+/* На 1440 видны 3 карточки, остальные скрыты */
+.doctor-card--extra,
+.doctor-card--mobile-only {
+  display: none;
+}
+
+.doctor-card__img {
+  position: relative;
+  width: 100%;
+  height: 400px;
+  border-radius: var(--lb-radius-sm);
+  background: var(--lb-sand-border);
+  overflow: hidden;
+}
+
+.doctor-card__img img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  object-fit: cover;
+  opacity: 0.9;
+}
+
+.doctor-card__info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 30px;
+  width: 100%;
+  padding: 0 20px 30px;
+}
+
+.doctor-card__name-block {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 15px;
+  width: 100%;
+}
+
+.doctor-card__name {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 5px;
+  width: 100%;
+  font-family: var(--lb-font-title);
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 20px;
+  color: var(--lb-graphite);
+}
+
+.doctor-card__practice {
+  width: 100%;
+  font-family: var(--lb-font-text);
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 20px;
+  letter-spacing: 0.08px;
+  color: var(--lb-graphite);
+}
+
+.doctor-card__meta {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  width: 100%;
+}
+
+.doctor-card__degree {
+  width: 100%;
+  font-family: var(--lb-font-text);
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 20px;
+  letter-spacing: 0.08px;
+  color: var(--lb-graphite);
+}
+
+.doctor-card__badges {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 5px;
+  width: 100%;
+  font-family: var(--lb-font-text);
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 20px;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  color: var(--lb-graphite);
+}
+
+.doctor-card__badges span {
+  /* Chrome добавляет letter-spacing после последней буквы, Figma — нет,
+     поэтому компенсируем его, иначе бейджи накапливают сдвиг вправо */
+  margin-right: -1.2px;
+  opacity: 0.5;
+}
+
+.doctor-card__buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  width: 100%;
+}
+
+.doctor-card__buttons-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  width: 100%;
+}
+
+.doctor-card__buttons-row .btn-50 {
+  flex: 1 0 0;
+  min-width: 0;
+}
+
+/* ============================== Principals ============================== */
+
+.principals-cont {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-block: 40px;
+}
+
+.principals {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 40px;
+  width: 100%;
+  padding: 30px;
+  border-radius: var(--lb-radius-lg);
+  background: var(--lb-soft-sand);
+}
+
+.principals__line {
+  width: 100%;
+}
+
+.principals__track {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  width: 100%;
+}
+
+.principals-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  height: 250px;
+  padding: 30px;
+  border-radius: var(--lb-radius-md);
+  background: var(--lb-warm-ivory);
+}
+
+.principals-card__title {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 25px;
+  width: 100%;
+  color: var(--lb-graphite);
+}
+
+.principals-card__title h3 {
+  width: 100%;
+  font-family: var(--lb-font-title);
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 28px;
+}
+
+.principals-card__title p {
+  width: 100%;
+  font-family: var(--lb-font-text);
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 22px;
+  opacity: 0.7;
+}
+
+/* Цитата */
+.quote {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  width: 100%;
+  padding: 40px;
+  border-radius: var(--lb-radius-md);
+  background: var(--lb-warm-ivory);
+}
+
+.quote .btn-50--outline {
+  background: transparent;
+}
+
+.quote__text {
+  width: 100%;
+  font-family: var(--lb-font-title);
+  font-size: 30px;
+  font-weight: 400;
+  line-height: 35px;
+  text-align: center;
+  color: var(--lb-graphite);
+}
+
+.quote__author {
+  font-family: var(--lb-font-text);
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 22px;
+  text-align: center;
+  color: var(--lb-graphite);
+}
+
+/* =============================== Contacts =============================== */
+
+.contacts-cont {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-block: 40px;
+}
+
+.contacts {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 40px;
+  width: 100%;
+  padding: 30px;
+  border-radius: var(--lb-radius-lg);
+  background: var(--lb-white);
+  box-shadow: var(--lb-shadow-big);
+}
+
+.contacts__cards {
+  display: flex;
+  align-items: stretch;
+  gap: 10px;
+  width: 100%;
+}
+
+.know-card {
+  display: flex;
+  flex: 1 0 0;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 30px;
+  min-width: 0;
+  padding: 30px;
+  border-radius: var(--lb-radius-md);
+  background: var(--lb-white);
+  box-shadow: var(--lb-shadow-small);
+}
+
+.know-card--help {
+  flex: 0 0 500px;
+  width: 500px;
+}
+
+.know-card__main {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 30px;
+  width: 100%;
+}
+
+.know-card__title {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 25px;
+  width: 100%;
+}
+
+.know-card__accent {
+  color: inherit;
+}
+
+.know-card__title h3 {
+  width: 100%;
+  font-family: var(--lb-font-title);
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 20px;
+  color: var(--lb-graphite);
+}
+
+.know-card__text {
+  width: 100%;
+  font-family: var(--lb-font-text);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 20px;
+  letter-spacing: 0.08px;
+  color: var(--lb-graphite);
+  opacity: 0.5;
+}
+
+/* Вопросы и контакты */
+.questions {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 25px;
+  width: 100%;
+}
+
+.questions__subtitle {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  width: 100%;
+  text-align: center;
+  color: var(--lb-graphite);
+}
+
+.questions__heading {
+  width: 100%;
+  font-family: var(--lb-font-title);
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 25px;
+}
+
+.questions__lead {
+  width: 100%;
+  font-family: var(--lb-font-title);
+  font-size: 20px;
+  font-weight: 300;
+  line-height: 25px;
+  opacity: 0.5;
+}
+
+.questions__contacts {
+  display: flex;
+  /* телефон, адрес и подписи приходят из админки: строка переносится,
+     а не выходит за пределы карточки */
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 30px;
+  width: 100%;
+  border-radius: var(--lb-radius-md);
+}
+
+.contact-item {
+  display: flex;
+  flex: 0 1 auto;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
+}
+
+.link-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  font-family: var(--lb-font-text);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 20px;
+  letter-spacing: 0.08px;
+  color: var(--lb-graphite);
+  opacity: 0.8;
+  text-align: center;
+}
+
+.link-button:hover {
+  opacity: 1;
+}
+
+.link-button img {
+  flex: 0 0 auto;
+  width: 20px;
+  height: 20px;
+}
+
+.contact-item__label {
+  font-family: var(--lb-font-text);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 20px;
+  letter-spacing: 0.08px;
+  color: var(--lb-muted);
+  opacity: 0.8;
+  text-align: center;
+}
+
+.contact-divider {
+  flex: 0 0 auto;
+  align-self: stretch;
+  width: 1px;
+  background: var(--lb-muted);
+  opacity: 0.2;
+}
+
+/* Декоративная графика */
+.contacts__art {
+  position: relative;
+  width: 100%;
+  height: 131px;
+}
+
+.contacts__art img {
+  position: absolute;
+  max-width: none;
+}
+
+.contacts__art-v1 {
+  left: 0;
+  top: 34.94%;
+  width: 99.94%;
+  height: 45.48%;
+}
+
+.contacts__art-v2 {
+  left: 0;
+  top: 28.33%;
+  width: 100%;
+  height: 72.09%;
+}
+
+.contacts__art-e1 {
+  left: 202px;
+  top: 58px;
+  width: 10px;
+  height: 10px;
+}
+
+.contacts__art-e2 {
+  left: 784px;
+  top: 45px;
+  width: 20px;
+  height: 20px;
+}
+
+/* Карта */
+.contacts__map {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  width: 100%;
+}
+
+.map-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 50px;
+  padding: 10px 5px 10px 30px;
+  border-radius: 1000px;
+  background: var(--lb-warm-ivory);
+}
+
+.map-bar__address {
+  font-family: var(--lb-font-text);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 20px;
+  letter-spacing: 0.08px;
+  color: var(--lb-graphite);
+  opacity: 0.8;
+}
+
+.map-bar__route {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 20px;
+  border-radius: 1000px;
+  background: var(--lb-white);
+  font-family: var(--lb-font-text);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 20px;
+  letter-spacing: 0.08px;
+  color: var(--lb-graphite);
+  opacity: 0.8;
+  min-width: 0;
+}
+
+.map-bar__route:hover {
+  opacity: 1;
+}
+
+.map-bar__img {
+  width: 100%;
+  height: 500px;
+  border-radius: var(--lb-radius-lg);
+  overflow: hidden;
+}
+
+.map-bar__img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ================================ Footer ================================ */
+
+/* Базовые отступы компонента Footer Cont — 40px сверху и снизу */
+.footer-cont {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-block: 40px;
+}
+
+/* На главной нижний отступ увеличен до 60px */
+.footer-cont--home {
+  padding-bottom: 60px;
+}
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 40px;
+  width: 100%;
+  padding-inline: 30px;
+  color: var(--lb-graphite);
+}
+
+.footer__top {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 20px;
+  width: 100%;
+  font-size: 16px;
+  line-height: 20px;
+  letter-spacing: 0.08px;
+}
+
+.footer__brand {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.footer__brand-name {
+  font-weight: 700;
+}
+
+.footer__brand-desc {
+  font-weight: 400;
+  opacity: 0.5;
+}
+
+.footer__menu {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: flex-end;
+  gap: 20px;
+}
+
+.footer__menu-links {
+  font-weight: 400;
+  opacity: 0.5;
+}
+
+.footer__menu-links a:hover {
+  text-decoration: underline;
+}
+
+.footer__phone {
+  font-weight: 700;
+}
+
+.footer__bot {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 10px 20px;
+  width: 100%;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 15px;
+  letter-spacing: 0.06px;
+}
+
+.footer__bot a {
+  opacity: 0.5;
+}
+
+.footer__bot a:hover {
+  opacity: 0.8;
+}
+
+/* =========================================================================
+   Планшет — макет 760
+   ========================================================================= */
+
+@media (max-width: 1199.98px) {
+
+  :root {
+    --lb-side: 20px;
+  }
+
+  /* ------- Navbar ------- */
+  .navbar-cont {
+    padding-block: 20px;
+  }
+
+  .navbar-lb {
+    padding-left: 30px;
+    padding-right: 20px;
+  }
+
+  .navbar-lb__burger {
+    display: inline-flex;
+  }
+
+  .navbar-lb__burger-lines {
+    display: none;
+  }
+
+  .navbar-lb__menu {
+    display: none;
+  }
+
+  /* ------- Hero (макет 760) ------- */
+  .hero {
+    align-items: flex-end;
+    padding: 60px 20px 20px;
+  }
+
+  .hero__bg img {
+    left: -48.68%;
+    top: -12.25%;
+    width: 163.76%;
+    height: 112.25%;
+  }
+
+  /* На 760 вместо градиента — сплошная заливка */
+  .hero__bg::after {
+    background: rgba(47, 52, 56, 0.7);
+  }
+
+  .hero__text {
+    flex: 1 0 0;
+    width: auto;
+    min-width: 0;
+    gap: 20px;
+  }
+
+  .hero__title {
+    font-size: 44px;
+    line-height: 50px;
+    letter-spacing: -0.44px;
+  }
+
+  .hero__lead {
+    width: 620px;
+    max-width: 100%;
+    height: 120px;
+  }
+
+  .hero__buttons {
+    flex-wrap: wrap;
+  }
+
+  /* ------- Diagnostics ------- */
+  .diagnostics-cont,
+  .help-cont,
+  .team-cont,
+  .principals-cont,
+  .contacts-cont {
+    padding-block: 30px;
+  }
+
+  .diagnostics {
+    gap: 40px;
+  }
+
+  /* Две колонки по 4 карточки, заполнение по столбцам */
+  .diagnostics__col {
+    display: contents;
+  }
+
+  .diagnostics__cards {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-rows: repeat(4, min-content);
+    grid-auto-flow: column;
+    align-items: start;
+    gap: 10px;
+  }
+
+  /* На планшете карточек 8 — дубль скрыт */
+  .diagnostics__col:nth-child(3) .diagnosis-card:nth-child(3) {
+    display: none;
+  }
+
+  /* Порядок заполнения колонок по макету 760: «Часто болит голова»
+     закрывает первую колонку, «Тики» открывает вторую */
+  .diagnostics__col:nth-child(1) .diagnosis-card:nth-child(1) { order: 1; }
+  .diagnostics__col:nth-child(1) .diagnosis-card:nth-child(2) { order: 2; }
+  .diagnostics__col:nth-child(1) .diagnosis-card:nth-child(3) { order: 3; }
+  .diagnostics__col:nth-child(3) .diagnosis-card:nth-child(1) { order: 4; }
+  .diagnostics__col:nth-child(2) .diagnosis-card:nth-child(1) { order: 5; }
+  .diagnostics__col:nth-child(2) .diagnosis-card:nth-child(2) { order: 6; }
+  .diagnostics__col:nth-child(2) .diagnosis-card:nth-child(3) { order: 7; }
+  .diagnostics__col:nth-child(3) .diagnosis-card:nth-child(2) { order: 8; }
+
+  .diagnosis-card__head {
+    justify-content: space-between;
+    min-height: 140px;
+    padding: 30px;
+    gap: 20px;
+  }
+
+  .diagnosis-card__desc {
+    white-space: normal;
+  }
+
+  .diagnosis-card__body {
+    padding: 30px 30px 40px;
+  }
+
+  .big-cards-frame {
+    padding: 40px 20px 20px;
+  }
+
+  /* ------- Help ------- */
+  .help {
+    padding: 50px 20px 30px;
+    gap: 50px;
+  }
+
+  .help__line {
+    gap: 20px;
+    padding-left: 0;
+  }
+
+  .help-card__head {
+    gap: 30px;
+  }
+
+  .help__big-text {
+    padding: 20px;
+  }
+
+  /* ------- Team ------- */
+  .team__img {
+    height: 460px;
+  }
+
+  .team__track {
+    flex-wrap: wrap;
+  }
+
+  .doctor-card {
+    flex: 0 0 calc((100% - 10px) / 2);
+    min-width: 0;
+  }
+
+  .doctor-card__img {
+    height: 330px;
+  }
+
+  .doctor-card__info {
+    padding: 0 0 30px;
+  }
+
+  .doctor-card--extra {
+    display: flex;
+  }
+
+  /* ------- Principals ------- */
+  .principals {
+    padding: 60px 30px 30px;
+  }
+
+  .principals-card {
+    height: 330px;
+    padding: 20px;
+  }
+
+  .know-card__accent {
+    color: var(--lb-orange);
+  }
+
+  .quote {
+    padding: 20px;
+  }
+
+  .section-title__sub br {
+    display: none;
+  }
+
+  /* ------- Contacts ------- */
+  .contacts {
+    padding: 60px 30px 30px;
+  }
+
+  .contacts__cards {
+    flex-wrap: wrap;
+  }
+
+  .know-card--help {
+    flex: 1 0 0;
+    width: auto;
+  }
+
+  .contacts__art-e1 {
+    left: 16%;
+  }
+
+  .contacts__art-e2 {
+    left: 63.18%;
+  }
+
+  /* ------- Footer ------- */
+  .footer-cont {
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+
+  .footer {
+    padding-inline: 30px;
+    gap: 40px;
+  }
+
+  /* Верхний блок на 760 выравнивается по центру */
+  .footer__top {
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+  }
+
+  .footer__brand {
+    justify-content: center;
+  }
+
+  .footer__menu {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+  }
+
+  /* Нижние ссылки — две колонки: левая по левому краю, правая по правому */
+  .footer__bot {
+    display: grid;
+    grid-template-rows: repeat(2, auto);
+    grid-auto-flow: column;
+    justify-content: space-between;
+    gap: 20px 40px;
+  }
+
+  .footer__bot a:nth-child(n + 3) {
+    justify-self: end;
+    text-align: right;
+  }
+}
+
+/* =========================================================================
+   Мобильный — макет 360
+   ========================================================================= */
+
+@media (max-width: 759.98px) {
+
+  :root {
+    --lb-side: 10px;
+  }
+
+  :target {
+    scroll-margin-top: 120px;
+  }
+
+  /* ------- Navbar ------- */
+  .navbar-cont {
+    padding-top: 10px;
+    padding-bottom: 20px;
+  }
+
+  .navbar-lb {
+    min-height: 80px;
+    padding-inline: 20px;
+  }
+
+  /* Логотип слева, бургер у правого края */
+  .navbar-lb__left {
+    flex: 1 1 auto;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  .navbar-lb__contacts {
+    display: none;
+  }
+
+  .navbar-lb__burger {
+    display: inline-flex;
+  }
+
+  .navbar-lb__burger-grid {
+    display: none;
+  }
+
+  .navbar-lb__burger-lines {
+    display: block;
+  }
+
+  /* ------- Hero: картинка сверху, текст снизу ------- */
+  .hero-cont {
+    gap: 20px;
+    padding-inline: 20px;
+    padding-bottom: 20px;
+  }
+
+  /* Картинка сверху отдельным блоком, текст под ней */
+  .hero {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 20px;
+    height: auto;
+    padding: 0;
+    border-radius: 0;
+    overflow: visible;
+  }
+
+  .hero__bg {
+    position: static;
+    height: 230px;
+    border-radius: var(--lb-radius-lg);
+  }
+
+  .hero__bg img {
+    position: static;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .hero__bg::after {
+    display: none;
+  }
+
+  .hero__text {
+    flex: 0 0 auto;
+    width: 100%;
+    max-width: none;
+    gap: 15px;
+  }
+
+  .hero__title br {
+    display: none;
+  }
+
+  .hero__title {
+    font-size: 25px;
+    font-weight: 500;
+    line-height: 25px;
+    letter-spacing: -0.25px;
+    color: #000;
+  }
+
+  .hero__lead {
+    width: 100%;
+    height: auto;
+    font-size: 16px;
+    line-height: 20px;
+    color: var(--lb-graphite);
+  }
+
+  .hero__buttons {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .hero__buttons .btn-big {
+    width: 100%;
+    flex: 0 0 auto;
+  }
+
+  .hero__buttons .btn-big--white {
+    border: 2px solid var(--lb-orange);
+  }
+
+  /* ------- Общие секции ------- */
+  .diagnostics-cont,
+  .help-cont,
+  .team-cont,
+  .principals-cont,
+  .contacts-cont {
+    padding-inline: 20px;
+    padding-block: 30px;
+  }
+
+  .section-title {
+    gap: 10px;
+  }
+
+  /* Mob H2 */
+  .section-title__heading {
+    font-size: 20px;
+    line-height: 20px;
+    letter-spacing: -0.2px;
+  }
+
+  .section-title__heading--tight {
+    font-size: 30px;
+    line-height: 30px;
+    letter-spacing: 0;
+  }
+
+  /* Mob Subh */
+  .section-title__sub {
+    font-size: 18px;
+    line-height: 20px;
+  }
+
+  .section-title__sub br {
+    display: revert;
+  }
+
+  /* ------- Diagnostics: одна колонка + «Показать еще» ------- */
+  .diagnostics {
+    gap: 20px;
+  }
+
+  .diagnostics__cards {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  /* Видны первые 4 карточки, остальные раскрываются кнопкой */
+  .diagnostics__cards .diagnosis-card {
+    display: none;
+  }
+
+  .diagnostics__col:nth-child(1) .diagnosis-card,
+  .diagnostics__col:nth-child(2) .diagnosis-card:nth-child(1) {
+    display: block;
+  }
+
+  .diagnostics__cards.is-expanded .diagnosis-card {
+    display: block;
+  }
+
+  /* Девятая карточка — дубль, на мобильном не показывается */
+  .diagnostics__cards .diagnostics__col:nth-child(3) .diagnosis-card:nth-child(3),
+  .diagnostics__cards.is-expanded .diagnostics__col:nth-child(3) .diagnosis-card:nth-child(3) {
+    display: none;
+  }
+
+  .diagnostics__more .btn-big img {
+    transition: transform 0.3s ease;
+  }
+
+  .diagnostics__more .btn-big.is-expanded img {
+    transform: rotate(180deg);
+  }
+
+  .diagnostics__more {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding-bottom: 20px;
+  }
+
+  .diagnosis-card {
+    border-radius: var(--lb-radius-md);
+  }
+
+  .diagnosis-card__head {
+    position: relative;
+    justify-content: space-between;
+    gap: 10px;
+    min-height: 110px;
+    padding: 20px 40px 20px 20px;
+    border-radius: var(--lb-radius-md);
+  }
+
+  .diagnosis-card--light .diagnosis-card__head {
+    min-height: 120px;
+  }
+
+  .diagnosis-card__desc {
+    white-space: normal;
+    overflow: visible;
+  }
+
+  .diagnosis-card__footer {
+    display: block;
+  }
+
+  .diagnosis-card__chevron {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    margin-top: -10px;
+  }
+
+  .big-cards-frame {
+    padding: 40px 20px 20px;
+    border-radius: var(--lb-radius-md);
+  }
+
+  .big-cards__line {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .diagnosis-card--light {
+    flex: 0 0 auto;
+    width: 100%;
+  }
+
+  /* ------- Help ------- */
+  .help {
+    padding: 50px 20px 30px;
+    gap: 20px;
+  }
+
+  .help .section-title {
+    margin-bottom: 30px;
+  }
+
+  /* Карточки «Как мы помогаем» прокручиваются по горизонтали */
+  .help__line {
+    gap: 0;
+    padding-left: 20px;
+    padding-bottom: 20px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .help__line::-webkit-scrollbar {
+    display: none;
+  }
+
+  .help-card {
+    flex: 0 0 215px;
+    scroll-snap-align: start;
+  }
+
+  .help__big-text {
+    padding: 20px;
+  }
+
+  .help__big-text p {
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 20px;
+    letter-spacing: 0;
+  }
+
+  /* ------- Team: слайдер карточек врачей ------- */
+  .team {
+    gap: 10px;
+  }
+
+  .team .section-title {
+    margin-bottom: 30px;
+  }
+
+  .team > .btn-big {
+    margin-top: 30px;
+  }
+
+  .team__img {
+    height: 170px;
+  }
+
+  .team__cards {
+    position: relative;
+  }
+
+  .team__track {
+    flex-wrap: nowrap;
+    gap: 10px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .team__track::-webkit-scrollbar {
+    display: none;
+  }
+
+  .doctor-card {
+    flex: 0 0 360px;
+    scroll-snap-align: start;
+  }
+
+  .doctor-card--extra,
+  .doctor-card--mobile-only {
+    display: flex;
+  }
+
+  /* ------- Principals: слайдер ------- */
+  .principals {
+    padding: 60px 20px 20px;
+    gap: 40px;
+  }
+
+  .principals__line {
+    position: relative;
+  }
+
+  .principals__track {
+    display: flex;
+    gap: 10px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .principals__track::-webkit-scrollbar {
+    display: none;
+  }
+
+  .principals-card {
+    flex: 0 0 325px;
+    height: 330px;
+    scroll-snap-align: start;
+    padding: 20px;
+  }
+
+  .br-mob {
+    display: revert;
+  }
+
+  /* В макете 360 у третьей карточки заголовок с межстрочным 20 */
+  .principals-card:nth-child(3) .principals-card__title h3 {
+    line-height: 20px;
+  }
+
+  .quote {
+    padding: 20px;
+    gap: 20px;
+  }
+
+  /* Mob Subh */
+  .quote__text {
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 20px;
+  }
+
+  .quote__text br {
+    display: none;
+  }
+
+  /* ------- Contacts ------- */
+  .contacts {
+    padding: 60px 20px 20px;
+    gap: 40px;
+  }
+
+  .contacts__cards {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .know-card,
+  .know-card--help {
+    flex: 0 0 auto;
+    width: 100%;
+    padding: 20px;
+  }
+
+  .questions {
+    gap: 50px;
+  }
+
+  .questions__lead {
+    font-size: 18px;
+    line-height: 20px;
+  }
+
+  .questions__contacts {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .contact-divider {
+    align-self: center;
+    width: 50px;
+    height: 1px;
+  }
+
+  .link-button span,
+  .contact-item__label {
+    white-space: normal;
+    text-align: center;
+  }
+
+  .contacts__art {
+    height: 60px;
+  }
+
+  .contacts__art-e1 {
+    left: 15%;
+    top: 25px;
+  }
+
+  .contacts__art-e2 {
+    left: 60%;
+    top: 17px;
+  }
+
+  .map-bar {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 20px;
+    height: auto;
+    padding: 20px;
+    border-radius: var(--lb-radius-md);
+    background: var(--lb-warm-ivory);
+  }
+
+  .map-bar__address {
+    text-align: center;
+    white-space: normal;
+  }
+
+  .map-bar__route {
+    background: var(--lb-white);
+    text-align: center;
+  }
+
+  .map-bar__img {
+    height: 500px;
+    border-radius: var(--lb-radius-md);
+  }
+
+  /* ------- Footer ------- */
+  .footer-cont {
+    padding-inline: 20px;
+    padding-block: 30px;
+  }
+
+  .footer {
+    padding-inline: 0;
+  }
+
+  .footer__top {
+    align-items: center;
+    gap: 40px;
+  }
+
+  .footer__brand {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .footer__menu {
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+  }
+
+  .footer__menu-links {
+    text-align: center;
+    white-space: normal;
+  }
+
+  /* На мобильном ссылки разбиваются на две строки с пустой строкой между ними */
+  .footer__menu-sep {
+    display: block;
+    height: 20px;
+    font-size: 0;
+  }
+
+  .footer__bot {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    text-align: center;
+  }
+}
+
+/* =========================================================================
+   Страница «Список услуг» (uslugi.html)
+   ========================================================================= */
+
+/* --------------------------- Шапка страницы --------------------------- */
+
+.page-hero-cont {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 20px;
+}
+
+.page-hero {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+  width: 100%;
+}
+
+.page-hero__crumbs {
+  font-family: var(--lb-font-text);
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 20px;
+  color: var(--lb-muted);
+}
+
+.page-hero__crumbs-current {
+  color: var(--lb-orange);
+}
+
+.page-hero__title {
+  font-family: var(--lb-font-title);
+  font-size: 50px;
+  font-weight: 400;
+  line-height: 50px;
+  letter-spacing: -0.5px;
+  color: #000;
+}
+
+.page-hero__lead {
+  width: 100%;
+  font-family: var(--lb-font-title);
+  font-size: 20px;
+  font-weight: 300;
+  line-height: 28px;
+  color: var(--lb-graphite);
+}
+
+/* ------------------------------ Услуги ------------------------------ */
+
+.services-cont {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-block: 40px;
+}
+
+.services {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  width: 100%;
+}
+
+/* Фильтр по категориям */
+.services__tabs {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  width: 100%;
+  border-radius: var(--lb-radius-lg);
+}
+
+.tab-btn {
+  display: inline-flex;
+  align-items: center;
+  /* текст прижат к padding-у, как текстовый слой в макете */
+  justify-content: flex-start;
+  flex: 0 0 auto;
+  /* min-height и max-width: название категории из админки может быть длиннее
+     макетного — кнопка станет выше, но не вылезет за контейнер */
+  min-height: 50px;
+  max-width: 100%;
+  padding: 10px 27px;
+  border-radius: 1000px;
+  background: var(--lb-sand-button);
+  font-family: var(--lb-font-text);
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 20px;
+  color: var(--lb-slate);
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.tab-btn:hover {
+  background: var(--lb-dark-hover);
+}
+
+.tab-btn.is-active {
+  background: var(--lb-orange);
+  color: var(--lb-white);
+}
+
+/* Категорий из админки может быть больше, чем помещается в строку */
+@media (min-width: 1200px) {
+
+  .services__tabs {
+    flex-wrap: wrap;
+  }
+}
+
+/* Сетка карточек: 4 колонки по 312.5 с шагом 10 */
+.services__grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 10px;
+  width: 100%;
+}
+
+.service-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
+  padding: 30px;
+  border-radius: var(--lb-radius-lg);
+  background: var(--lb-white);
+  transition: box-shadow 0.25s ease;
+}
+
+.service-card:hover {
+  box-shadow: var(--lb-shadow-hover);
+}
+
+.service-card__name {
+  width: 100%;
+  font-family: var(--lb-font-title);
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 28px;
+  color: #000;
+}
+
+.service-card__divider {
+  display: block;
+  flex: 0 0 auto;
+  width: 90px;
+  height: 2px;
+  border-radius: 1000px;
+  background: var(--lb-sand-border);
+}
+
+.service-card__btn {
+  width: 100%;
+}
+
+/* ------------------------------ Консилиум ------------------------------ */
+
+.consilium-title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  width: 100%;
+}
+
+.consilium-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0 64px;
+  width: 100%;
+  min-height: 50px;
+  padding: 10px 27px;
+  border-radius: 1000px;
+  background: var(--lb-sand-button);
+}
+
+.consilium-bar__item {
+  font-family: var(--lb-font-title);
+  font-size: 20px;
+  font-weight: 300;
+  line-height: 28px;
+  text-align: center;
+  color: #000;
+}
+
+.consilium-bar__item--price {
+  font-weight: 400;
+  color: var(--lb-orange);
+}
+
+/* Разделитель не занимает места в потоке — как линия в макете */
+.consilium-bar__sep,
+.phero__pill-sep,
+.info-pill__sep {
+  position: relative;
+  flex: 0 0 auto;
+  width: 0;
+  height: 20px;
+}
+
+.consilium-bar__sep::before,
+.phero__pill-sep::before,
+.info-pill__sep::before {
+  content: "";
+  display: block;
+  position: absolute;
+  left: -0.5px;
+  top: 0;
+  width: 1px;
+  height: 100%;
+  background: var(--lb-sand-border);
+}
+
+/* ------------------------------ Как нас найти ------------------------------ */
+
+.find-us {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+}
+
+.find-us__head {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 30px;
+  width: 100%;
+}
+
+.find-us__photos {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  width: 100%;
+}
+
+.find-us__photo {
+  flex: 0 1 393px;
+  min-width: 0;
+  aspect-ratio: 393 / 262;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.find-us__photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ------------------------------ Планшет ------------------------------ */
+
+@media (max-width: 1199.98px) {
+
+  .page-hero__title {
+    font-size: 44px;
+    line-height: 50px;
+    letter-spacing: -0.44px;
+  }
+
+  .services-cont {
+    padding-block: 30px;
+  }
+
+  .services {
+    gap: 20px;
+  }
+
+  /* Кнопки фильтра прокручиваются по горизонтали */
+  .services__tabs {
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+  }
+
+  .services__tabs::-webkit-scrollbar {
+    display: none;
+  }
+
+  .tab-btn {
+    scroll-snap-align: start;
+  }
+
+  .services__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .consilium-bar {
+    gap: 0 40px;
+  }
+
+  .find-us__photos {
+    gap: 10px;
+    width: 100%;
+  }
+
+  .find-us__photo {
+    flex: 1 1 0;
+    width: auto;
+    height: auto;
+    aspect-ratio: 393 / 262;
+  }
+}
+
+/* ------------------------------ Мобильный ------------------------------ */
+
+@media (max-width: 759.98px) {
+
+  .page-hero-cont {
+    padding-inline: 20px;
+  }
+
+  .page-hero {
+    gap: 15px;
+  }
+
+  .page-hero__title {
+    font-size: 25px;
+    font-weight: 500;
+    line-height: 25px;
+    letter-spacing: -0.25px;
+  }
+
+  .page-hero__lead {
+    font-size: 16px;
+    line-height: 20px;
+  }
+
+  .services-cont {
+    padding-inline: 20px;
+    padding-block: 30px;
+  }
+
+  .services__grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .service-card {
+    padding: 20px;
+  }
+
+  .consilium-title {
+    gap: 20px;
+  }
+
+  .consilium-bar {
+    flex-direction: column;
+    gap: 10px;
+    height: auto;
+    padding: 20px;
+    border-radius: var(--lb-radius-md);
+  }
+
+  .consilium-bar__item {
+    font-size: 18px;
+    line-height: 20px;
+    white-space: normal;
+    text-align: center;
+  }
+
+  .consilium-bar__sep {
+    width: 50px;
+    height: 1px;
+  }
+
+  .consilium-bar__sep::before {
+    position: static;
+    width: 100%;
+    height: 1px;
+  }
+
+  .find-us__head {
+    gap: 20px;
+  }
+
+  /* Фотографии клиники пролистываются как слайдер */
+  .find-us__photos {
+    gap: 10px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+  }
+
+  .find-us__photos::-webkit-scrollbar {
+    display: none;
+  }
+
+  .find-us__photo {
+    flex: 0 0 260px;
+    width: 260px;
+    scroll-snap-align: start;
+  }
+}
+
+/* =========================================================================
+   Продуктовая страница «Консилиум» (product.html)
+   ========================================================================= */
+
+/* --------------------------- Обложка страницы --------------------------- */
+
+.phero-cont {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 20px;
+}
+
+.phero {
+  position: relative;
+  width: 100%;
+  height: 700px;
+  border-radius: var(--lb-radius-lg);
+  overflow: hidden;
+}
+
+.phero__bg {
+  position: absolute;
+  inset: 0;
+  border-radius: var(--lb-radius-lg);
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.phero__bg-base {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  object-fit: cover;
+}
+
+.phero__bg-tint {
+  position: absolute;
+  inset: 0;
+  background: rgba(32, 36, 38, 0.7);
+}
+
+/* Второй, зеркальный слой фотографии с затемнением слева */
+.phero__bg-layer {
+  display: block;
+  position: absolute;
+  left: calc(50% + 35px);
+  top: calc(50% - 0.5px);
+  width: 1350px;
+  height: 727px;
+  transform: translate(-50%, -50%) scaleX(-1);
+  overflow: hidden;
+}
+
+.phero__bg-layer img {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 80.74%;
+  height: 100%;
+  max-width: none;
+}
+
+.phero__bg-layer::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to left, #2f3438 20.333%, rgba(47, 52, 56, 0) 100%);
+}
+
+.phero__text {
+  position: absolute;
+  inset: 0;
+  color: var(--lb-white);
+}
+
+.phero__text > * {
+  position: absolute;
+  left: 50px;
+  margin: 0;
+}
+
+.phero__title {
+  top: 61px;
+  width: 740px;
+  font-family: var(--lb-font-title);
+  font-size: 50px;
+  font-weight: 400;
+  line-height: 50px;
+  letter-spacing: -0.5px;
+}
+
+.phero__lead {
+  top: 241px;
+  width: 680px;
+  height: 60px;
+  font-family: var(--lb-font-title);
+  font-size: 20px;
+  font-weight: 300;
+  line-height: 28px;
+}
+
+.phero__pill {
+  top: 321px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0 14px;
+  min-height: 50px;
+  padding: 10px 27px;
+  border-radius: 1000px;
+  background: var(--lb-sand-button);
+}
+
+.phero__pill-item {
+  font-family: var(--lb-font-text);
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 20px;
+  color: var(--lb-slate);
+}
+
+.phero__pill-price {
+  font-family: var(--lb-font-text);
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 20px;
+  color: var(--lb-orange);
+}
+
+.phero__list {
+  top: 401px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 0;
+  list-style: none;
+}
+
+.phero__list li {
+  position: relative;
+  padding-left: 30px;
+  font-family: var(--lb-font-text);
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 22px;
+}
+
+.phero__list img {
+  position: absolute;
+  left: 0;
+  top: 1px;
+  width: 20px;
+  height: 20px;
+}
+
+.phero__buttons {
+  top: 527px;
+  display: flex;
+  align-items: flex-start;
+  width: 740px;
+}
+
+.phero__badges {
+  top: 617px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  font-family: var(--lb-font-text);
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 22px;
+}
+
+/* ------------------------ Вариации общих блоков ------------------------ */
+
+/* Подзаголовок секции стилем p1 (20/28) */
+.section-title__sub--loose {
+  line-height: 28px;
+}
+
+.section-title__sub--narrow {
+  width: 918px;
+  max-width: 100%;
+}
+
+.section-title__sub--nowrap {
+  width: auto;
+}
+
+/* Тело аккордеона одним текстовым потоком: пустая строка вместо отступа */
+.diagnosis-card__body--flow {
+  gap: 0;
+}
+
+.diagnosis-card__body--flow ul {
+  margin: 0;
+}
+
+.diagnosis-card__body--flow p {
+  margin-top: 22px;
+}
+
+.doctor-card__note {
+  width: 100%;
+  font-family: var(--lb-font-text);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  color: var(--lb-graphite);
+  opacity: 0.5;
+}
+
+/* --------------------------- Что вы получите --------------------------- */
+
+.gains-cont {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-block: 40px;
+}
+
+.gains {
+  position: relative;
+  width: 100%;
+  height: 616px;
+}
+
+.gains__media {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: calc(100% - 752px);
+  height: 616px;
+  border-radius: 40px;
+  background: var(--lb-dark-hover);
+  overflow: hidden;
+}
+
+.gains__media img {
+  position: absolute;
+  left: 0;
+  top: 110px;
+  width: 528px;
+  height: 402px;
+  max-width: none;
+  object-fit: cover;
+}
+
+.gains__content {
+  position: absolute;
+  right: 0;
+  top: 56px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 667px;
+}
+
+.gains__title {
+  font-family: var(--lb-font-title);
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 30px;
+  letter-spacing: -0.3px;
+  color: var(--lb-graphite);
+}
+
+.gains__lead {
+  font-family: var(--lb-font-title);
+  font-size: 20px;
+  font-weight: 300;
+  line-height: 28px;
+  color: var(--lb-muted);
+}
+
+.gains__list {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin: 20px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* Светлая дорожка на всю высоту списка, x = 695 по макету */
+.gains__list::before {
+  content: "";
+  position: absolute;
+  left: 2px;
+  top: 0;
+  width: 2px;
+  height: 100%;
+  border-radius: 1000px;
+  background: var(--lb-soft-sand);
+}
+
+.gain-item {
+  position: relative;
+  padding-left: 32px;
+}
+
+.gain-item__bar {
+  position: absolute;
+  left: 2px;
+  top: 0;
+  width: 2px;
+  height: 28px;
+  border-radius: 1000px;
+  background: var(--lb-orange);
+}
+
+.gain-item__num {
+  position: absolute;
+  left: 32px;
+  top: 0;
+  font-family: var(--lb-font-title);
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 28px;
+  color: var(--lb-orange);
+}
+
+.gain-item__title {
+  margin-left: 23px;
+  width: 612px;
+  font-family: var(--lb-font-title);
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 28px;
+  color: #000;
+}
+
+.gain-item__text {
+  margin-top: 8px;
+  width: 635px;
+  font-family: var(--lb-font-text);
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 22px;
+  color: var(--lb-muted);
+}
+
+.gain-item--two-line .gain-item__text {
+  margin-top: 16px;
+}
+
+/* ---------------------- Почему мы работаем именно так ---------------------- */
+
+.flow {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+}
+
+.flow__cards {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  width: 100%;
+}
+
+.flow__arrow {
+  flex: 0 0 auto;
+  width: 32px;
+  height: 32px;
+}
+
+.flow__note {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 20px;
+  border-radius: var(--lb-radius-lg);
+  background: var(--lb-sand-button);
+  font-family: var(--lb-font-title);
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 25px;
+  text-align: center;
+  color: var(--lb-graphite);
+}
+
+/* Обводка нарисована внутрь, чтобы высота блока осталась 65px */
+.flow__note--outline {
+  background: var(--lb-white);
+  box-shadow: inset 0 0 0 1px var(--lb-orange);
+}
+
+.role-card {
+  display: flex;
+  flex: 1 0 0;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
+  min-width: 0;
+  padding: 30px;
+  border-radius: var(--lb-radius-lg);
+  background: var(--lb-white);
+}
+
+.role-card__name {
+  width: 100%;
+  font-family: var(--lb-font-title);
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 28px;
+  color: #000;
+}
+
+.role-card__num {
+  color: var(--lb-orange);
+}
+
+.role-card__divider {
+  display: block;
+  flex: 0 0 auto;
+  width: 90px;
+  height: 2px;
+  border-radius: 1000px;
+  background: var(--lb-orange);
+}
+
+.role-card__text {
+  width: 100%;
+  font-family: var(--lb-font-text);
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 22px;
+  color: var(--lb-muted);
+}
+
+.compare {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  width: 100%;
+}
+
+.compare__col {
+  display: flex;
+  flex: 0 0 auto;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.compare__title {
+  width: 612px;
+  font-family: var(--lb-font-title);
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 28px;
+  text-align: center;
+  color: #000;
+}
+
+.compare__divider {
+  display: block;
+  width: 90px;
+  height: 2px;
+  border-radius: 1000px;
+  background: var(--lb-orange);
+}
+
+.compare__text {
+  width: 635px;
+  font-family: var(--lb-font-text);
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 22px;
+  text-align: center;
+  color: var(--lb-muted);
+}
+
+/* На узком десктопе колонки делят строку поровну; на 1440 это 612 / 635 как в макете */
+@media (min-width: 1200px) {
+
+  .compare__col {
+    flex: 1 1 0;
+    min-width: 0;
+  }
+
+  .compare__title {
+    width: 100%;
+    max-width: 612px;
+  }
+
+  .compare__text {
+    width: 100%;
+    max-width: 635px;
+  }
+}
+
+/* Линия нулевой высоты — как в макете */
+.pp-hr {
+  position: relative;
+  width: 100%;
+  height: 0;
+  margin: 0;
+  border: 0;
+  opacity: 1;
+  overflow: visible;
+}
+
+.pp-hr::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: -1px;
+  height: 1px;
+  background: var(--lb-sand-border);
+}
+
+.cta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  width: 100%;
+}
+
+.cta__title {
+  width: 100%;
+  font-family: var(--lb-font-title);
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 25px;
+  text-align: center;
+  color: var(--lb-graphite);
+}
+
+.cta__button {
+  width: 634px;
+  max-width: 100%;
+}
+
+/* --------------------------- Как всё происходит --------------------------- */
+
+.steps-cont {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-block: 40px;
+}
+
+.steps-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 50px;
+  width: 100%;
+  padding: 50px 30px;
+  border-radius: var(--lb-radius-lg);
+  background: var(--lb-white);
+  /* линии таймлайна по макету выходят за карточки этапов, но не за секцию */
+  overflow: hidden;
+}
+
+.steps {
+  display: flex;
+  align-items: flex-start;
+  gap: 30px;
+  width: 100%;
+  margin: 0;
+  padding-left: 30px;
+  list-style: none;
+}
+
+.step-card {
+  display: flex;
+  flex: 1 0 0;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  min-width: 0;
+}
+
+.step-card__num {
+  font-family: var(--lb-font-title);
+  font-size: 60px;
+  font-weight: 200;
+  line-height: 60px;
+  color: var(--lb-orange);
+}
+
+.step-card__name {
+  width: 100%;
+  font-family: var(--lb-font-title);
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 28px;
+  color: #000;
+}
+
+.step-card__line {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+}
+
+.step-card__rule {
+  flex: 0 0 auto;
+  width: var(--rule);
+  height: 2px;
+  border-radius: 1000px;
+  background: var(--lb-orange);
+}
+
+/* Длина линии таймлайна у каждого шага своя — как в макете */
+.steps > li:nth-child(1) .step-card__rule { --rule: 127px; }
+.steps > li:nth-child(2) .step-card__rule { --rule: 590px; }
+.steps > li:nth-child(3) .step-card__rule { --rule: 246px; }
+.steps > li:nth-child(4) .step-card__rule { --rule: 102px; }
+.steps > li:nth-child(5) .step-card__rule { --rule: 162px; }
+
+.step-card__label {
+  flex: 0 0 auto;
+  font-family: var(--lb-font-title);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  color: var(--lb-orange);
+}
+
+.step-card__label--hidden {
+  opacity: 0;
+}
+
+.step-card__text {
+  margin-top: 10px;
+  width: 100%;
+  font-family: var(--lb-font-text);
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 22px;
+  color: var(--lb-muted);
+}
+
+/* ------------------------ Что входит в консилиум ------------------------ */
+
+.includes-cont {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 20px;
+}
+
+.includes-cont > .diagnostics {
+  padding-block: 40px;
+}
+
+.includes {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  width: 100%;
+}
+
+.includes__cards {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  width: 100%;
+}
+
+.includes__note {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 25px;
+  width: 100%;
+  padding: 20px;
+  border-radius: var(--lb-radius-lg);
+  background: var(--lb-sand-button);
+  text-align: center;
+}
+
+.includes__note-title {
+  width: 100%;
+  font-family: var(--lb-font-title);
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 25px;
+  color: var(--lb-graphite);
+}
+
+.includes__note-text {
+  width: 100%;
+  font-family: var(--lb-font-text);
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 22px;
+  color: var(--lb-muted);
+}
+
+/* -------------------------------- Отзыв -------------------------------- */
+
+.review {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 30px;
+  width: 100%;
+  margin: 0;
+  padding: 40px;
+  border-radius: var(--lb-radius-md);
+  background: var(--lb-white);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
+}
+
+.review__icon {
+  flex: 0 0 auto;
+  width: 50px;
+  height: 50px;
+}
+
+.review__body {
+  display: flex;
+  flex: 1 0 0;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
+  min-width: 0;
+}
+
+.review__text {
+  margin: 0;
+  width: 100%;
+  font-family: var(--lb-font-title);
+  font-size: 30px;
+  font-weight: 300;
+  line-height: 35px;
+  color: #000;
+}
+
+.review__footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.review__author {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--lb-font-text);
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 22px;
+  color: var(--lb-graphite);
+}
+
+.review__author span {
+  opacity: 0.5;
+}
+
+.review__link {
+  background: transparent;
+}
+
+/* ---------------------------- Частые вопросы ---------------------------- */
+
+.faq-cont {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-block: 40px;
+}
+
+.faq {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+  width: 100%;
+}
+
+.faq__list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 850px;
+  max-width: 100%;
+}
+
+.faq-item {
+  width: 100%;
+}
+
+.faq-item__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  width: 100%;
+  text-align: left;
+}
+
+.faq-item__q {
+  font-family: var(--lb-font-title);
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 25px;
+  color: #000;
+}
+
+.faq-item__num {
+  color: var(--lb-orange);
+}
+
+.faq-item__icon {
+  position: relative;
+  flex: 0 0 auto;
+  width: 25px;
+  height: 25px;
+}
+
+.faq-item__icon img {
+  position: absolute;
+  inset: 0;
+  width: 25px;
+  height: 25px;
+}
+
+.faq-item__head:not(.collapsed) .faq-item__icon-plus,
+.faq-item__head.collapsed .faq-item__icon-minus {
+  opacity: 0;
+}
+
+.faq-item__body {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
+  padding-top: 20px;
+}
+
+.faq-item__body p {
+  font-family: var(--lb-font-text);
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 22px;
+  color: var(--lb-muted);
+}
+
+.faq-item__line {
+  position: relative;
+  display: block;
+  margin-top: 20px;
+  height: 0;
+}
+
+.faq-item__line::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: -1px;
+  height: 1px;
+  background: var(--lb-sand-border);
+}
+
+/* -------------------- Продуктовая страница: планшет 760 -------------------- */
+
+@media (max-width: 1199.98px) {
+
+  .br-desk {
+    display: none;
+  }
+
+  /* ------- Обложка ------- */
+  .page-product .phero {
+    display: flex;
+    align-items: flex-end;
+    padding: 60px 20px 20px;
+  }
+
+  /* На 760 вместо зеркального слоя — сплошная заливка */
+  .page-product .phero__bg-layer {
+    display: none;
+  }
+
+  .page-product .phero__bg-tint {
+    background: rgba(47, 52, 56, 0.7);
+  }
+
+  .page-product .phero__text {
+    position: relative;
+    inset: auto;
+    display: flex;
+    flex: 1 0 0;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 20px;
+    min-width: 0;
+  }
+
+  .page-product .phero__text > * {
+    position: static;
+    width: 100%;
+  }
+
+  .page-product .phero__title {
+    font-size: 44px;
+    line-height: 50px;
+    letter-spacing: -0.44px;
+  }
+
+  .page-product .phero__lead {
+    height: 44px;
+    font-family: var(--lb-font-text);
+    font-size: 16px;
+    line-height: 22px;
+  }
+
+  .page-product .phero__pill {
+    width: auto;
+  }
+
+  .page-product .phero__list {
+    width: auto;
+  }
+
+  .page-product .phero__badges {
+    width: auto;
+  }
+
+  .page-product .phero__btn-tail {
+    display: none;
+  }
+
+  .page-product .phero__buttons .btn-big {
+    width: 100%;
+  }
+
+  /* ------- Общие блоки страницы ------- */
+  .page-product .diagnostics-cont,
+  .page-product .gains-cont,
+  .page-product .steps-cont {
+    padding-block: 30px;
+  }
+
+  .page-product .section-title__sub--loose {
+    width: 100%;
+    font-family: var(--lb-font-text);
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 22px;
+  }
+
+  .page-product .section-title__sub--nowrap {
+    white-space: normal;
+  }
+
+  /* ------- Узнаёте свою ситуацию ------- */
+  .page-product .big-cards,
+  .page-product .big-cards__line {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .page-product .diagnosis-card__head {
+    min-height: 0;
+    padding: 20px 30px;
+    gap: 20px;
+  }
+
+  .page-product .diagnosis-card__body {
+    padding: 22px 30px 20px;
+  }
+
+  /* ------- Что вы получите ------- */
+  .page-product .gains {
+    height: auto;
+  }
+
+  .page-product .gains__media {
+    display: none;
+  }
+
+  .page-product .gains__content {
+    position: static;
+    width: 100%;
+  }
+
+  .page-product .gains__title {
+    width: 100%;
+    text-align: center;
+    white-space: normal;
+  }
+
+  .page-product .gains__lead {
+    width: 100%;
+    text-align: center;
+    font-family: var(--lb-font-text);
+    font-size: 16px;
+    line-height: 22px;
+  }
+
+  .page-product .gains__list {
+    margin-top: 30px;
+    width: 667px;
+    max-width: 100%;
+  }
+
+  /* Светлая дорожка есть и в макетах 760/360 */
+  .page-product .gains__list::before {
+    left: 2px;
+  }
+
+  /* ------- Почему мы работаем именно так ------- */
+  .page-product .flow__cards {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+  }
+
+  .page-product .flow__cards .role-card {
+    flex: 0 0 auto;
+  }
+
+  .page-product .flow__cards .role-card {
+    padding: 20px 30px;
+    gap: 10px;
+  }
+
+  /* На 760 обводка рисуется наружу — блок становится 67px */
+  .page-product .flow__note--outline {
+    box-shadow: none;
+    border: 1px solid var(--lb-orange);
+  }
+
+  .page-product .compare {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .page-product .pp-hr {
+    display: none;
+  }
+
+  .page-product .cta__button {
+    width: 100%;
+  }
+
+  /* ------- Как всё происходит ------- */
+  .page-product .steps-card {
+    padding: 40px 20px;
+  }
+
+  .page-product .steps {
+    gap: 20px;
+    padding-left: 0;
+  }
+
+  .page-product .step-card__name {
+    height: 56px;
+  }
+
+  .page-product .steps > li:nth-child(1) .step-card__rule {
+    --rule: 37px;
+  }
+
+  .page-product .steps > li:nth-child(2) .step-card__rule {
+    --rule: 314px;
+  }
+
+  .page-product .steps > li:nth-child(5) .step-card__rule {
+    --rule: 75px;
+  }
+
+  .page-product .steps > li:nth-child(3) .step-card__rule,
+  .page-product .steps > li:nth-child(4) .step-card__rule {
+    display: none;
+  }
+
+  .page-product .steps > li:nth-child(4) .step-card__line {
+    justify-content: flex-end;
+  }
+
+  .page-product .steps > li:nth-child(1) .step-card__label,
+  .page-product .steps > li:nth-child(4) .step-card__label,
+  .page-product .steps > li:nth-child(5) .step-card__label {
+    font-size: 12px;
+    line-height: 17px;
+  }
+
+  /* ------- Что входит в консилиум ------- */
+  .page-product .includes-cont {
+    padding-block: 30px;
+  }
+
+  .page-product .includes-cont > .diagnostics {
+    padding-block: 0;
+    gap: 30px;
+  }
+
+  .page-product .includes__cards {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .page-product .includes .consilium-bar {
+    gap: 0 64px;
+  }
+
+  .page-product .contacts .consilium-bar {
+    gap: 0 44px;
+  }
+
+  /* ------- Врачи и отзыв ------- */
+  .page-product .team-cont {
+    padding-top: 30px;
+    padding-bottom: 50px;
+  }
+
+  .page-product .team {
+    gap: 20px;
+  }
+
+  .page-product .team__track {
+    flex-wrap: wrap;
+  }
+
+  .page-product .doctor-card {
+    flex: 0 0 calc(50% - 5px);
+    gap: 20px;
+  }
+
+  .page-product .doctor-card--extra {
+    display: flex;
+  }
+
+  .page-product .doctor-card__img {
+    height: 330px;
+  }
+
+  .page-product .doctor-card__info {
+    padding: 0;
+    gap: 20px;
+  }
+
+  .page-product .review {
+    gap: 0;
+    padding: 30px;
+  }
+
+  .page-product .review__icon {
+    display: none;
+  }
+
+  .page-product .review__text {
+    font-size: 24px;
+    line-height: 30px;
+  }
+
+  .page-product .review__author {
+    gap: 6px;
+  }
+
+  /* ------- Частые вопросы ------- */
+  .page-product .faq-cont {
+    padding-top: 30px;
+    padding-bottom: 50px;
+  }
+
+  .page-product .faq__list {
+    width: 100%;
+  }
+
+  /* ------- Контакты и подвал ------- */
+  .page-product .contacts-cont {
+    padding-top: 60px;
+    padding-bottom: 20px;
+  }
+
+  .page-product .consilium-title {
+    gap: 20px;
+  }
+
+  .page-product .know-card__main {
+    gap: 20px;
+  }
+
+  .page-product .know-card__title {
+    gap: 12px;
+  }
+
+  .page-product .find-us {
+    gap: 40px;
+  }
+
+  .page-product .find-us__photos {
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    gap: 20px;
+  }
+
+  .page-product .find-us__photos::-webkit-scrollbar {
+    display: none;
+  }
+
+  .page-product .find-us__photo {
+    flex: 0 0 386px;
+    width: 386px;
+    height: 257px;
+    aspect-ratio: auto;
+    scroll-snap-align: start;
+  }
+
+  .page-product .footer-cont {
+    padding-top: 40px;
+    padding-bottom: 60px;
+  }
+}
+
+/* -------------------- Продуктовая страница: мобильный 360 -------------------- */
+
+@media (max-width: 759.98px) {
+
+  /* ------- Обложка: картинка отдельным блоком, текст под ней ------- */
+  .page-product .phero-cont {
+    gap: 20px;
+    padding-inline: 20px;
+    padding-bottom: 30px;
+  }
+
+  .page-product .phero {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 20px;
+    height: auto;
+    padding: 0;
+    border-radius: 0;
+    overflow: visible;
+  }
+
+  .page-product .phero__bg {
+    position: static;
+    height: 230px;
+  }
+
+  .page-product .phero__bg-base {
+    position: static;
+    width: 100%;
+    height: 100%;
+  }
+
+  .page-product .phero__bg-tint {
+    display: none;
+  }
+
+  .page-product .phero__text {
+    position: static;
+    flex: 0 0 auto;
+    gap: 15px;
+    color: var(--lb-graphite);
+  }
+
+  .page-product .phero__title {
+    font-size: 25px;
+    font-weight: 500;
+    line-height: 25px;
+    letter-spacing: -0.25px;
+    color: #000;
+  }
+
+  .page-product .phero__lead {
+    height: auto;
+    font-size: 16px;
+    line-height: 20px;
+    color: var(--lb-graphite);
+  }
+
+  .page-product .phero__pill {
+    width: 100%;
+    gap: 8px;
+  }
+
+  .page-product .phero__pill-item,
+  .page-product .phero__pill-price {
+    font-size: 14px;
+  }
+
+  .page-product .phero__list {
+    width: 100%;
+  }
+
+  .page-product .phero__list li {
+    width: 100%;
+    white-space: normal;
+    color: var(--lb-graphite);
+  }
+
+  .page-product .phero__btn-tail {
+    display: inline;
+  }
+
+  .page-product .phero__badges {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    color: var(--lb-muted);
+  }
+
+  .page-product .phero__badge-sep {
+    display: none;
+  }
+
+  .page-product .phero__badge::before {
+    content: "• ";
+  }
+
+  /* ------- Общие отступы секций ------- */
+  .page-product .diagnostics-cont,
+  .page-product .gains-cont,
+  .page-product .includes-cont,
+  .page-product .faq-cont,
+  .page-product .team-cont {
+    padding-inline: 20px;
+    padding-block: 30px;
+  }
+
+  .page-product .steps-cont,
+  .page-product .contacts-cont {
+    padding-inline: 20px;
+    padding-block: 40px;
+  }
+
+  .page-product .diagnostics,
+  .page-product .team {
+    gap: 20px;
+  }
+
+  /* p1 Mob */
+  .page-product .section-title__sub--loose {
+    font-family: var(--lb-font-title);
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 18px;
+  }
+
+  /* ------- Узнаёте свою ситуацию ------- */
+  .page-product .big-cards-frame {
+    padding: 20px;
+  }
+
+  .page-product .diagnosis-card__head {
+    position: relative;
+    min-height: 0;
+    gap: 10px;
+    padding: 20px;
+  }
+
+  .page-product .diagnosis-card__footer {
+    display: contents;
+  }
+
+  .page-product .diagnosis-card__title,
+  .page-product .diagnosis-card__desc {
+    width: 220px;
+    max-width: 100%;
+  }
+
+  .page-product .diagnosis-card__chevron {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    /* сброс margin-top из общего мобильного правила: центрируем через transform */
+    margin-top: 0;
+    transform: translateY(-50%);
+  }
+
+  .page-product .diagnosis-card__head:not(.collapsed) .diagnosis-card__chevron {
+    transform: translateY(-50%) rotate(180deg);
+  }
+
+  .page-product .diagnosis-card__body {
+    padding: 22px 20px 20px;
+  }
+
+  .page-product .diagnosis-card,
+  .page-product .diagnosis-card__head {
+    border-radius: var(--lb-radius-md);
+  }
+
+  /* p1 bold Mob */
+  .page-product .diagnosis-card__title {
+    font-size: 18px;
+    line-height: 20px;
+  }
+
+  /* ------- Что вы получите ------- */
+  .page-product .gains__title {
+    font-size: 20px;
+    line-height: 20px;
+    letter-spacing: -0.2px;
+  }
+
+  .page-product .gains__lead {
+    font-family: var(--lb-font-title);
+    font-size: 16px;
+    line-height: 18px;
+  }
+
+  /* На мобильном абзац идёт сплошным текстом */
+  .page-product .gains__lead br {
+    display: none;
+  }
+
+  .page-product .gains__list {
+    margin-top: 10px;
+    width: 100%;
+  }
+
+  .page-product .gain-item {
+    padding-left: 16px;
+  }
+
+  .page-product .gain-item__num {
+    position: static;
+    display: inline;
+    font-size: inherit;
+    line-height: inherit;
+  }
+
+  .page-product .gain-item__title {
+    margin-left: 0;
+    width: 100%;
+    font-size: 16px;
+    line-height: 22px;
+  }
+
+  /* p1 Mob */
+  .page-product .gain-item__text,
+  .page-product .gain-item--two-line .gain-item__text {
+    margin-top: 6px;
+    width: 100%;
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  /* ------- Почему мы работаем именно так ------- */
+  .page-product .role-card {
+    padding: 20px;
+    gap: 20px;
+  }
+
+  .page-product .flow__cards .role-card {
+    gap: 10px;
+  }
+
+  .page-product .role-card__name {
+    line-height: 25px;
+  }
+
+  /* p1 Mob */
+  .page-product .role-card__text,
+  .page-product .compare__text,
+  .page-product .know-card__text {
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  .page-product .flow__note {
+    font-size: 20px;
+    line-height: 28px;
+  }
+
+  .page-product .compare__title,
+  .page-product .compare__text {
+    width: 100%;
+  }
+
+  .page-product .compare__title {
+    line-height: 25px;
+  }
+
+  .page-product .cta {
+    gap: 20px;
+  }
+
+  .page-product .cta__title {
+    line-height: 28px;
+  }
+
+  .page-product .flow {
+    gap: 10px;
+  }
+
+  .page-product .diagnostics > .flow,
+  .page-product .diagnostics > .compare {
+    margin-bottom: 10px;
+  }
+
+  /* ------- Как всё происходит ------- */
+  .page-product .steps-card {
+    padding: 30px 20px;
+    gap: 30px;
+  }
+
+  .page-product .steps {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .page-product .step-card {
+    flex: 0 0 auto;
+    width: 100%;
+  }
+
+  .page-product .step-card__num {
+    font-size: 40px;
+    line-height: 40px;
+  }
+
+  .page-product .step-card__name {
+    height: auto;
+    margin-top: 4px;
+    font-size: 20px;
+    line-height: 20px;
+  }
+
+  .page-product .step-card__line {
+    margin-top: 4px;
+  }
+
+  .page-product .step-card__text {
+    margin-top: 0;
+    line-height: 20px;
+  }
+
+  /* Линия тянется на всю строку, подпись прижата вправо */
+  .page-product .steps .step-card__rule {
+    display: block;
+    flex: 1 1 auto;
+    width: auto;
+  }
+
+  .page-product .steps .step-card__label {
+    font-size: 12px;
+    line-height: 17px;
+  }
+
+  .page-product .step-card__label--hidden {
+    opacity: 1;
+  }
+
+  /* ------- Что входит в консилиум ------- */
+  .page-product .includes-cont > .diagnostics {
+    gap: 20px;
+  }
+
+  .page-product .includes {
+    gap: 20px;
+  }
+
+  .page-product .includes__cards {
+    gap: 16px;
+  }
+
+  .page-product .includes__note-title {
+    font-size: 20px;
+    line-height: 28px;
+  }
+
+  .page-product .includes__note-text {
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  .page-product .includes .consilium-bar,
+  .page-product .contacts .consilium-bar {
+    flex-direction: row;
+    gap: 8px;
+    height: 50px;
+    padding: 10px 27px;
+    border-radius: 1000px;
+  }
+
+  .page-product .consilium-bar__item {
+    font-family: var(--lb-font-text);
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 20px;
+    color: var(--lb-slate);
+  }
+
+  .page-product .consilium-bar__item--price {
+    font-weight: 600;
+    color: var(--lb-orange);
+  }
+
+  .page-product .consilium-bar__sep {
+    width: 0;
+    height: 20px;
+  }
+
+  .page-product .consilium-bar__sep::before {
+    position: absolute;
+    left: -0.5px;
+    width: 1px;
+    height: 100%;
+  }
+
+  /* ------- Врачи и отзыв ------- */
+  .page-product .team .section-title {
+    margin-bottom: 0;
+  }
+
+  .page-product .team__track {
+    flex-direction: column;
+    flex-wrap: nowrap;
+    gap: 20px;
+  }
+
+  .page-product .doctor-card {
+    flex: 0 0 auto;
+    width: 100%;
+    gap: 20px;
+  }
+
+  .page-product .doctor-card--extra {
+    display: none;
+  }
+
+  .page-product .doctor-card__img {
+    height: 330px;
+  }
+
+  .page-product .doctor-card__info {
+    padding: 0;
+    gap: 20px;
+  }
+
+  .page-product .review {
+    padding: 20px;
+  }
+
+  .page-product .review__text {
+    font-size: 20px;
+    line-height: 24px;
+  }
+
+  .page-product .review__footer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+
+  .page-product .review__author {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+  }
+
+  .page-product .review__author span:nth-child(2) {
+    display: none;
+  }
+
+  .page-product .review__link {
+    width: 100%;
+  }
+
+  /* ------- Частые вопросы ------- */
+  .page-product .faq {
+    gap: 30px;
+  }
+
+  .page-product .faq-item__head {
+    gap: 25px;
+  }
+
+  .page-product .faq-item__q {
+    font-size: 18px;
+    line-height: 25px;
+  }
+
+  .page-product .faq-item__body p {
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  /* ------- Контакты и подвал ------- */
+  .page-product .contacts {
+    padding: 30px 20px;
+  }
+
+  .page-product .consilium-title {
+    gap: 30px;
+  }
+
+  .page-product .know-card {
+    padding: 20px;
+  }
+
+  .page-product .know-card__main {
+    gap: 20px;
+  }
+
+  .page-product .know-card__title {
+    gap: 25px;
+  }
+
+  .page-product .find-us {
+    gap: 40px;
+  }
+
+  .page-product .find-us__head {
+    gap: 20px;
+  }
+
+  .page-product .find-us__photos {
+    gap: 10px;
+  }
+
+  .page-product .find-us__photo {
+    flex: 0 0 240px;
+    width: 240px;
+    height: 160px;
+  }
+
+  .page-product .map-bar__route {
+    width: 100%;
+  }
+
+  .page-product .footer-cont {
+    padding-top: 40px;
+    padding-bottom: 60px;
+  }
+}
+
+/* =========================================================================
+   Страница «Список врачей» (vrachi.html)
+   ========================================================================= */
+
+.doctors-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+  width: 100%;
+}
+
+.doctors-grid__empty,
+.prices__empty {
+  width: 100%;
+  padding-block: 40px;
+  font-family: var(--lb-font-title);
+  font-size: 20px;
+  font-weight: 300;
+  line-height: 28px;
+  text-align: center;
+  color: var(--lb-muted);
+}
+
+@media (max-width: 1199.98px) {
+
+  .doctors-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 759.98px) {
+
+  .doctors-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+/* =========================================================================
+   Страница врача (vrach.html)
+   ========================================================================= */
+
+/* Заголовок секции по левому краю */
+.section-title__heading--left {
+  text-align: left;
+}
+
+/* ------------------------ Плашка с параметрами приёма ------------------------ */
+
+.info-pill {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  min-height: 50px;
+  margin: 0;
+  padding: 10px 27px;
+  border-radius: 1000px;
+  background: var(--lb-sand-button);
+}
+
+.info-pill__item {
+  font-family: var(--lb-font-title);
+  font-size: 20px;
+  font-weight: 300;
+  line-height: 28px;
+  color: #000;
+}
+
+.info-pill__item--price,
+.info-pill__accent {
+  font-weight: 400;
+  color: var(--lb-orange);
+}
+
+/* ------------------------------ Маркированный список ------------------------------ */
+
+.bullet-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.bullet-list li {
+  position: relative;
+  padding-left: 16px;
+}
+
+.bullet-list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 8px;
+  height: 8px;
+  border-radius: 10px;
+  background: var(--lb-orange);
+}
+
+.bullet-list--lg li {
+  max-width: 100%;
+  font-family: var(--lb-font-title);
+  font-size: 20px;
+  font-weight: 300;
+  line-height: 28px;
+  color: var(--lb-graphite);
+}
+
+.bullet-list--lg li::before {
+  top: 10px;
+}
+
+.bullet-list--sm li {
+  font-family: var(--lb-font-text);
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 22px;
+  color: var(--lb-graphite);
+}
+
+.bullet-list--sm li::before {
+  top: 7px;
+}
+
+/* ------------------------------ Шапка врача ------------------------------ */
+
+.doc-hero-cont {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 20px;
+}
+
+.doc-hero {
+  position: relative;
+  width: 100%;
+  height: 610px;
+}
+
+.doc-hero > * {
+  position: absolute;
+  left: 0;
+  margin: 0;
+}
+
+.doc-hero__photo {
+  left: 753px;
+  right: 0;
+  top: 0;
+  width: auto;
+  height: 610px;
+  border-radius: var(--lb-radius-lg);
+  background: var(--lb-sand-border);
+  overflow: hidden;
+}
+
+.doc-hero__photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.9;
+}
+
+.doc-hero__crumbs {
+  top: 20px;
+  font-family: var(--lb-font-text);
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 20px;
+  color: var(--lb-muted);
+}
+
+.doc-hero__crumbs span {
+  color: var(--lb-orange);
+}
+
+.doc-hero__practice {
+  top: 83px;
+  width: 680px;
+  font-family: var(--lb-font-text);
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 22px;
+  color: #000;
+}
+
+.doc-hero__name {
+  top: 117px;
+  width: 692px;
+  font-family: var(--lb-font-title);
+  font-size: 50px;
+  font-weight: 400;
+  line-height: 50px;
+  letter-spacing: -0.5px;
+  color: #000;
+}
+
+.doc-hero__degree {
+  top: 235px;
+  width: 743px;
+  font-family: var(--lb-font-title);
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 28px;
+  color: var(--lb-orange);
+}
+
+.doc-hero__lead {
+  top: 283px;
+  width: 743px;
+  font-family: var(--lb-font-title);
+  font-size: 20px;
+  font-weight: 300;
+  line-height: 28px;
+  color: var(--lb-graphite);
+}
+
+.doc-hero__pill {
+  top: 387px;
+  width: 420px;
+  gap: 54px;
+  padding-inline: 30px;
+}
+
+.doc-hero__btn {
+  top: 467px;
+  width: 263px;
+  max-width: 100%;
+}
+
+/* --------------------------- Как врач помогает --------------------------- */
+
+.doc-help {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  width: 100%;
+}
+
+.doc-help__grid {
+  position: relative;
+  width: 100%;
+  height: 651px;
+}
+
+.doc-help__grid > * {
+  position: absolute;
+  margin: 0;
+}
+
+.doc-help__subtitle {
+  font-family: var(--lb-font-title);
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 29px;
+  color: #000;
+}
+
+.doc-help__subtitle--cases {
+  left: 0;
+  top: 0;
+}
+
+.doc-help__list {
+  left: 0;
+  top: 59px;
+  width: 313px;
+}
+
+.doc-help__media {
+  left: 323px;
+  right: 0;
+  top: 0;
+  width: auto;
+  height: 500px;
+  border-radius: var(--lb-radius-lg);
+  overflow: hidden;
+}
+
+.doc-help__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.doc-help__play {
+  position: absolute;
+  left: 437px;
+  top: 208px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 84px;
+  height: 84px;
+  border-radius: 14px;
+  background: var(--lb-orange);
+}
+
+.doc-help__play img {
+  width: 38px;
+  height: 38px;
+  transform: rotate(90deg);
+}
+
+.doc-help__subtitle--approach {
+  left: 323px;
+  top: 520px;
+}
+
+.doc-help__quote {
+  left: 323px;
+  top: 565px;
+  font-family: var(--lb-font-title);
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 28px;
+  color: var(--lb-orange);
+}
+
+.doc-help__text {
+  left: 323px;
+  right: 0;
+  top: 607px;
+  width: auto;
+  font-family: var(--lb-font-text);
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 22px;
+  color: var(--lb-graphite);
+}
+
+/* ------------------------ Опыт и подготовка ------------------------ */
+
+.doc-exp {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+  width: 100%;
+}
+
+.doc-exp__title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  width: 100%;
+}
+
+.doc-exp__pill {
+  justify-content: flex-start;
+  gap: 30px;
+  width: 850px;
+  max-width: 100%;
+}
+
+.doc-exp__lead {
+  width: 100%;
+  font-family: var(--lb-font-title);
+  font-size: 20px;
+  font-weight: 300;
+  line-height: 28px;
+  text-align: center;
+  color: var(--lb-muted);
+}
+
+.doc-exp__list {
+  width: 100%;
+}
+
+.faq-item--sm .faq-item__q {
+  font-size: 20px;
+  line-height: 28px;
+}
+
+/* ---------------------------- Отзывы о враче ---------------------------- */
+
+.contacts--flat {
+  align-items: center;
+  box-shadow: none;
+}
+
+.reviews {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+}
+
+.reviews__rating {
+  width: 100%;
+  border: 1.5px solid var(--lb-sand-border);
+  background: transparent;
+  color: var(--lb-orange);
+}
+
+.reviews__rating-dot {
+  font-weight: 400;
+}
+
+.reviews__row {
+  display: flex;
+  align-items: stretch;
+  gap: 10px;
+  width: 100%;
+}
+
+.review-card {
+  display: flex;
+  flex: 1 0 0;
+  flex-direction: column;
+  gap: 30px;
+  min-width: 0;
+  padding: 30px;
+  border-radius: var(--lb-radius-md);
+  background: var(--lb-warm-ivory);
+}
+
+.review-card__body {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
+  width: 100%;
+}
+
+.review-card__text {
+  width: 100%;
+  font-family: var(--lb-font-title);
+  font-size: 20px;
+  font-weight: 300;
+  line-height: 28px;
+  color: var(--lb-graphite);
+  opacity: 0.7;
+}
+
+.review-card__author {
+  width: 100%;
+  font-family: var(--lb-font-title);
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 28px;
+  color: #000;
+}
+
+.review-card__source,
+.card-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--lb-font-text);
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 20px;
+  color: var(--lb-orange);
+}
+
+/* ---------------------------- Запись к врачу ---------------------------- */
+
+.contacts--book {
+  padding: 40px 30px 30px;
+}
+
+.book-title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  width: 100%;
+}
+
+.book-title__head {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.book-title__practice {
+  font-family: var(--lb-font-title);
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 28px;
+  color: var(--lb-orange);
+}
+
+.book-title__buttons {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+}
+
+.book-title__pill {
+  flex: 1 0 0;
+  min-width: 0;
+  gap: 0 64px;
+}
+
+.book-title__btn {
+  flex: 1 0 0;
+  min-width: 0;
+}
+
+/* ------------------ Страница врача: планшет и мобильный ------------------ */
+
+@media (max-width: 1199.98px) {
+
+  /* Шапка: фотография сверху, текст под ней */
+  .doc-hero {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+    height: auto;
+  }
+
+  .doc-hero > * {
+    position: static;
+    width: 100%;
+  }
+
+  .doc-hero__photo {
+    height: 400px;
+  }
+
+  .doc-hero__name {
+    font-size: 44px;
+    line-height: 50px;
+    letter-spacing: -0.44px;
+  }
+
+  .doc-hero__pill {
+    width: 420px;
+    max-width: 100%;
+  }
+
+  /* Как врач помогает */
+  .doc-help__grid {
+    position: static;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    height: auto;
+  }
+
+  .doc-help__grid > * {
+    position: static;
+    width: 100%;
+  }
+
+  .doc-help__subtitle,
+  .doc-help__quote {
+    white-space: normal;
+  }
+
+  .doc-help__subtitle--approach {
+    margin-top: 20px;
+  }
+
+  .doc-help__media {
+    position: relative;
+    left: 0;
+    top: 0;
+    height: 400px;
+  }
+
+  .doc-help__play {
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .bullet-list--lg li,
+  .bullet-list--sm li {
+    width: 100%;
+    white-space: normal;
+  }
+
+  /* Опыт: плашка перестраивается в столбик */
+  .doc-exp__pill {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    height: auto;
+    padding: 20px;
+    border-radius: var(--lb-radius-md);
+  }
+
+  .doc-exp__pill .info-pill__sep {
+    width: 50px;
+    height: 1px;
+  }
+
+  .doc-exp__pill .info-pill__sep::before {
+    position: static;
+    display: block;
+    width: 100%;
+    height: 1px;
+  }
+
+  .book-title__head {
+    white-space: normal;
+  }
+}
+
+@media (max-width: 759.98px) {
+
+  .doc-hero {
+    gap: 15px;
+  }
+
+  .doc-hero__photo {
+    height: 330px;
+  }
+
+  .doc-hero__crumbs {
+    white-space: normal;
+  }
+
+  .doc-hero__name {
+    font-size: 25px;
+    line-height: 25px;
+    letter-spacing: -0.25px;
+  }
+
+  .doc-hero__degree {
+    font-size: 18px;
+    line-height: 24px;
+  }
+
+  .doc-hero__lead {
+    font-family: var(--lb-font-text);
+    font-size: 16px;
+    line-height: 20px;
+  }
+
+  .doc-hero__lead br {
+    display: none;
+  }
+
+  .doc-hero__pill {
+    gap: 20px;
+    padding-inline: 20px;
+  }
+
+  .doc-help__subtitle {
+    font-size: 20px;
+    line-height: 25px;
+  }
+
+  .doc-help__media {
+    height: 220px;
+  }
+
+  .doc-help__play {
+    width: 64px;
+    height: 64px;
+  }
+
+  .doc-help__play img {
+    width: 28px;
+    height: 28px;
+  }
+
+  .doc-help__quote,
+  .doc-exp__lead {
+    font-size: 18px;
+    line-height: 24px;
+  }
+
+  .doc-exp__title {
+    gap: 20px;
+  }
+
+  .faq-item--sm .faq-item__q {
+    font-size: 18px;
+    line-height: 24px;
+  }
+
+  .reviews__row {
+    flex-direction: column;
+  }
+
+  .review-card {
+    flex: 0 0 auto;
+    padding: 20px;
+    gap: 20px;
+  }
+
+  .review-card__text,
+  .review-card__author {
+    font-size: 18px;
+    line-height: 24px;
+  }
+
+  .reviews__rating {
+    height: auto;
+    padding-block: 15px;
+    white-space: normal;
+    text-align: center;
+  }
+
+  .contacts--book {
+    padding: 30px 20px;
+  }
+
+  .book-title__buttons {
+    flex-direction: column;
+  }
+
+  .book-title__pill,
+  .book-title__btn {
+    flex: 0 0 auto;
+    width: 100%;
+  }
+
+  .book-title__pill {
+    gap: 0 20px;
+  }
+}
+
+/* =========================================================================
+   Страница «Контакты» (kontakty.html)
+   ========================================================================= */
+
+/* Заголовок страницы во всю ширину контейнера */
+.page-hero__title--wide {
+  width: 100%;
+}
+
+/* ------------------------- Карточки с контактами ------------------------- */
+
+.contact-cards {
+  display: flex;
+  align-items: stretch;
+  gap: 10px;
+  width: 100%;
+}
+
+.contact-cards > .service-card {
+  flex: 1 0 0;
+  min-width: 0;
+}
+
+.service-card__divider--accent {
+  background: var(--lb-orange);
+}
+
+.contact-card__links {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+/* По макету ссылка МАКС занимает 75px, ВКонтакте — 111px: по содержимому */
+.contact-card__messengers .link-button {
+  width: auto;
+  justify-content: flex-start;
+}
+
+.contact-card__messengers {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.contact-card__text {
+  width: 100%;
+  font-family: var(--lb-font-text);
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 22px;
+  color: var(--lb-muted);
+}
+
+/* --------------------------- Блок «Как нас найти» --------------------------- */
+
+.findus-cont {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-inline: 110px;
+  padding-block: 40px;
+}
+
+.findus-page {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  width: 100%;
+}
+
+@media (max-width: 1199.98px) {
+
+  .findus-cont {
+    padding-inline: 20px;
+    padding-block: 30px;
+  }
+
+  .contact-cards {
+    flex-wrap: wrap;
+  }
+
+  .contact-cards > .service-card {
+    flex: 1 0 calc(50% - 5px);
+  }
+}
+
+@media (max-width: 759.98px) {
+
+  .contact-cards {
+    flex-direction: column;
+  }
+
+  .contact-cards > .service-card {
+    flex: 0 0 auto;
+    width: 100%;
+  }
+
+  .contact-card__links {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .findus-page {
+    gap: 20px;
+  }
+}
+
+/* =========================================================================
+   Страница «Цены на услуги» (ceny.html)
+   ========================================================================= */
+
+/* Строка с лидом и датой актуальности */
+.page-hero__row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 20px;
+  width: 100%;
+}
+
+.page-hero__row > .page-hero__lead {
+  width: auto;
+}
+
+.page-hero__note {
+  font-family: var(--lb-font-title);
+  font-size: 20px;
+  font-weight: 300;
+  line-height: 28px;
+  text-align: right;
+  color: var(--lb-muted);
+}
+
+/* ------------------------------ Фильтры ------------------------------ */
+
+.prices {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  width: 100%;
+}
+
+.prices__filters {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
+  width: 100%;
+}
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  width: 100%;
+  height: 50px;
+  padding: 10px 30px;
+  border-radius: 1000px;
+  background: var(--lb-sand-button);
+}
+
+.search-bar__icon {
+  flex: 0 0 auto;
+  width: 20px;
+  height: 20px;
+}
+
+.search-bar__input {
+  flex: 1 1 auto;
+  min-width: 0;
+  height: 20px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  font-family: var(--lb-font-text);
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 20px;
+  color: var(--lb-graphite);
+  outline: none;
+  appearance: none;
+}
+
+.search-bar__input::placeholder {
+  color: var(--lb-muted);
+  opacity: 1;
+}
+
+.search-bar__input::-webkit-search-cancel-button {
+  -webkit-appearance: none;
+}
+
+/* ------------------------- Карточки прайса ------------------------- */
+
+.prices__cards {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 10px;
+  width: 100%;
+}
+
+.price-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
+  width: 100%;
+  padding: 30px;
+  border-radius: var(--lb-radius-lg);
+  background: var(--lb-white);
+}
+
+.price-card__title {
+  width: 100%;
+  font-family: var(--lb-font-title);
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 29px;
+  color: #000;
+}
+
+.price-card__list {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+  width: 100%;
+}
+
+.price-row {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+  width: 100%;
+}
+
+.price-row__main {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  width: 100%;
+}
+
+.price-row__name {
+  flex: 1 0 0;
+  min-width: 0;
+  font-family: var(--lb-font-title);
+  font-size: 20px;
+  font-weight: 300;
+  line-height: 28px;
+  color: #000;
+}
+
+.price-row__price {
+  flex: 1 0 0;
+  min-width: 0;
+  font-family: var(--lb-font-title);
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 28px;
+  color: var(--lb-orange);
+}
+
+.price-row.is-hidden,
+.price-card.is-hidden {
+  display: none;
+}
+
+.price-row__line {
+  display: block;
+  flex: 0 0 auto;
+  width: 100%;
+  height: 2px;
+  border-radius: 1000px;
+  background: var(--lb-sand-border);
+}
+
+/* ------------------------------ Планшет ------------------------------ */
+
+@media (max-width: 1199.98px) {
+
+  .page-hero__row {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .page-hero__note {
+    text-align: left;
+  }
+
+  .prices {
+    gap: 20px;
+  }
+
+  .search-bar {
+    padding-inline: 20px;
+  }
+
+  .price-row__price {
+    flex: 0 1 auto;
+    min-width: 0;
+    text-align: right;
+  }
+}
+
+/* ------------------------------ Мобильный ------------------------------ */
+
+@media (max-width: 759.98px) {
+
+  .page-hero__row {
+    gap: 5px;
+  }
+
+  .page-hero__note {
+    font-size: 16px;
+    line-height: 20px;
+  }
+
+  .search-bar {
+    gap: 10px;
+    padding-inline: 20px;
+  }
+
+  .search-bar__input {
+    font-size: 14px;
+  }
+
+  .price-card {
+    gap: 15px;
+    padding: 20px;
+    border-radius: var(--lb-radius-md);
+  }
+
+  .price-card__title {
+    font-size: 18px;
+    line-height: 20px;
+  }
+
+  .price-card__list {
+    gap: 12px;
+  }
+
+  .price-row {
+    gap: 12px;
+  }
+
+  .price-row__main {
+    gap: 10px;
+  }
+
+  .price-row__name,
+  .price-row__price {
+    font-size: 16px;
+    line-height: 22px;
+  }
+
+  .price-row__price {
+    flex: 0 1 auto;
+    min-width: 0;
+    text-align: right;
+  }
+}
+
+/* =========================================================================
+   Страница «Отзывы» (otzyvy.html)
+   ========================================================================= */
+
+/* ------------------------ Оценки на площадках ------------------------ */
+
+.rating-cards {
+  display: flex;
+  align-items: stretch;
+  gap: 10px;
+  width: 100%;
+}
+
+.rating-card {
+  display: flex;
+  flex: 1 0 0;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
+  min-width: 0;
+  padding: 30px;
+  border-radius: var(--lb-radius-lg);
+  background: var(--lb-white);
+}
+
+.rating-card__title {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 14px;
+  width: 100%;
+}
+
+.rating-card__score {
+  width: 100%;
+  font-family: var(--lb-font-title);
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 28px;
+  color: #000;
+}
+
+.rating-card__value {
+  color: var(--lb-orange);
+}
+
+.rating-card__count {
+  width: 100%;
+  font-family: var(--lb-font-text);
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 22px;
+  color: var(--lb-muted);
+}
+
+/* -------------------------- Отзывы родителей -------------------------- */
+
+.reviews-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  width: 100%;
+}
+
+.reviews-page__rows {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+}
+
+.reviews-page__row {
+  display: flex;
+  align-items: stretch;
+  gap: 20px;
+  width: 100%;
+}
+
+.reviews-page__more {
+  width: 634px;
+  max-width: 100%;
+}
+
+.review-card--white {
+  background: var(--lb-white);
+}
+
+.review-card__meta {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+}
+
+.review-card__meta .review-card__author {
+  width: auto;
+}
+
+.review-card__dot {
+  flex: 0 0 auto;
+  width: 6px;
+  height: 6px;
+  border-radius: 10px;
+  background: var(--lb-muted);
+}
+
+.review-card__date {
+  font-family: var(--lb-font-text);
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 22px;
+  color: var(--lb-muted);
+}
+
+/* ---------------------------- Истории семей ---------------------------- */
+
+.stories {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  width: 100%;
+}
+
+.stories__rows {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+}
+
+.stories__row {
+  display: flex;
+  align-items: stretch;
+  gap: 20px;
+  width: 100%;
+}
+
+/* Фото задаёт высоту ряда: 630 x 320 на 1440.
+   Базис задан явно: у карточки есть внутренние отступы, и при flex-basis: 0
+   они прибавились бы к её доле строки. align-self исключает растягивание
+   по высоте — иначе aspect-ratio пересчитал бы ширину от высоты строки. */
+.story-photo {
+  flex: 0 0 calc(50% - 10px);
+  align-self: flex-start;
+  min-width: 0;
+  aspect-ratio: 630 / 320;
+  border-radius: var(--lb-radius-md);
+  overflow: hidden;
+  background: var(--lb-sand-border);
+}
+
+.story-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.story-card {
+  display: flex;
+  flex: 0 0 calc(50% - 10px);
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  min-width: 0;
+  padding: 30px;
+  border-radius: var(--lb-radius-md);
+  background: var(--lb-white);
+}
+
+.story-card__body {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
+  width: 100%;
+}
+
+.story-card__title {
+  width: 100%;
+  font-family: var(--lb-font-title);
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 29px;
+  color: #000;
+}
+
+.story-card__text {
+  width: 100%;
+  font-family: var(--lb-font-title);
+  font-size: 20px;
+  font-weight: 300;
+  line-height: 28px;
+  color: var(--lb-graphite);
+  opacity: 0.7;
+}
+
+/* ---------------------------- Оставить отзыв ---------------------------- */
+
+.review-cta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+}
+
+.review-cta__lead {
+  font-family: var(--lb-font-title);
+  font-size: 20px;
+  font-weight: 300;
+  line-height: 28px;
+  text-align: center;
+  color: var(--lb-graphite);
+}
+
+.review-cta__btn {
+  width: 490px;
+  max-width: 100%;
+}
+
+/* ------------------------------ Планшет ------------------------------ */
+
+@media (max-width: 1199.98px) {
+
+  .rating-cards {
+    flex-wrap: wrap;
+  }
+
+  .rating-cards > .rating-card {
+    flex: 1 0 calc(50% - 5px);
+  }
+
+  .reviews-page,
+  .stories {
+    gap: 20px;
+  }
+
+  .reviews-page__row,
+  .stories__row {
+    gap: 10px;
+  }
+
+  .story-photo,
+  .story-card {
+    flex-basis: calc(50% - 5px);
+  }
+
+  /* Высоту ряда задаёт карточка, фото подстраивается */
+  .story-photo {
+    align-self: stretch;
+    aspect-ratio: auto;
+  }
+}
+
+/* ------------------------------ Мобильный ------------------------------ */
+
+@media (max-width: 759.98px) {
+
+  .rating-cards {
+    flex-direction: column;
+  }
+
+  .rating-cards > .rating-card {
+    flex: 0 0 auto;
+    width: 100%;
+    padding: 20px;
+    border-radius: var(--lb-radius-md);
+  }
+
+  .reviews-page__row,
+  .stories__row {
+    flex-direction: column;
+  }
+
+  .review-card--white {
+    padding: 20px;
+  }
+
+  .review-card__meta {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .review-card__meta .review-card__author {
+    white-space: normal;
+  }
+
+  .story-card {
+    padding: 20px;
+  }
+
+  .story-card__title {
+    font-size: 18px;
+    line-height: 22px;
+  }
+
+  .story-card__text {
+    font-size: 16px;
+    line-height: 22px;
+  }
+
+  .story-photo,
+  .story-card {
+    flex: 0 0 auto;
+    width: 100%;
+  }
+
+  .story-photo {
+    aspect-ratio: 16 / 10;
+  }
+
+  .review-cta__lead {
+    font-size: 16px;
+    line-height: 22px;
+  }
+}
+
+/* =========================================================================
+   Страница «Акции» (akcii.html)
+   ========================================================================= */
+
+.promos {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  width: 100%;
+}
+
+.promo-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
+  width: 100%;
+  padding: 30px;
+  border-radius: var(--lb-radius-lg);
+  background: var(--lb-white);
+}
+
+.promo-card__body {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
+  width: 100%;
+}
+
+.promo-card__title {
+  width: 100%;
+  font-family: var(--lb-font-title);
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 29px;
+  color: #000;
+}
+
+.promo-card__divider {
+  display: block;
+  flex: 0 0 auto;
+  width: 90px;
+  height: 2px;
+  border-radius: 1000px;
+  background: var(--lb-orange);
+}
+
+.promo-card__cols {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  width: 100%;
+}
+
+.promo-card__col {
+  display: flex;
+  flex: 1 0 0;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  min-width: 0;
+}
+
+.promo-card__term {
+  width: 100%;
+  font-family: var(--lb-font-text);
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 22px;
+  color: #000;
+}
+
+.promo-card__text {
+  width: 100%;
+  font-family: var(--lb-font-text);
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 22px;
+  color: var(--lb-muted);
+}
+
+/* Во второй колонке текст занимает 360 из 600 — как в макете */
+.promo-card__col--terms > .promo-card__term,
+.promo-card__col--terms > .promo-card__text {
+  width: 360px;
+  max-width: 100%;
+}
+
+.promo-price {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0 20px;
+  width: 100%;
+}
+
+.promo-price__new,
+.promo-price__old {
+  font-family: var(--lb-font-title);
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 28px;
+}
+
+.promo-price__new {
+  color: var(--lb-orange);
+}
+
+.promo-price__dot {
+  flex: 0 0 auto;
+  width: 6px;
+  height: 6px;
+  border-radius: 10px;
+  background: var(--lb-muted);
+}
+
+.promo-price__old {
+  position: relative;
+  color: var(--lb-muted);
+}
+
+/* Наклонная линия поверх старой цены: 73.25 x 1, поворот 14.23° */
+.promo-price__old::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 15px;
+  width: calc(100% + 2.25px);
+  height: 1px;
+  background: var(--lb-muted);
+  transform: translate(-50%, -50%) rotate(14.23deg);
+}
+
+.promo-card__btn {
+  width: 385px;
+  max-width: 100%;
+}
+
+/* ------------------------------ Планшет ------------------------------ */
+
+@media (max-width: 1199.98px) {
+
+  .promos {
+    gap: 20px;
+  }
+
+  .promo-card__cols {
+    gap: 10px;
+  }
+
+  .promo-card__col--terms > .promo-card__term,
+  .promo-card__col--terms > .promo-card__text {
+    width: 100%;
+  }
+}
+
+/* ------------------------------ Мобильный ------------------------------ */
+
+@media (max-width: 759.98px) {
+
+  .promos {
+    gap: 10px;
+  }
+
+  .promo-card {
+    gap: 15px;
+    padding: 20px;
+    border-radius: var(--lb-radius-md);
+  }
+
+  .promo-card__body {
+    gap: 15px;
+  }
+
+  .promo-card__title {
+    font-size: 18px;
+    line-height: 22px;
+  }
+
+  .promo-card__cols {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .promo-card__col {
+    flex: 0 0 auto;
+    width: 100%;
+  }
+
+  .promo-card__term,
+  .promo-card__text {
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  .promo-price {
+    gap: 0 15px;
+  }
+
+  .promo-price__new,
+  .promo-price__old {
+    font-size: 18px;
+    line-height: 25px;
+  }
+
+  .promo-price__old::after {
+    top: 13px;
+    width: calc(100% + 2.58px);
+  }
+
+  .promo-card__btn {
+    width: 100%;
+  }
+}
+
+/* =========================================================================
+   Страница «О клинике» (o-klinike.html)
+
+   Блоки собраны на потоке (flex/grid): текст может стать длиннее, и соседние
+   элементы просто сдвинутся, а не наложатся друг на друга. Абсолютно
+   позиционированы только декоративные слои — фон шапки, пунктирное кольцо
+   и плашка поверх фотографии.
+   ========================================================================= */
+
+/* ------------------------------ Шапка ------------------------------ */
+
+.phero--about {
+  height: auto;
+  min-height: 610px;
+}
+
+.page-about .phero__bg-base {
+  top: -12.6%;
+  bottom: auto;
+  height: 139.96%;
+}
+
+.page-about .phero__bg-layer {
+  top: calc(50% + 44.5px);
+}
+
+.ahero {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  padding: 20px 50px 80px;
+  color: var(--lb-white);
+}
+
+.ahero > * {
+  margin: 0;
+}
+
+.ahero__crumbs {
+  font-family: var(--lb-font-text);
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 20px;
+  color: var(--lb-muted);
+}
+
+.ahero__crumbs span {
+  color: var(--lb-orange);
+}
+
+.ahero__eyebrow {
+  margin-top: 40px;
+  font-family: var(--lb-font-text);
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 22px;
+}
+
+.ahero__title {
+  margin-top: 12px;
+  width: 740px;
+  max-width: 100%;
+  font-family: var(--lb-font-title);
+  font-size: 50px;
+  font-weight: 400;
+  line-height: 50px;
+  letter-spacing: -0.5px;
+}
+
+.ahero__lead {
+  margin-top: 30px;
+  width: 680px;
+  max-width: 100%;
+  font-family: var(--lb-font-title);
+  font-size: 20px;
+  font-weight: 300;
+  line-height: 28px;
+}
+
+.ahero__btn {
+  margin-top: 40px;
+  width: 263px;
+  max-width: 100%;
+}
+
+.ahero__badges {
+  margin-top: 30px;
+  font-family: var(--lb-font-text);
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 22px;
+}
+
+/* --------------------- Ребёнок — больше, чем симптом --------------------- */
+
+.mind {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+  width: 100%;
+  padding: 40px;
+  border-radius: var(--lb-radius-lg);
+  background: var(--lb-sand-button);
+}
+
+.mind__intro {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+}
+
+.mind__title {
+  width: 100%;
+  font-family: var(--lb-font-title);
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 29px;
+  text-align: center;
+  color: #000;
+}
+
+.mind__text {
+  width: 100%;
+  font-family: var(--lb-font-title);
+  font-size: 20px;
+  font-weight: 300;
+  line-height: 28px;
+  text-align: center;
+  color: var(--lb-graphite);
+}
+
+/* Схема: две колонки подписей вокруг фотографии */
+.mind__map {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 64.5px;
+  width: 100%;
+}
+
+.mind__ring {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 850px;
+  height: 438px;
+  border: 2px dashed var(--lb-sand-border);
+  border-radius: 370px;
+  pointer-events: none;
+}
+
+.mind__col {
+  position: relative;
+  display: flex;
+  flex: 0 0 161px;
+  flex-direction: column;
+  align-items: center;
+  gap: 105px;
+}
+
+.mind__pill {
+  display: inline-flex;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: center;
+  min-height: 50px;
+  max-width: 100%;
+  padding: 10px 27px;
+  border-radius: 1000px;
+  background: var(--lb-soft-sand);
+  font-family: var(--lb-font-title);
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 28px;
+  text-align: center;
+  color: #000;
+}
+
+/* Средняя подпись в каждой колонке сдвинута дальше от центра */
+.mind__pill--far {
+  transform: translateX(-65px);
+}
+
+.mind__col--right .mind__pill--far {
+  transform: translateX(65px);
+}
+
+.mind__center {
+  position: relative;
+  flex: 0 0 420px;
+  height: 540px;
+  border-radius: var(--lb-radius-lg);
+  overflow: hidden;
+}
+
+.mind__center img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.mind__result {
+  position: absolute;
+  left: calc(50% - 0.5px);
+  bottom: 26px;
+  transform: translateX(-50%);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 50px;
+  width: max-content;
+  max-width: calc(100% - 20px);
+  padding: 10px 27px;
+  border-radius: 1000px;
+  background: var(--lb-orange);
+  font-family: var(--lb-font-title);
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 28px;
+  text-align: center;
+  color: var(--lb-white);
+}
+
+/* ---------------------------- Специалисты ---------------------------- */
+
+.page-about .section-title__sub {
+  line-height: 28px;
+}
+
+.page-about .team__img {
+  height: 500px;
+}
+
+.page-about .team__img img {
+  top: -26.67%;
+  height: 170.67%;
+}
+
+/* Шесть карточек в одной ленте: на десктопе сетка по три в ряд,
+   на мобильном лента превращается в слайдер */
+.page-about .team__track {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.team__more,
+.science__more,
+.reviews__more {
+  width: 634px;
+  max-width: 100%;
+}
+
+/* ------------------------- Практика и наука ------------------------- */
+
+.science-cont {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 40px;
+  padding-bottom: 60px;
+}
+
+.science {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+  width: 100%;
+}
+
+.science__grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  width: 100%;
+}
+
+.science-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
+  padding: 30px;
+  border-radius: var(--lb-radius-lg);
+  background: var(--lb-white);
+}
+
+.science-card__title {
+  width: 100%;
+  font-family: var(--lb-font-title);
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 28px;
+  color: #000;
+}
+
+.science-card__num {
+  color: var(--lb-orange);
+}
+
+.science-card__text {
+  width: 100%;
+  font-family: var(--lb-font-text);
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 22px;
+  color: var(--lb-muted);
+}
+
+/* ------------------------------ Принципы ------------------------------ */
+
+.page-about .principals-card {
+  height: auto;
+  min-height: 250px;
+}
+
+.page-about .principals-card__title {
+  gap: 20px;
+}
+
+.principals-card__num {
+  color: var(--lb-orange);
+}
+
+/* ------------------------------- Отзывы ------------------------------- */
+
+.reviews__head {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  width: 100%;
+}
+
+.reviews__ratings {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  width: 100%;
+}
+
+.reviews__ratings .reviews__rating {
+  flex: 1 0 0;
+  min-width: 0;
+  height: auto;
+  min-height: 50px;
+  white-space: normal;
+}
+
+/* ------------------------------ Планшет ------------------------------ */
+
+@media (max-width: 1199.98px) {
+
+  .ahero {
+    padding: 20px 30px 40px;
+  }
+
+  .ahero__title {
+    width: 100%;
+    font-size: 44px;
+    line-height: 50px;
+    letter-spacing: -0.44px;
+  }
+
+  .ahero__title br {
+    display: none;
+  }
+
+  .ahero__lead {
+    width: 100%;
+  }
+
+  .mind {
+    gap: 30px;
+    padding: 30px;
+  }
+
+  .mind__title {
+    font-size: 20px;
+    line-height: 25px;
+  }
+
+  .mind__text {
+    font-size: 16px;
+    line-height: 22px;
+  }
+
+  /* Схема перестраивается в колонку: подписи — строками над и под фото */
+  .mind__map {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .mind__ring {
+    display: none;
+  }
+
+  .mind__col {
+    flex: 0 0 auto;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+  }
+
+  .mind__pill--far,
+  .mind__col--right .mind__pill--far {
+    transform: none;
+  }
+
+  .mind__center {
+    flex: 0 0 auto;
+    width: 100%;
+    height: 360px;
+  }
+
+  .page-about .team__track {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .science-cont {
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+
+  .science {
+    gap: 30px;
+  }
+}
+
+/* ------------------------------ Мобильный ------------------------------ */
+
+@media (max-width: 759.98px) {
+
+  .phero--about {
+    min-height: 0;
+  }
+
+  .ahero {
+    padding: 20px 20px 30px;
+  }
+
+  .ahero__eyebrow {
+    margin-top: 25px;
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  .ahero__title {
+    margin-top: 10px;
+    font-size: 25px;
+    font-weight: 500;
+    line-height: 30px;
+    letter-spacing: -0.25px;
+  }
+
+  .ahero__lead {
+    margin-top: 20px;
+    font-size: 16px;
+    line-height: 22px;
+  }
+
+  .ahero__btn {
+    margin-top: 25px;
+    width: 100%;
+  }
+
+  .ahero__badges {
+    margin-top: 20px;
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  .mind {
+    gap: 20px;
+    padding: 20px;
+    border-radius: var(--lb-radius-md);
+  }
+
+  .mind__title {
+    font-size: 18px;
+    line-height: 22px;
+  }
+
+  .mind__text {
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  .mind__pill {
+    min-height: 40px;
+    padding: 10px 20px;
+    font-size: 16px;
+    line-height: 20px;
+  }
+
+  .mind__center {
+    height: 260px;
+  }
+
+  .mind__result {
+    min-height: 40px;
+    bottom: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    line-height: 20px;
+  }
+
+  .page-about .team__track {
+    display: flex;
+    flex-wrap: nowrap;
+  }
+
+  .page-about .doctor-card {
+    flex: 0 0 360px;
+  }
+
+  .science-cont {
+    padding-inline: 20px;
+  }
+
+  .science__grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .science-card {
+    gap: 15px;
+    padding: 20px;
+    border-radius: var(--lb-radius-md);
+  }
+
+  .science-card__title {
+    font-size: 18px;
+    line-height: 22px;
+  }
+
+  .science-card__text {
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  .reviews__head {
+    gap: 20px;
+  }
+
+  .reviews__ratings {
+    flex-direction: column;
+  }
+
+  .reviews__ratings .reviews__rating {
+    flex: 0 0 auto;
+    width: 100%;
+  }
+}
+
+/* =========================================================================
+   Страница «Статья» (statya.html)
+
+   Текст статьи приходит из админки, поэтому вся страница собрана на потоке:
+   отступы заданы margin/gap, ширины — max-width, высоты не фиксированы.
+   ========================================================================= */
+
+/* --------------------------- Шапка статьи --------------------------- */
+
+.article-hero-cont {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-block: 20px;
+}
+
+.article-hero {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.article-hero > * {
+  margin: 0;
+}
+
+.article-hero__crumbs {
+  font-family: var(--lb-font-text);
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 20px;
+  color: var(--lb-muted);
+}
+
+.article-hero__crumbs span {
+  color: var(--lb-orange);
+}
+
+.article-hero__title {
+  margin-top: 16px;
+  width: 100%;
+  font-family: var(--lb-font-title);
+  font-size: 50px;
+  font-weight: 400;
+  line-height: 50px;
+  letter-spacing: -0.5px;
+  color: #000;
+}
+
+.article-hero__lead {
+  margin-top: 30px;
+  width: 100%;
+  font-family: var(--lb-font-title);
+  font-size: 20px;
+  font-weight: 300;
+  line-height: 28px;
+  color: var(--lb-graphite);
+}
+
+.article-hero__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 50px;
+  margin-top: 20px;
+  width: 100%;
+  max-width: 958px;
+  font-family: var(--lb-font-text);
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 22px;
+  color: var(--lb-muted);
+}
+
+.article-hero__img {
+  position: relative;
+  margin-top: 40px;
+  width: 100%;
+  height: 400px;
+  border-radius: var(--lb-radius-sm);
+  overflow: hidden;
+}
+
+.article-hero__img img {
+  position: absolute;
+  left: 0;
+  top: -23.31%;
+  width: 100%;
+  height: 213.44%;
+  max-width: none;
+  object-fit: cover;
+}
+
+/* ---------------------------- Текст статьи ---------------------------- */
+
+.article {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  width: 100%;
+}
+
+.article__intro {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  width: 100%;
+}
+
+.article__col {
+  display: flex;
+  flex: 1 0 0;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 26px;
+  min-width: 0;
+}
+
+.article__h2 {
+  width: 100%;
+  font-family: var(--lb-font-title);
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 30px;
+  color: var(--lb-graphite);
+}
+
+.article__h3 {
+  width: 100%;
+  max-width: 958px;
+  font-family: var(--lb-font-title);
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 29px;
+  color: var(--lb-graphite);
+}
+
+.article__block,
+.article__section,
+.article__body {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
+  width: 100%;
+}
+
+.article__body {
+  max-width: 980px;
+}
+
+.article__text {
+  width: 100%;
+  max-width: 958px;
+  font-family: var(--lb-font-text);
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 22px;
+  color: var(--lb-graphite);
+}
+
+.article__btn {
+  width: 367px;
+  max-width: 100%;
+}
+
+/* Содержание */
+.article-toc {
+  display: flex;
+  flex: 0 0 312px;
+  flex-direction: column;
+  align-items: flex-start;
+  align-self: flex-start;
+  gap: 12px;
+  min-width: 0;
+  padding: 20px;
+  border-radius: var(--lb-radius-lg);
+  background: var(--lb-soft-sand);
+}
+
+.article-toc__link {
+  width: 100%;
+  font-family: var(--lb-font-text);
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 22px;
+  color: var(--lb-graphite);
+  text-decoration: underline;
+}
+
+.article-toc__link.is-active,
+.article-toc__link:hover {
+  color: var(--lb-orange);
+}
+
+/* Маркированный список */
+.article-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+  max-width: 958px;
+  margin: 0;
+  list-style: none;
+}
+
+.article-list li {
+  position: relative;
+  padding-left: 12px;
+  font-family: var(--lb-font-text);
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 22px;
+  color: var(--lb-graphite);
+}
+
+.article-list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 8px;
+  width: 6px;
+  height: 6px;
+  border-radius: 10px;
+  background: var(--lb-orange);
+}
+
+.article__img {
+  width: 100%;
+  height: 250px;
+  border-radius: var(--lb-radius-sm);
+  overflow: hidden;
+}
+
+.article__img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Цитата с вертикальной чертой */
+.article-quote {
+  display: flex;
+  align-items: stretch;
+  gap: 20px;
+  width: 100%;
+  margin: 0;
+}
+
+.article-quote__bar {
+  flex: 0 0 2px;
+  width: 2px;
+  border-radius: 1000px;
+  background: var(--lb-orange);
+}
+
+.article-quote p {
+  width: 100%;
+  max-width: 958px;
+  font-family: var(--lb-font-title);
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 28px;
+  color: var(--lb-graphite);
+}
+
+/* ------------------------------- По теме ------------------------------- */
+
+.related {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
+  width: 100%;
+}
+
+.related__list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+  max-width: 958px;
+  margin: 0;
+  list-style: none;
+}
+
+.related__item {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+}
+
+.related__link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  width: 100%;
+  font-family: var(--lb-font-title);
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 28px;
+  color: var(--lb-graphite);
+  transition: color 0.2s ease;
+}
+
+.related__link:hover {
+  color: var(--lb-orange);
+}
+
+.related__link img {
+  flex: 0 0 auto;
+}
+
+/* Линия нулевой высоты — как в макете */
+.related__line {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 0;
+}
+
+.related__line::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: -1px;
+  width: 100%;
+  height: 1px;
+  background: var(--lb-sand-border);
+}
+
+/* ------------------------------ Планшет ------------------------------ */
+
+@media (max-width: 1199.98px) {
+
+  .article-hero__title {
+    font-size: 44px;
+    line-height: 50px;
+    letter-spacing: -0.44px;
+  }
+
+  .article-hero__img {
+    height: 300px;
+  }
+
+  .article__intro {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .article__col {
+    flex: 0 0 auto;
+    width: 100%;
+    gap: 20px;
+  }
+
+  .article-toc {
+    flex: 0 0 auto;
+    width: 100%;
+  }
+
+  .article {
+    gap: 20px;
+  }
+}
+
+/* ------------------------------ Мобильный ------------------------------ */
+
+@media (max-width: 759.98px) {
+
+  .article-hero-cont {
+    padding-inline: 20px;
+  }
+
+  .article-hero__title {
+    margin-top: 15px;
+    font-size: 25px;
+    font-weight: 500;
+    line-height: 30px;
+    letter-spacing: -0.25px;
+  }
+
+  .article-hero__lead {
+    margin-top: 20px;
+    font-size: 16px;
+    line-height: 22px;
+  }
+
+  .article-hero__meta {
+    gap: 5px;
+    margin-top: 15px;
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  .article-hero__img {
+    margin-top: 20px;
+    height: 200px;
+  }
+
+  .article__h2 {
+    font-size: 20px;
+    line-height: 25px;
+  }
+
+  .article__h3 {
+    font-size: 18px;
+    line-height: 22px;
+  }
+
+  .article__text,
+  .article-list li {
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  .article__btn {
+    width: 100%;
+  }
+
+  .article__img {
+    height: 180px;
+  }
+
+  .article-quote {
+    gap: 15px;
+  }
+
+  .article-quote p {
+    font-size: 16px;
+    line-height: 22px;
+  }
+
+  .related__link {
+    font-size: 16px;
+    line-height: 22px;
+  }
+}
+
+/* =========================================================================
+   Страницы со списком материалов: «Список статей» (statyi.html)
+   ========================================================================= */
+
+/* Сетка карточек: 3 колонки по 420 с шагом 10 */
+.posts-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+  width: 100%;
+}
+
+.posts-grid__empty {
+  width: 100%;
+  padding-block: 40px;
+  font-family: var(--lb-font-title);
+  font-size: 20px;
+  font-weight: 300;
+  line-height: 28px;
+  text-align: center;
+  color: var(--lb-muted);
+}
+
+/* Карточка материала */
+.post-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 30px;
+  min-width: 0;
+  padding: 10px;
+  border-radius: var(--lb-radius-md);
+  background: var(--lb-white);
+  box-shadow: var(--lb-shadow-small);
+}
+
+/* По макету 400 × 230, пропорция сохраняется на любой ширине колонки */
+.post-card__img {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 400 / 230;
+  border-radius: var(--lb-radius-sm);
+  background: var(--lb-sand-border);
+  overflow: hidden;
+}
+
+.post-card__img img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  object-fit: cover;
+}
+
+.post-card__info {
+  display: flex;
+  flex: 1 0 auto;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+  width: 100%;
+  padding: 0 20px 20px;
+}
+
+.post-card__title {
+  width: 100%;
+  font-family: var(--lb-font-title);
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 20px;
+  color: var(--lb-graphite);
+}
+
+/* Дата и ссылка прижаты к низу: заголовки разной длины не ломают ряд */
+.post-card__meta {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  width: 100%;
+  margin-top: auto;
+}
+
+.post-card__date {
+  width: 100%;
+  font-family: var(--lb-font-text);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  color: var(--lb-graphite);
+  opacity: 0.5;
+}
+
+.post-card__more {
+  width: 100%;
+  font-family: var(--lb-font-text);
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 20px;
+  letter-spacing: 0.08px;
+  color: var(--lb-orange);
+  transition: color 0.2s ease;
+}
+
+.post-card__more:hover {
+  color: var(--lb-graphite);
+}
+
+@media (max-width: 1199.98px) {
+
+  .posts-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 759.98px) {
+
+  .posts-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+/* =========================================================================
+   Страница «Вопрос-ответ» (vopros-otvet.html)
+   ========================================================================= */
+
+/* Вопрос и линия занимают всю ширину контейнера, ответ — 850 по макету */
+.page-faq .faq__list {
+  width: 100%;
+}
+
+.page-faq .faq-item__body p {
+  width: 850px;
+  max-width: 100%;
+}
+
+/* Карточка контактов на этой странице выше по вертикали */
+.contacts--faq {
+  padding: 40px 30px;
+}
+
+.faq__empty {
+  width: 100%;
+  padding-block: 40px;
+  font-family: var(--lb-font-title);
+  font-size: 20px;
+  font-weight: 300;
+  line-height: 28px;
+  text-align: center;
+  color: var(--lb-muted);
+}
+
+@media (max-width: 1199.98px) {
+
+  .contacts--faq {
+    padding: 30px 20px;
+  }
+}
+
+/* =========================================================================
+   Планшет: автор и дата отзыва не помещаются в строку узкой карточки
+   ========================================================================= */
+
+@media (min-width: 760px) and (max-width: 1199.98px) {
+
+  .review-card__meta {
+    flex-wrap: wrap;
+    gap: 10px 20px;
+  }
+}
+
+/* =========================================================================
+   Мобильный: плашка консилиума по макету 360 — шаг 8 и padding 10,
+   чтобы три параметра помещались в одну строку (320 × 50)
+   ========================================================================= */
+
+@media (max-width: 759.98px) {
+
+  .phero__pill {
+    gap: 0 8px;
+    padding: 10px;
+  }
+}
