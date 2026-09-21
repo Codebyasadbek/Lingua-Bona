@@ -1,0 +1,35 @@
+<!doctype html><meta charset="utf-8">
+<style>html,body{margin:0}iframe{border:0;display:block}</style>
+<iframe id="f" scrolling="no"></iframe>
+<script>
+const q = new URLSearchParams(location.search);
+const f = document.getElementById('f');
+f.width = +q.get('w'); f.height = 200; f.src = q.get('p');
+f.onload = async () => {
+  const d = f.contentDocument, w = f.contentWindow;
+  await d.fonts.ready;
+  f.height = d.documentElement.scrollHeight;
+  const els = [];
+  d.querySelectorAll('body *').forEach(el => {
+    const cs = w.getComputedStyle(el);
+    if (cs.display === 'none' || cs.visibility === 'hidden') return;
+    const r = el.getBoundingClientRect();
+    if (r.width < 0.5 && r.height < 0.5) return;
+    const o = { t: el.tagName,
+      c: (el.className && el.className.baseVal === undefined) ? String(el.className) : '',
+      x: +r.x.toFixed(2), y: +r.y.toFixed(2), w: +r.width.toFixed(2), h: +r.height.toFixed(2) };
+    // прямоугольник текстового прогона
+    const kids = [...el.childNodes].filter(n => n.nodeType === 3 && n.textContent.trim());
+    if (kids.length) {
+      const rg = d.createRange(); rg.selectNodeContents(el);
+      const rr = rg.getBoundingClientRect();
+      if (rr.width) { o.tx = +rr.x.toFixed(2); o.ty = +rr.y.toFixed(2);
+                      o.tw = +rr.width.toFixed(2); o.th = +rr.height.toFixed(2); }
+    }
+    els.push(o);
+  });
+  const pre = document.createElement('pre'); pre.id = 'R';
+  pre.textContent = JSON.stringify({ pageH: d.documentElement.scrollHeight, els });
+  document.body.appendChild(pre);
+};
+</script>

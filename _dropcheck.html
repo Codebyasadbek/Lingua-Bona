@@ -1,0 +1,29 @@
+<!doctype html><meta charset="utf-8">
+<style>html,body{margin:0}iframe{border:0;display:block}</style>
+<iframe id="f" scrolling="no" src="index.html" width="1440" height="900"></iframe>
+<script>
+const f = document.getElementById('f');
+f.onload = async () => {
+  const d = f.contentDocument, w = f.contentWindow;
+  await d.fonts.ready;
+  const tog = d.querySelector('[data-bs-toggle="dropdown"]');
+  const dd = w.bootstrap ? new w.bootstrap.Dropdown(tog) : null;
+  if (dd) dd.show();
+  const panel = d.querySelector('.menu-dropdown');
+  const nav = d.querySelector('.navbar-lb');
+  const menu = d.querySelector('.navbar-lb__menu');
+  const r = panel.getBoundingClientRect();
+  const out = {
+    bootstrap: !!w.bootstrap,
+    shown: panel.classList.contains('show'),
+    panel: [+r.x.toFixed(1), +r.y.toFixed(1), +r.width.toFixed(1), +r.height.toFixed(1)],
+    navbarOverflow: w.getComputedStyle(nav).overflowX + '/' + w.getComputedStyle(nav).overflowY,
+    menuOverflow: w.getComputedStyle(menu).overflowX + '/' + w.getComputedStyle(menu).overflowY,
+    navbarBottom: +nav.getBoundingClientRect().bottom.toFixed(1),
+    links: [...d.querySelectorAll('.menu-dropdown__link')].map(a => a.textContent.trim() + ' -> ' + a.getAttribute('href'))
+  };
+  const pre = document.createElement('pre'); pre.id='R';
+  pre.textContent = JSON.stringify(out, null, 1);
+  document.body.appendChild(pre);
+};
+</script>

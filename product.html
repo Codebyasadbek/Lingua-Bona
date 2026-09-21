@@ -31,7 +31,16 @@
       <nav class="navbar-lb__menu" aria-label="Основное меню">
         <a class="menu-btn" href="uslugi.html">Услуги</a>
         <a class="menu-btn" href="vrachi.html">Врачи</a>
-        <a class="menu-btn" href="o-klinike.html">Клиника</a>
+        <div class="menu-dropdown-wrap dropdown">
+          <a class="menu-btn" href="o-klinike.html" role="button"
+             data-bs-toggle="dropdown" data-bs-display="static" data-bs-auto-close="true" aria-expanded="false">Клиника</a>
+          <ul class="dropdown-menu menu-dropdown">
+            <li><a class="menu-dropdown__link" href="o-klinike.html">О клинике</a></li>
+            <li><a class="menu-dropdown__link" href="statyi.html">Справочник родителей</a></li>
+            <li><a class="menu-dropdown__link" href="novosti.html">Новости</a></li>
+            <li><a class="menu-dropdown__link" href="vopros-otvet.html">Вопрос-ответ</a></li>
+          </ul>
+        </div>
         <a class="menu-btn" href="akcii.html">Акции</a>
         <a class="menu-btn" href="ceny.html">Цены</a>
         <a class="menu-btn" href="otzyvy.html">Отзывы</a>
@@ -61,7 +70,19 @@
       <nav class="mobile-menu__nav" aria-label="Мобильное меню">
         <a class="mobile-menu__link" href="uslugi.html">Услуги</a>
         <a class="mobile-menu__link" href="vrachi.html">Врачи</a>
-        <a class="mobile-menu__link" href="o-klinike.html">Клиника</a>
+        <div class="mobile-menu__group">
+          <button class="mobile-menu__link mobile-menu__toggle collapsed" type="button"
+                  data-bs-toggle="collapse" data-bs-target="#menuClinic"
+                  aria-expanded="false" aria-controls="menuClinic">Клиника</button>
+          <div class="collapse" id="menuClinic">
+            <div class="mobile-menu__sub">
+              <a class="mobile-menu__sublink" href="o-klinike.html">О клинике</a>
+              <a class="mobile-menu__sublink" href="statyi.html">Справочник родителей</a>
+              <a class="mobile-menu__sublink" href="novosti.html">Новости</a>
+              <a class="mobile-menu__sublink" href="vopros-otvet.html">Вопрос-ответ</a>
+            </div>
+          </div>
+        </div>
         <a class="mobile-menu__link" href="akcii.html">Акции</a>
         <a class="mobile-menu__link" href="ceny.html">Цены</a>
         <a class="mobile-menu__link" href="otzyvy.html">Отзывы</a>

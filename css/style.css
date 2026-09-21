@@ -136,6 +136,84 @@ button {
   background: var(--lb-orange);
 }
 
+/* ---------------------- Выпадающее меню «Клиника» ---------------------- */
+
+/* обёртка — обычный элемент строки меню, ширина по тексту,
+   чтобы шапка осталась такой же, как в макете */
+.menu-dropdown-wrap {
+  display: flex;
+  align-items: center;
+  min-width: 0;
+}
+
+.menu-dropdown.dropdown-menu {
+  min-width: 250px;
+  /* строка меню заканчивается на 80px, низ пилюли шапки — на 120px */
+  margin-top: 40px;
+  padding: 10px;
+  border: 0;
+  border-radius: var(--lb-radius-md);
+  background: var(--lb-white);
+  box-shadow: var(--lb-shadow-big);
+}
+
+.menu-dropdown__link {
+  display: block;
+  padding: 10px 15px;
+  border-radius: var(--lb-radius-sm);
+  font-family: var(--lb-font-text);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 20px;
+  letter-spacing: 0.08px;
+  color: var(--lb-graphite);
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.menu-dropdown__link:hover,
+.menu-dropdown__link:focus-visible {
+  background: var(--lb-sand-button);
+  color: var(--lb-orange);
+}
+
+.menu-dropdown__link[aria-current="page"] {
+  color: var(--lb-orange);
+}
+
+/* второй уровень в мобильном меню */
+.mobile-menu__group {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.mobile-menu__toggle {
+  padding: 0;
+  border: 0;
+  background: none;
+  text-align: left;
+}
+
+.mobile-menu__sub {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 15px;
+  padding: 15px 0 0 20px;
+}
+
+.mobile-menu__sublink {
+  font-family: var(--lb-font-text);
+  font-size: 16px;
+  line-height: 20px;
+  color: var(--lb-muted);
+}
+
+.mobile-menu__sublink[aria-current="page"] {
+  color: var(--lb-orange);
+}
+
 /* ------------------------------- Кнопки -------------------------------- */
 
 /* Круглая кнопка 50×50 */
@@ -333,8 +411,10 @@ button {
   /* min-height, а не height: название клиники или подпись кнопки из админки
      могут занять две строки — шапка станет выше, но не разорвётся */
   min-height: 100px;
-  /* последний рубеж: содержимое не может вызвать прокрутку всей страницы */
-  overflow: hidden;
+  /* последний рубеж по горизонтали; по вертикали ничего не режем,
+     иначе обрежется выпадающее меню «Клиника» */
+  overflow-x: clip;
+  overflow-y: visible;
   padding-left: 50px;
   padding-right: 30px;
   border-radius: var(--lb-radius-lg);
@@ -362,6 +442,18 @@ button {
   color: #000;
 }
 
+/* Логотип-картинка (только на главной): коробка та же 160×30, что и у текста */
+.navbar-lb__logo--img {
+  display: flex;
+  align-items: center;
+  height: 30px;
+}
+
+.navbar-lb__logo--img img {
+  width: 160px;
+  height: auto;
+}
+
 .navbar-lb__burger {
   display: none;
 }
@@ -370,15 +462,9 @@ button {
   display: flex;
   flex: 0 1 auto;
   align-items: center;
-  gap: 20px;
+  flex-wrap: wrap;
+  gap: 10px 20px;
   min-width: 0;
-  /* пунктов меню может стать больше, чем помещается в пилюлю */
-  overflow-x: auto;
-  scrollbar-width: none;
-}
-
-.navbar-lb__menu::-webkit-scrollbar {
-  display: none;
 }
 
 .menu-btn {
@@ -1477,6 +1563,15 @@ button {
   padding-bottom: 60px;
 }
 
+@media (max-width: 1199.98px) {
+
+  /* на главной футер компактнее, чем на внутренних страницах */
+  .footer-cont.footer-cont--home {
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+}
+
 .footer {
   display: flex;
   flex-direction: column;
@@ -1739,7 +1834,7 @@ button {
 
   /* ------- Principals ------- */
   .principals {
-    padding: 60px 30px 30px;
+    padding: 30px;
   }
 
   .principals-card {
@@ -1761,7 +1856,7 @@ button {
 
   /* ------- Contacts ------- */
   .contacts {
-    padding: 60px 30px 30px;
+    padding: 30px;
   }
 
   .contacts__cards {
@@ -1783,8 +1878,8 @@ button {
 
   /* ------- Footer ------- */
   .footer-cont {
-    padding-top: 30px;
-    padding-bottom: 30px;
+    padding-top: 40px;
+    padding-bottom: 60px;
   }
 
   .footer {
@@ -1972,8 +2067,6 @@ button {
   }
 
   .section-title__heading--tight {
-    font-size: 30px;
-    line-height: 30px;
     letter-spacing: 0;
   }
 
@@ -2172,8 +2265,8 @@ button {
 
   /* ------- Principals: слайдер ------- */
   .principals {
-    padding: 60px 20px 20px;
-    gap: 40px;
+    padding: 20px;
+    gap: 30px;
   }
 
   .principals__line {
@@ -2228,7 +2321,7 @@ button {
 
   /* ------- Contacts ------- */
   .contacts {
-    padding: 60px 20px 20px;
+    padding: 20px;
     gap: 40px;
   }
 
@@ -2313,7 +2406,8 @@ button {
   /* ------- Footer ------- */
   .footer-cont {
     padding-inline: 20px;
-    padding-block: 30px;
+    padding-top: 40px;
+    padding-bottom: 60px;
   }
 
   .footer {
@@ -2371,12 +2465,22 @@ button {
   padding-top: 20px;
 }
 
+/* Отступы заданы явно: на планшете расстояние «крошки → заголовок»
+   меньше, чем «заголовок → лид», поэтому один gap не подходит */
 .page-hero {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 16px;
   width: 100%;
+}
+
+.page-hero__title {
+  margin-top: 16px;
+}
+
+.page-hero > .page-hero__lead,
+.page-hero > .page-hero__row {
+  margin-top: 16px;
 }
 
 .page-hero__crumbs {
@@ -2595,6 +2699,11 @@ button {
   width: 100%;
 }
 
+/* на «Контактах» заголовок ближе к фотографиям */
+.page-contacts .find-us__head {
+  gap: 20px;
+}
+
 .find-us__photos {
   display: flex;
   align-items: flex-start;
@@ -2620,7 +2729,19 @@ button {
 
 @media (max-width: 1199.98px) {
 
+  /* на планшете и мобиле блок начинается сразу под шапкой */
+  .page-hero-cont {
+    padding-top: 0;
+  }
+
+  /* на планшете и мобиле заголовок и лид тянутся на всю ширину, как в макете */
+  .page-hero__title,
+  .page-hero__lead {
+    width: 100%;
+  }
+
   .page-hero__title {
+    margin-top: 10px;
     font-size: 44px;
     line-height: 50px;
     letter-spacing: -0.44px;
@@ -2631,7 +2752,7 @@ button {
   }
 
   .services {
-    gap: 20px;
+    gap: 50px;
   }
 
   /* Кнопки фильтра прокручиваются по горизонтали */
@@ -2678,10 +2799,6 @@ button {
     padding-inline: 20px;
   }
 
-  .page-hero {
-    gap: 15px;
-  }
-
   .page-hero__title {
     font-size: 25px;
     font-weight: 500;
@@ -2689,22 +2806,59 @@ button {
     letter-spacing: -0.25px;
   }
 
+  .page-hero__title {
+    margin-top: 15px;
+  }
+
+  .page-hero__crumbs {
+    font-size: 12px;
+    line-height: 17px;
+  }
+
+  .page-hero > .page-hero__lead,
+  .page-hero > .page-hero__row {
+    margin-top: 15px;
+  }
+
   .page-hero__lead {
-    font-size: 16px;
+    font-family: var(--lb-font-text);
+    font-size: 14px;
     line-height: 20px;
   }
 
   .services-cont {
     padding-inline: 20px;
-    padding-block: 30px;
+    padding-top: 24px;
+    padding-bottom: 30px;
+  }
+
+  .services {
+    gap: 30px;
   }
 
   .services__grid {
     grid-template-columns: minmax(0, 1fr);
   }
 
+  .tab-btn {
+    min-height: 42px;
+    font-size: 14px;
+  }
+
   .service-card {
     padding: 20px;
+    gap: 16px;
+    border-radius: var(--lb-radius-md);
+  }
+
+  .service-card__name {
+    font-size: 18px;
+    line-height: 25px;
+  }
+
+  .service-card__btn {
+    height: 42px;
+    font-size: 14px;
   }
 
   .consilium-title {
@@ -2754,8 +2908,10 @@ button {
   }
 
   .find-us__photo {
-    flex: 0 0 260px;
-    width: 260px;
+    flex: 0 0 240px;
+    width: 240px;
+    height: 160px;
+    aspect-ratio: auto;
     scroll-snap-align: start;
   }
 }
@@ -4538,6 +4694,16 @@ button {
   .doctors-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
+
+  /* на списке врачей карточка плотнее, чем на главной */
+  .doctors-grid .doctor-card {
+    gap: 20px;
+  }
+
+  .doctors-grid .doctor-card__info {
+    gap: 20px;
+    padding-bottom: 0;
+  }
 }
 
 @media (max-width: 759.98px) {
@@ -4753,7 +4919,7 @@ button {
 .doc-help__grid {
   position: relative;
   width: 100%;
-  height: 651px;
+  height: 613px;
 }
 
 .doc-help__grid > * {
@@ -4833,7 +4999,7 @@ button {
 .doc-help__text {
   left: 323px;
   right: 0;
-  top: 607px;
+  top: 569px;
   width: auto;
   font-family: var(--lb-font-text);
   font-size: 16px;
@@ -4848,7 +5014,7 @@ button {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 40px;
+  gap: 30px;
   width: 100%;
 }
 
@@ -4861,10 +5027,17 @@ button {
 }
 
 .doc-exp__pill {
-  justify-content: flex-start;
+  justify-content: center;
   gap: 30px;
-  width: 850px;
+  width: auto;
   max-width: 100%;
+  padding: 0;
+  background: none;
+}
+
+/* до списка отступ больше, чем между строками заголовка */
+.doc-exp__list {
+  margin-top: 10px;
 }
 
 .doc-exp__lead {
@@ -4891,6 +5064,21 @@ button {
 .contacts--flat {
   align-items: center;
   box-shadow: none;
+}
+
+/* на странице врача блок отзывов — без белой подложки и отступов */
+.page-doctor .contacts--flat {
+  padding: 0;
+  border-radius: 0;
+  background: none;
+}
+
+.page-doctor .contacts--flat .reviews {
+  gap: 30px;
+}
+
+.page-doctor .contacts--flat .review-card {
+  padding-top: 0;
 }
 
 .reviews {
@@ -5020,7 +5208,7 @@ button {
 
 @media (max-width: 1199.98px) {
 
-  /* Шапка: фотография сверху, текст под ней */
+  /* Шапка: текст сверху, фотография под ним */
   .doc-hero {
     display: flex;
     flex-direction: column;
@@ -5034,27 +5222,66 @@ button {
     width: 100%;
   }
 
-  .doc-hero__photo {
-    height: 400px;
+  .doc-hero__crumbs {
+    order: 1;
+  }
+
+  .doc-hero__practice {
+    order: 2;
+    color: var(--lb-graphite);
   }
 
   .doc-hero__name {
+    order: 3;
+    margin-top: -10px;
     font-size: 44px;
     line-height: 50px;
     letter-spacing: -0.44px;
   }
 
+  .doc-hero__degree {
+    order: 4;
+    font-family: var(--lb-font-text);
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 22px;
+  }
+
+  .doc-hero__lead {
+    order: 5;
+    margin-top: -10px;
+    font-family: var(--lb-font-text);
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 22px;
+  }
+
   .doc-hero__pill {
-    width: 420px;
-    max-width: 100%;
+    order: 6;
+    gap: 54px;
+    padding-inline: 30px;
+  }
+
+  .doc-hero__btn {
+    order: 7;
+  }
+
+  .doc-hero__photo {
+    order: 8;
+    margin-top: 10px;
+    height: 700px;
   }
 
   /* Как врач помогает */
+  .doc-help {
+    gap: 30px;
+  }
+
   .doc-help__grid {
     position: static;
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 30px;
     height: auto;
   }
 
@@ -5068,15 +5295,41 @@ button {
     white-space: normal;
   }
 
+  /* Список жалоб становится двухколоночным */
+  .doc-help__list {
+    display: block;
+    margin-top: -10px;
+    margin-bottom: -12px;
+    columns: 2;
+    column-gap: 20px;
+  }
+
+  .doc-help__list li {
+    margin-bottom: 12px;
+    break-inside: avoid;
+    font-family: var(--lb-font-text);
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 22px;
+  }
+
+  .doc-help__list li::before {
+    top: 7px;
+  }
+
   .doc-help__subtitle--approach {
-    margin-top: 20px;
+    margin-top: 0;
+  }
+
+  .doc-help__text {
+    margin-top: -10px;
   }
 
   .doc-help__media {
     position: relative;
     left: 0;
     top: 0;
-    height: 400px;
+    height: 376px;
   }
 
   .doc-help__play {
@@ -5091,91 +5344,232 @@ button {
     white-space: normal;
   }
 
-  /* Опыт: плашка перестраивается в столбик */
-  .doc-exp__pill {
-    flex-direction: column;
-    align-items: center;
+  /* Опыт и подготовка */
+  .doc-exp {
+    gap: 40px;
+  }
+
+  .doc-exp__title {
     gap: 10px;
-    width: 100%;
+  }
+
+  .doc-exp__pill {
+    gap: 20px;
+    min-height: 40px;
+  }
+
+  .doc-exp__pill .info-pill__item {
+    font-size: 16px;
+    line-height: 18px;
+  }
+
+  .doc-exp__lead {
+    margin-top: -30px;
+    font-family: var(--lb-font-text);
+    font-size: 16px;
+    line-height: 22px;
+  }
+
+  .doc-exp__list {
+    margin-top: 0;
+  }
+
+  /* Отзывы о враче */
+  .page-doctor .contacts-cont--reviews {
+    padding-block: 20px;
+  }
+
+  .page-doctor .contacts--flat {
+    gap: 20px;
+  }
+
+  .page-doctor .contacts--flat .reviews {
+    gap: 10px;
+  }
+
+  .page-doctor .reviews__rating {
+    align-self: center;
+    width: auto;
     height: auto;
-    padding: 20px;
-    border-radius: var(--lb-radius-md);
+    min-height: 0;
+    margin-bottom: 10px;
+    padding: 0;
+    gap: 0;
+    border: 0;
+    background: none;
+    font-size: 16px;
+    line-height: 20px;
+    color: var(--lb-orange);
   }
 
-  .doc-exp__pill .info-pill__sep {
-    width: 50px;
-    height: 1px;
-  }
-
-  .doc-exp__pill .info-pill__sep::before {
-    position: static;
-    display: block;
+  .page-doctor .contacts--flat .review-card {
     width: 100%;
-    height: 1px;
+    padding-block: 20px;
+    gap: 20px;
+  }
+
+  .page-doctor .contacts--flat .reviews__row {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .page-doctor .reviews__more {
+    align-self: flex-start;
   }
 
   .book-title__head {
+    gap: 10px;
     white-space: normal;
+  }
+
+  .contacts--book {
+    padding: 30px;
+  }
+
+  .book-title {
+    gap: 40px;
+  }
+
+  .book-title__practice {
+    font-family: var(--lb-font-text);
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 22px;
   }
 }
 
 @media (max-width: 759.98px) {
 
-  .doc-hero {
-    gap: 15px;
+  .doc-hero-cont {
+    padding-bottom: 30px;
   }
 
-  .doc-hero__photo {
-    height: 330px;
+  .doc-hero {
+    gap: 15px;
+    padding-inline: 10px;
   }
 
   .doc-hero__crumbs {
     white-space: normal;
+    font-size: 12px;
+    line-height: 17px;
+  }
+
+  .doc-hero__photo {
+    order: 2;
+    margin-top: -5px;
+    height: 370px;
+  }
+
+  .doc-hero__practice {
+    order: 3;
+    margin-top: 5px;
+    font-family: var(--lb-font-text);
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 20px;
+    color: var(--lb-muted);
   }
 
   .doc-hero__name {
+    order: 4;
+    margin-top: 0;
     font-size: 25px;
+    font-weight: 500;
     line-height: 25px;
     letter-spacing: -0.25px;
   }
 
   .doc-hero__degree {
-    font-size: 18px;
-    line-height: 24px;
+    order: 5;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 20px;
   }
 
   .doc-hero__lead {
-    font-family: var(--lb-font-text);
+    order: 6;
+    margin-top: 0;
     font-size: 16px;
     line-height: 20px;
   }
 
-  .doc-hero__lead br {
-    display: none;
+  .doc-hero__pill {
+    order: 7;
+    min-height: 42px;
+    gap: 20px;
+    padding: 10px 27px;
   }
 
-  .doc-hero__pill {
+  .doc-hero__pill .info-pill__item {
+    font-family: var(--lb-font-text);
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 20px;
+    color: var(--lb-slate);
+  }
+
+  .doc-hero__pill .info-pill__item--price {
+    font-weight: 600;
+    color: var(--lb-orange);
+  }
+
+  .doc-hero__btn {
+    order: 8;
+  }
+
+  .doc-help {
     gap: 20px;
-    padding-inline: 20px;
+  }
+
+  .doc-help__grid {
+    gap: 20px;
+  }
+
+  .doc-help__list {
+    display: flex;
+    margin-top: 0;
+    margin-bottom: 0;
+    columns: auto;
+  }
+
+  .doc-help__list li {
+    margin-bottom: 0;
+    font-family: var(--lb-font-title);
+    font-size: 16px;
+    line-height: 18px;
+  }
+
+  .doc-help__list li::before {
+    top: 5px;
   }
 
   .doc-help__subtitle {
-    font-size: 20px;
-    line-height: 25px;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 18px;
+    letter-spacing: -0.18px;
+    color: var(--lb-graphite);
+  }
+
+  .doc-help__subtitle--approach {
+    color: #000;
   }
 
   .doc-help__media {
-    height: 220px;
+    height: 168px;
+    border-radius: var(--lb-radius-md);
   }
 
   .doc-help__play {
-    width: 64px;
-    height: 64px;
+    width: 50px;
+    height: 50px;
+    border-radius: 8px;
   }
 
   .doc-help__play img {
-    width: 28px;
-    height: 28px;
+    width: 22px;
+    height: 22px;
   }
 
   .doc-help__quote,
@@ -5203,21 +5597,116 @@ button {
     gap: 20px;
   }
 
+
   .review-card__text,
   .review-card__author {
-    font-size: 18px;
-    line-height: 24px;
+    font-size: 16px;
+    line-height: 22px;
+  }
+
+  .review-card__text {
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  /* на мобиле лид идёт сразу под заголовком, пилюля — после него */
+  .doc-exp {
+    gap: 20px;
+  }
+
+  .doc-exp__title {
+    display: contents;
+  }
+
+  .doc-exp__title > .section-title__heading {
+    order: 1;
+  }
+
+  .doc-exp__lead {
+    order: 2;
+    margin-top: -10px;
+    font-family: var(--lb-font-title);
+    font-size: 16px;
+    line-height: 18px;
+  }
+
+  /* плашка — столбик с горизонтальными разделителями */
+  .doc-exp__pill {
+    order: 3;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+    width: 100%;
+    min-height: 0;
+  }
+
+  .doc-exp__pill .info-pill__item {
+    font-size: 20px;
+    line-height: 28px;
+  }
+
+  .doc-exp__pill .info-pill__sep {
+    width: 100%;
+    height: 0;
+  }
+
+  .doc-exp__pill .info-pill__sep::before {
+    position: static;
+    display: block;
+    width: 100%;
+    height: 1px;
+  }
+
+  .doc-exp__list {
+    order: 4;
+    margin-top: 20px;
+  }
+
+  .faq-item--sm .faq-item__q {
+    line-height: 25px;
+  }
+
+  .bullet-list--sm li {
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  .bullet-list--sm li::before {
+    top: 6px;
+  }
+
+  /* Отзывы о враче */
+  .page-doctor .contacts-cont--reviews {
+    padding-block: 40px;
+  }
+
+  .page-doctor .reviews__rating {
+    margin-bottom: 0;
+  }
+
+  .page-doctor .contacts--flat .reviews {
+    gap: 20px;
+  }
+
+  .page-doctor .contacts--flat .review-card {
+    padding-block: 10px;
+    gap: 30px;
+  }
+
+  .page-doctor .contacts--flat .review-card__body {
+    gap: 16px;
+  }
+
+  .page-doctor .contacts--flat .reviews__row {
+    gap: 20px;
   }
 
   .reviews__rating {
-    height: auto;
-    padding-block: 15px;
-    white-space: normal;
     text-align: center;
   }
 
   .contacts--book {
-    padding: 30px 20px;
+    padding: 20px;
   }
 
   .book-title__buttons {
@@ -5303,7 +5792,7 @@ button {
 .findus-page {
   display: flex;
   flex-direction: column;
-  gap: 30px;
+  gap: 20px;
   width: 100%;
 }
 
@@ -5523,7 +6012,7 @@ button {
 
   .page-hero__row {
     flex-direction: column;
-    gap: 10px;
+    gap: 16px;
   }
 
   .page-hero__note {
@@ -5531,30 +6020,34 @@ button {
   }
 
   .prices {
-    gap: 20px;
+    gap: 50px;
   }
 
   .search-bar {
     padding-inline: 20px;
   }
 
-  .price-row__price {
-    flex: 0 1 auto;
-    min-width: 0;
-    text-align: right;
-  }
 }
 
 /* ------------------------------ Мобильный ------------------------------ */
 
 @media (max-width: 759.98px) {
 
+  .page-prices .diagnostics-cont {
+    padding-top: 24px;
+  }
+
+  .prices {
+    gap: 30px;
+  }
+
   .page-hero__row {
-    gap: 5px;
+    gap: 24px;
   }
 
   .page-hero__note {
-    font-size: 16px;
+    font-family: var(--lb-font-text);
+    font-size: 14px;
     line-height: 20px;
   }
 
@@ -5568,18 +6061,18 @@ button {
   }
 
   .price-card {
-    gap: 15px;
-    padding: 20px;
-    border-radius: var(--lb-radius-md);
+    gap: 20px;
   }
 
   .price-card__title {
+    font-weight: 700;
     font-size: 18px;
-    line-height: 20px;
+    line-height: 18px;
+    letter-spacing: -0.18px;
   }
 
   .price-card__list {
-    gap: 12px;
+    gap: 16px;
   }
 
   .price-row {
@@ -5587,19 +6080,18 @@ button {
   }
 
   .price-row__main {
-    gap: 10px;
+    gap: 14px;
   }
 
   .price-row__name,
   .price-row__price {
-    font-size: 16px;
-    line-height: 22px;
+    font-family: var(--lb-font-text);
+    font-size: 14px;
+    line-height: 20px;
   }
 
   .price-row__price {
-    flex: 0 1 auto;
-    min-width: 0;
-    text-align: right;
+    font-weight: 600;
   }
 }
 
@@ -5668,18 +6160,38 @@ button {
   width: 100%;
 }
 
-.reviews-page__rows {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
+/* Список отзывов: первый — во всю ширину, дальше две колонки */
+.reviews-page__list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 30px 60px;
   width: 100%;
 }
 
-.reviews-page__row {
-  display: flex;
-  align-items: stretch;
-  gap: 20px;
-  width: 100%;
+.review-card--wide {
+  grid-column: 1 / -1;
+}
+
+/* на планшете и мобиле отзывы идут в одну колонку */
+@media (max-width: 1199.98px) {
+
+  .reviews-page__list {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 10px;
+  }
+
+  .reviews-page__list .review-card {
+    gap: 20px;
+  }
+}
+
+/* Отзыв в списке: без подложки, снизу тонкая оранжевая черта */
+.reviews-page__list .review-card,
+.reviews .review-card {
+  gap: 30px;
+  padding: 20px 0;
+  border-radius: 0;
+  background: none;
 }
 
 .reviews-page__more {
@@ -5929,19 +6441,19 @@ button {
 .promos {
   display: flex;
   flex-direction: column;
-  gap: 30px;
+  gap: 20px;
   width: 100%;
 }
 
+/* Карточка акции: без белой подложки, разделена тонкой линией снизу */
 .promo-card {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   gap: 20px;
   width: 100%;
-  padding: 30px;
-  border-radius: var(--lb-radius-lg);
-  background: var(--lb-white);
+  padding-block: 20px;
+  border-bottom: 1px solid var(--lb-sand-border);
 }
 
 .promo-card__body {
@@ -6057,7 +6569,7 @@ button {
 }
 
 .promo-card__btn {
-  width: 385px;
+  width: 280px;
   max-width: 100%;
 }
 
@@ -6065,8 +6577,9 @@ button {
 
 @media (max-width: 1199.98px) {
 
+  /* на планшете карточки вплотную: у каждой своя линия снизу */
   .promos {
-    gap: 20px;
+    gap: 0;
   }
 
   .promo-card__cols {
@@ -6088,23 +6601,27 @@ button {
   }
 
   .promo-card {
-    gap: 15px;
-    padding: 20px;
-    border-radius: var(--lb-radius-md);
+    gap: 20px;
   }
 
   .promo-card__body {
-    gap: 15px;
+    gap: 20px;
   }
 
   .promo-card__title {
+    font-weight: 700;
     font-size: 18px;
-    line-height: 22px;
+    line-height: 18px;
+    letter-spacing: -0.18px;
   }
 
   .promo-card__cols {
     flex-direction: column;
-    gap: 15px;
+    gap: 20px;
+  }
+
+  .promo-card__btn {
+    height: 42px;
   }
 
   .promo-card__col {
@@ -6112,25 +6629,8 @@ button {
     width: 100%;
   }
 
-  .promo-card__term,
-  .promo-card__text {
-    font-size: 14px;
-    line-height: 20px;
-  }
-
   .promo-price {
-    gap: 0 15px;
-  }
-
-  .promo-price__new,
-  .promo-price__old {
-    font-size: 18px;
-    line-height: 25px;
-  }
-
-  .promo-price__old::after {
-    top: 13px;
-    width: calc(100% + 2.58px);
+    gap: 0 20px;
   }
 
   .promo-card__btn {
@@ -6359,13 +6859,14 @@ button {
   max-width: calc(100% - 20px);
   padding: 10px 27px;
   border-radius: 1000px;
-  background: var(--lb-orange);
+  /* в новом макете эта «кнопка» белая с чёрным текстом */
+  background: var(--lb-white);
   font-family: var(--lb-font-title);
   font-size: 20px;
   font-weight: 400;
   line-height: 28px;
   text-align: center;
-  color: var(--lb-white);
+  color: #000;
 }
 
 /* ---------------------------- Специалисты ---------------------------- */
@@ -6394,6 +6895,12 @@ button {
 .team__more,
 .science__more,
 .reviews__more {
+  align-self: center;
+}
+
+/* Кнопки «Вся команда» и «Публикации и разработки» — 634px по центру */
+.team__more,
+.science__more {
   width: 634px;
   max-width: 100%;
 }
@@ -6479,19 +6986,28 @@ button {
   width: 100%;
 }
 
+/* Оценки площадок — обычные ссылки по центру, без кнопок */
 .reviews__ratings {
   display: flex;
+  flex-wrap: wrap;
   align-items: flex-start;
-  gap: 10px;
+  justify-content: center;
+  gap: 10px 70px;
   width: 100%;
 }
 
 .reviews__ratings .reviews__rating {
-  flex: 1 0 0;
+  flex: 0 1 auto;
   min-width: 0;
-  height: auto;
-  min-height: 50px;
-  white-space: normal;
+  width: auto;
+  padding: 0;
+  border: 0;
+  background: none;
+  font-family: var(--lb-font-text);
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 20px;
+  color: var(--lb-orange);
 }
 
 /* ------------------------------ Планшет ------------------------------ */
@@ -6635,23 +7151,51 @@ button {
     line-height: 20px;
   }
 
-  .mind__pill {
-    min-height: 40px;
-    padding: 10px 20px;
-    font-size: 16px;
-    line-height: 20px;
+  /* на мобиле все «слова» идут одной колонкой в порядке макета:
+     Слова, Речь, Внимание, Эмоции, Обучение, Поведение, затем результат */
+  .mind__map {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 14px;
   }
 
+  .mind__col,
   .mind__center {
-    height: 260px;
+    display: contents;
+  }
+
+  .mind__pill,
+  .mind__result {
+    width: 100%;
+    max-width: none;
+    min-height: 42px;
+    padding: 10px 12px;
+    font-size: 16px;
+    line-height: 22px;
+  }
+
+  .mind__col > .mind__pill:nth-child(1) { order: 1; }
+  .mind__col--right > .mind__pill:nth-child(1) { order: 2; }
+  .mind__col > .mind__pill:nth-child(2) { order: 3; }
+  .mind__col--right > .mind__pill:nth-child(2) { order: 4; }
+  .mind__col > .mind__pill:nth-child(3) { order: 5; }
+  .mind__col--right > .mind__pill:nth-child(3) { order: 6; }
+
+  .mind__pill--far,
+  .mind__col--right .mind__pill--far {
+    transform: none;
   }
 
   .mind__result {
-    min-height: 40px;
-    bottom: 20px;
-    padding: 10px 20px;
-    font-size: 16px;
-    line-height: 20px;
+    position: static;
+    order: 7;
+    transform: none;
+  }
+
+  .mind__center img {
+    order: 8;
+    height: 360px;
+    border-radius: var(--lb-radius-md);
   }
 
   .page-about .team__track {
@@ -6775,10 +7319,21 @@ button {
   color: var(--lb-muted);
 }
 
-.article-hero__img {
-  position: relative;
+/* Картинка и оглавление статьи — в одну строку под шапкой */
+.article-hero__row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 20px;
   margin-top: 40px;
   width: 100%;
+}
+
+.article-hero__img {
+  position: relative;
+  flex: 0 1 635px;
+  width: 635px;
+  max-width: 100%;
   height: 400px;
   border-radius: var(--lb-radius-sm);
   overflow: hidden;
@@ -6870,7 +7425,7 @@ button {
 /* Содержание */
 .article-toc {
   display: flex;
-  flex: 0 0 312px;
+  flex: 0 1 419px;
   flex-direction: column;
   align-items: flex-start;
   align-self: flex-start;
@@ -6887,6 +7442,7 @@ button {
   font-size: 16px;
   font-weight: 600;
   line-height: 22px;
+  max-width: 379px;
   color: var(--lb-graphite);
   text-decoration: underline;
 }
@@ -7044,8 +7600,20 @@ button {
     letter-spacing: -0.44px;
   }
 
+  .article-hero__row {
+    flex-direction: column;
+    gap: 20px;
+  }
+
   .article-hero__img {
+    flex: 0 0 auto;
+    width: 100%;
     height: 300px;
+  }
+
+  .article-toc {
+    flex: 0 0 auto;
+    width: 100%;
   }
 
   .article__intro {
@@ -7251,6 +7819,71 @@ button {
   color: var(--lb-graphite);
 }
 
+/* Карточки материалов на планшете и мобиле */
+@media (max-width: 1199.98px) {
+
+  .post-card__img {
+    height: 200px;
+    aspect-ratio: auto;
+  }
+
+  .post-card--lead {
+    gap: 30px;
+  }
+
+  .post-card__head {
+    gap: 5px;
+  }
+}
+
+@media (max-width: 759.98px) {
+
+  .post-card {
+    gap: 16px;
+  }
+
+  .post-card__img {
+    height: 180px;
+  }
+
+  .post-card__info {
+    gap: 10px;
+    padding: 0 10px 10px;
+  }
+
+  .post-card__title {
+    font-size: 18px;
+    line-height: 25px;
+  }
+}
+
+/* Первая новость: картинка ниже, дата над заголовком, есть описание */
+.post-card--lead {
+  gap: 16px;
+}
+
+.post-card--lead .post-card__img {
+  aspect-ratio: 400 / 200;
+}
+
+.post-card__head {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 7px;
+  width: 100%;
+}
+
+.post-card__text {
+  width: 100%;
+  font-family: var(--lb-font-text);
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 22px;
+  color: var(--lb-graphite);
+  opacity: 0.5;
+}
+
 @media (max-width: 1199.98px) {
 
   .posts-grid {
@@ -7274,14 +7907,36 @@ button {
   width: 100%;
 }
 
+/* ответ: крупнее и контрастнее, во всю ширину — как в новом макете */
 .page-faq .faq-item__body p {
-  width: 850px;
-  max-width: 100%;
+  width: 100%;
+  font-family: var(--lb-font-title);
+  font-size: 20px;
+  line-height: 28px;
+  color: var(--lb-graphite);
 }
 
 /* Карточка контактов на этой странице выше по вертикали */
 .contacts--faq {
   padding: 40px 30px;
+}
+
+@media (max-width: 759.98px) {
+
+  .page-faq .faq-cont {
+    padding-top: 24px;
+  }
+
+  .page-faq .faq-item__q {
+    font-size: 18px;
+    line-height: 25px;
+  }
+
+  .page-faq .faq-item__body p {
+    font-family: var(--lb-font-text);
+    font-size: 14px;
+    line-height: 20px;
+  }
 }
 
 .faq__empty {
@@ -7307,6 +7962,13 @@ button {
    ========================================================================= */
 
 @media (min-width: 760px) and (max-width: 1199.98px) {
+
+  /* где под заголовком нет фильтров, отступ под шапкой больше:
+     в макете эти 20px — нижний padding самой шапки */
+  .page-promos .diagnostics-cont,
+  .page-contacts .diagnostics-cont {
+    padding-top: 50px;
+  }
 
   .review-card__meta {
     flex-wrap: wrap;
