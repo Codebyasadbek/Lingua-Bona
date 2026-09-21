@@ -7,6 +7,12 @@ const f = document.getElementById('f');
 f.width = +q.get('w'); f.height = 200; f.src = q.get('p');
 f.onload = async () => {
   const d = f.contentDocument, w = f.contentWindow;
+  // принудительно грузим все начертания: иначе fonts.ready резолвится до загрузки
+  const jobs = [];
+  for (const fam of ['Chiron GoRound TC', 'Manrope'])
+    for (const wt of [200, 300, 400, 500, 600, 700])
+      jobs.push(d.fonts.load(wt + ' 44px "' + fam + '"', 'Привет мир Hello 0123'));
+  await Promise.all(jobs.map(p => p.catch(() => null)));
   await d.fonts.ready;
   f.height = d.documentElement.scrollHeight;
   const els = [];
